@@ -19,7 +19,7 @@ import grey from '@material-ui/core/colors/grey'
 import blue from '@material-ui/core/colors/blue'
 import Button from '@material-ui/core/Button'
 
-import 'client/style.css'
+//import 'client/style.css'
 import reducers from 'client/reducers'
 import ContentRouter from 'client/components/routes/SiteRouter'
 import PageBuilder from 'client/components/SimplePageBuilder'
@@ -115,7 +115,7 @@ class App3 extends React.Component {
 ReactDOM.render(
     <Provider store={store}>
         <Router history={history}>
-            <App3/>
+            <App/>
         </Router>
     </Provider>,
     document.getElementById('root')
