@@ -3,7 +3,7 @@ import uniqueValidator from 'mongoose-unique-validator'
 
 import clearSpecialSymbols from '../resources/clearSpecialSymbols'
 
-const TextSchema = new mongoose.Schema({
+const WorkSchema = new mongoose.Schema({
 	title: {
 		type: String,
 		required: true,
@@ -21,12 +21,12 @@ const TextSchema = new mongoose.Schema({
 	}
 })
 
-TextSchema.plugin(uniqueValidator)
+WorkSchema.plugin(uniqueValidator)
 
-TextSchema.pre('save', function(next){
-    const text = this
-    text.nameUrl = clearSpecialSymbols(text.nameUrl)
+WorkSchema.pre('save', function(next){
+    const work = this
+    work.nameUrl = clearSpecialSymbols(work.nameUrl)
     next()
 })
 
-export default mongoose.model('Text', TextSchema)
+export default mongoose.model('Work', WorkSchema)

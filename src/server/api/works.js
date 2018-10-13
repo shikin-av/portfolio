@@ -1,12 +1,12 @@
 import { Router } from 'express'
 
-import Text from '../models/Text'
+import Work from '../models/Work'
 
 export default () => {
     const api = Router()
 
     api.get('/', async (req, res, next) => {
-        return await Text.find((err, cities) => {
+        return await Work.find((err, cities) => {
             if(!err){
                 return res.json(cities)
             } else {
@@ -16,12 +16,12 @@ export default () => {
     })
 
     api.get('/:nameUrl', async (req, res, next) => {
-        return await Text.findOne({
+        return await Work.findOne({
             nameUrl: req.params.nameUrl
-        }, (err, text) => {
+        }, (err, work) => {
             if(!err){
-                if(text){
-                    return res.json(text)
+                if(work){
+                    return res.json(work)
                 } else {
                     return next()
                 }
@@ -37,15 +37,15 @@ export default () => {
             content,
             nameUrl,
         } = req.body
-        const text = new Text({
+        const work = new Work({
             title,
             content,
             nameUrl,
         })
         
-        return await text.save(err => {
+        return await work.save(err => {
             if(!err) {
-                return res.status(201).json(text)
+                return res.status(201).json(work)
             } else {
                 return next(err)
             }
@@ -58,20 +58,20 @@ export default () => {
             content,
             nameUrl,
         } = req.body
-        return await Text.findOne({
+        return await Work.findOne({
             nameUrl: req.params.nameUrl
-        }, (err, text) => {
+        }, (err, work) => {
             if(!err){
-                if(!text){
+                if(!work){
                     return next()
                 }
-                text.title    = title   || text.title
-                text.content  = content || text.content
-                text.nameUrl  = nameUrl || text.nameUrl
+                work.title    = title   || work.title
+                work.content  = content || work.content
+                work.nameUrl  = nameUrl || work.nameUrl
                 
-                return text.save((err) => {
+                return work.save((err) => {
                     if(!err) {
-                        return res.status(202).json(text)
+                        return res.status(202).json(work)
                     } else {
                         return next(err)
                     }
@@ -83,15 +83,15 @@ export default () => {
     })
 
     api.delete('/:nameUrl', async (req, res, next) => {
-        return await Text.findOne({
+        return await Work.findOne({
             nameUrl: req.params.nameUrl
-        }, (err, text) => {
+        }, (err, work) => {
             if(!err){
-                if(!text){
+                if(!work){
                     return next()
                 }
     
-                return text.remove(err => {
+                return work.remove(err => {
                     if(!err){
                         return res.json({ status: 'OK' })
                     } else {

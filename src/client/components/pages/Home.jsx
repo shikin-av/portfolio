@@ -6,26 +6,39 @@ import withStyles from '@material-ui/core/styles/withStyles'
 
 import fakeData from 'client/fakeData'
 import Header from 'client/components/Header'
-import Works from 'client/components/Works'
+import WorkList from 'client/components/WorkList'
+import Case from 'client/components/Case'
 
 class Home extends React.Component {    
 
+    componentWillMount = () => {
+        const {nameurl} = this.props.match.params
+        console.log('nameurl', nameurl)
+    }
+
+    componentWillReceiveProps = nextProps => {
+        const {nameurl} = nextProps.match.params
+        console.log('nameurl', nameurl)
+    }
+
     render() {
         const {classes} = this.props
+        const {nameurl} = this.props.match.params
         return (
             <div className={classes.root}>
                 <ReactCSSTransitionGroup 
                     transitionName='animOpacity'                        
                     transitionAppear={true}
-                    transitionAppearTimeout={1900}
+                    transitionAppearTimeout={2000}
                     transitionEnter={true}
-                    transitionEnterTimeout={1900}
+                    transitionEnterTimeout={2000}
                     transitionLeave={true}
-                    transitionLeaveTimeout={1900}
+                    transitionLeaveTimeout={2000}
                 > 
                     <Header/>
-                    <Works items={fakeData}/>
+                    <WorkList items={fakeData}/>                    
                 </ReactCSSTransitionGroup>
+                {nameurl && <Case nameurl={nameurl}/>}
             </div>
         )
     }

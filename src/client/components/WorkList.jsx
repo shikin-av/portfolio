@@ -9,7 +9,7 @@ import config from 'config/client'
 
 const imagesLoadedOptions = {background: '.my-bg-image-el'}
 
-class Works extends React.Component {
+class WorkList extends React.Component {
     static propTypes = {
         items: array.isRequired,
     }
@@ -22,7 +22,7 @@ class Works extends React.Component {
     }
 
     clickWorkHandler = e => {
-        console.log(e)
+        //console.log(e)
     }
 
     render() {
@@ -36,8 +36,10 @@ class Works extends React.Component {
                 className={`${classes.work} work`}
                 key={item.img}
             >
-               <img src={`${config.assetsPath}/imgs/content/${item.img}`}/> 
-               <h3 className={classes.tags}>Lorem ipsum dolor sit amet</h3>
+                <Link to={item.nameurl}>
+                    <img src={`${config.assetsPath}/imgs/content/${item.img}`}/> 
+                    <h3 className={classes.tags}>Lorem ipsum dolor sit amet</h3>
+                </Link>
             </li>
         ))
 
@@ -84,7 +86,9 @@ const styles = theme => ({
         fontSize: '1em',
         margin: '1em',
         marginTop: '0.5em',
+        color: 'rgba(255, 255, 255, 0.65)',
+        textDecoration: 'none',
     }
 })
 
-export default withStyles(styles)(Works)
+export default withStyles(styles)(WorkList)

@@ -2,7 +2,7 @@ import { Router } from 'express'
 import _ from 'lodash'
 import moment from 'moment'
 
-import Text from '../models/Text'
+import Work from '../models/Work'
 import getRandomInt from '../resources/getRandomInt'
 
 export default () => {
