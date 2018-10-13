@@ -1,12 +1,15 @@
-/*@import url('https://fonts.googleapis.com/css?family=Roboto+Slab:100,300,400,700&subset=cyrillic');*/
-@import url('https://fonts.googleapis.com/css?family=Oswald:200,300,400,500,600,700|Roboto+Slab:100,300,400,700&subset=cyrillic');
+@charset "UTF-8";
+@import url("http://fonts.googleapis.com/css?family=Source+Sans+Pro:200");
 
 body {
-    font-family: 'Roboto Slab', Arial, Verdana, sans-serif;
+    font-family: "Source Sans Pro", Helvetica, sans-serif;
     color: #383a3c;
-    font-size: 16px;
-    background: url(/assets/imgs/design/background.png) repeat;
-    background-color: #e6e1d0;
+    font-size: 12pt;
+    font-weight: 200;
+    line-height: 1.65;
+    background-image: url(/assets/imgs/design/background.jpg);
+    background-size: cover;
+    background-position: top center;    
 }
 
 .public-DraftEditor-content{
@@ -41,10 +44,6 @@ h1, h2, h3 {
     margin-bottom: 0.35em;
 }
 
-h1, h2 {
-    text-shadow: 1px 2px #FCFAF7, 3px 4px #484A4D;
-}
-
 h1 {    
     font-size: 2.8125rem;
     line-height: 1.13333em;
@@ -59,10 +58,6 @@ h2 {
 h3 {
     font-size: 1.5rem;
     line-height: 1.35417em;
-}
-
-h4 {
-    font-family: 'Oswald', 'Roboto Slab', Arial, Verdana, sans-serif;
 }
 
 .rdw-image-modal {
@@ -200,6 +195,34 @@ figure {
     height: 70px;
     transition: 0.9s;
 }
+
+/* ---- */
+.animOpacity-enter {
+  opacity: 0;  
+}
+.animOpacity-enter.animOpacity-enter-active {
+  opacity: 1;  
+  transition: opacity 1.9s ease, filter 1.9s ease;
+}
+ 
+.animOpacity-leave {
+  opacity: 1;  
+}   
+.animOpacity-leave.animOpacity-leave-active {
+  opacity: 0;  
+  transition: opacity 1.9s ease, filter 1.9s ease;
+}
+
+.animOpacity-appear {
+  opacity: 0;  
+}
+.animOpacity-appear.animOpacity-appear-active {
+  opacity: 1;  
+  transition: opacity 1.9s ease, filter 1.9s ease;
+}
+/* ---- */
+
+
 .rdw-option-wrapper, .rdw-dropdown-wrapper, .rdw-fontsize-wrapper, .rdw-block-wrapper, .rdw-inline-wrapper, .rdw-colorpicker-wrapper, .rdw-link-wrapper, .rdw-image-wrapper, .rdw-history-wrapper {
     display: inline-flex;
 }
@@ -1110,4 +1133,175 @@ figure {
   border-bottom: 2px solid #383A3C;
   top: 5px;
   width: 152px;
+}
+
+/* ----------------------------- */
+.gridcase {
+	position: relative;
+	margin: 0 auto;
+	padding: 1em 0 4em;
+	max-width: 1000px;
+	list-style: none;
+  text-align: center;
+}
+
+.gridcase figure {
+	position: relative;
+	float: left;
+	overflow: hidden;
+	margin: 0px;
+	width: 100%;
+	background: #3085a3;
+	text-align: center;
+	cursor: pointer;
+}
+
+.gridcase figure img {
+	position: relative;
+	display: block;
+	min-height: 100%;
+	max-width: 100%;
+	opacity: 0.8;
+}
+
+.gridcase figure figcaption {
+	padding: 2em;
+	color: #fff;
+	text-transform: uppercase;
+	font-size: 1.25em;
+	-webkit-backface-visibility: hidden;
+	backface-visibility: hidden;
+}
+
+.gridcase figure figcaption::before,
+.gridcase figure figcaption::after {
+	pointer-events: none;
+}
+
+.gridcase figure figcaption,
+.gridcase figure figcaption > a {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+}
+
+.gridcase figure figcaption > a {
+	z-index: 1000;
+	text-indent: 200%;
+	white-space: nowrap;
+	font-size: 0;
+	opacity: 0;
+}
+
+.gridcase figure h2 {
+	word-spacing: -0.15em;
+	font-weight: 300;
+}
+
+.gridcase figure h2 span {
+	font-weight: 800;
+}
+
+.gridcase figure h2,
+.gridcase figure p {
+	margin: 0;
+}
+
+.gridcase figure p {
+	letter-spacing: 1px;
+	font-size: 68.5%;
+}
+
+/* --------------- */
+
+figure.effect-bubba {
+	background: #9e5406;
+}
+
+figure.effect-bubba img {
+	opacity: 0.7;
+	-webkit-transition: opacity 0.35s;
+	transition: opacity 0.35s;
+}
+
+figure.effect-bubba:hover img {
+	opacity: 0.4;
+}
+
+figure.effect-bubba figcaption::before,
+figure.effect-bubba figcaption::after {
+	position: absolute;
+	top: 30px;
+	right: 30px;
+	bottom: 30px;
+	left: 30px;
+	content: '';
+	opacity: 0;
+	-webkit-transition: opacity 0.35s, -webkit-transform 0.35s;
+	transition: opacity 0.35s, transform 0.35s;
+}
+
+figure.effect-bubba figcaption::before {
+	border-top: 1px solid #fff;
+	border-bottom: 1px solid #fff;
+	-webkit-transform: scale(0,1);
+	transform: scale(0,1);
+}
+
+figure.effect-bubba figcaption::after {
+	border-right: 1px solid #fff;
+	border-left: 1px solid #fff;
+	-webkit-transform: scale(1,0);
+	transform: scale(1,0);
+}
+
+figure.effect-bubba h2 {
+	padding-top: 0%;
+	-webkit-transition: -webkit-transform 0.35s;
+	transition: transform 0.35s;
+	-webkit-transform: translate3d(0,-20px,0);
+	transform: translate3d(0,-20px,0);
+}
+
+figure.effect-bubba p {
+	padding: 20px 2.5em;
+	opacity: 0;
+	-webkit-transition: opacity 0.35s, -webkit-transform 0.35s;
+	transition: opacity 0.35s, transform 0.35s;
+	-webkit-transform: translate3d(0,20px,0);
+	transform: translate3d(0,20px,0);
+}
+
+figure.effect-bubba:hover figcaption::before,
+figure.effect-bubba:hover figcaption::after {
+	opacity: 1;
+	-webkit-transform: scale(1);
+	transform: scale(1);
+}
+
+figure.effect-bubba:hover h2,
+figure.effect-bubba:hover p {
+	opacity: 1;
+	-webkit-transform: translate3d(0,0,0);
+	transform: translate3d(0,0,0);
+}
+
+@media screen and (max-width: 50em) {
+	.content {
+		padding: 0 10px;
+		text-align: center;
+	}
+	.gridcase figure {
+		display: inline-block;
+		float: none;
+		margin: 10px auto;
+		width: 100%;
+	}
+}
+
+.work:hover {
+    background-color: rgba(255, 255, 255, 0.25);
+    box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.25), 0 0 0.5em 0 #FF6382;
 }
