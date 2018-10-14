@@ -29,15 +29,25 @@ class Home extends React.Component {
                 <ReactCSSTransitionGroup 
                     transitionName='animOpacity'                        
                     transitionAppear={true}
-                    transitionAppearTimeout={2000}
+                    transitionAppearTimeout={1900}
                     transitionEnter={true}
-                    transitionEnterTimeout={2000}
+                    transitionEnterTimeout={1900}
                     transitionLeave={true}
-                    transitionLeaveTimeout={2000}
+                    transitionLeaveTimeout={1900}
                 > 
                     <Header/>
-                    <WorkList items={fakeData}/>                    
                 </ReactCSSTransitionGroup>
+                    <ReactCSSTransitionGroup 
+                        transitionName='animOpacityLong'                        
+                        transitionAppear={true}
+                        transitionAppearTimeout={2900}
+                        transitionEnter={true}
+                        transitionEnterTimeout={2900}
+                        transitionLeave={true}
+                        transitionLeaveTimeout={2900}
+                    >                     
+                        <WorkList items={fakeData}/> 
+                    </ReactCSSTransitionGroup>
                 {nameurl && <Case nameurl={nameurl}/>}
             </div>
         )

@@ -16,7 +16,7 @@ class WorkList extends React.Component {
 
     masonryOptions = {
         transitionDuration: 0,
-        //columnWidth: 120,
+        //columnWidth: 6,
         gutter: 24,
         isResizeBound: true,
     }
@@ -37,7 +37,10 @@ class WorkList extends React.Component {
                 key={item.img}
             >
                 <Link to={item.nameurl}>
-                    <img src={`${config.assetsPath}/imgs/content/${item.img}`}/> 
+                    <img 
+                        src={`${config.assetsPath}/imgs/content/${item.img}`}
+                        className={classes.img}
+                    /> 
                     <h3 className={classes.tags}>Lorem ipsum dolor sit amet</h3>
                 </Link>
             </li>
@@ -88,7 +91,17 @@ const styles = theme => ({
         marginTop: '0.5em',
         color: 'rgba(255, 255, 255, 0.65)',
         textDecoration: 'none',
-    }
+    },
+    img: {
+        background: `
+            linear-gradient(to bottom, 
+            rgba(255,255,255,0.71) 0%,
+            rgba(255,255,255,0.71) 0%,
+            rgba(241,241,241,0.86) 50%,
+            rgba(225,225,225,0.86) 51%,
+            rgba(225,225,225,1) 100%)
+        `,
+    },
 })
 
 export default withStyles(styles)(WorkList)
