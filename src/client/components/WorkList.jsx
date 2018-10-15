@@ -31,7 +31,7 @@ class WorkList extends React.Component {
             items
         } = this.props
 
-        const works = items.map(item => (
+        /*const works = items.map(item => (
             <li 
                 className={`${classes.work} work`}
                 key={item.img}
@@ -42,6 +42,22 @@ class WorkList extends React.Component {
                         className={classes.img}
                     /> 
                     <h3 className={classes.tags}>Lorem ipsum dolor sit amet</h3>
+                </Link>
+            </li>
+        ))*/
+        const works = items.map(item => (
+            <li 
+                className={`${classes.work} work gridcase`}
+                key={item.img}
+            >
+                <Link to={item.nameurl}>
+                    <figure className={`effect-bubba`}>
+                        <img src={`${config.assetsPath}/imgs/content/${item.img}`}/>
+                        <figcaption>                            
+                            <p>{item.description}</p>
+                        </figcaption>			                        
+                        <h3 className={classes.tags}>Lorem ipsum dolor sit amet</h3>
+                    </figure>                    
                 </Link>
             </li>
         ))
@@ -91,16 +107,6 @@ const styles = theme => ({
         marginTop: '0.5em',
         color: 'rgba(255, 255, 255, 0.65)',
         textDecoration: 'none',
-    },
-    img: {
-        background: `
-            linear-gradient(to bottom, 
-            rgba(255,255,255,0.71) 0%,
-            rgba(255,255,255,0.71) 0%,
-            rgba(241,241,241,0.86) 50%,
-            rgba(225,225,225,0.86) 51%,
-            rgba(225,225,225,1) 100%)
-        `,
     },
 })
 

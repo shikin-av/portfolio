@@ -18,7 +18,9 @@ class Case extends React.Component {
     }
 
     handleClose = () => {
-        this.setState({open: false})
+        this.setState({open: false}, () => {
+            document.location.href = '/#/'
+        })
     }
 
     render() {
