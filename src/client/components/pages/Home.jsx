@@ -1,5 +1,4 @@
 import React from 'react'
-import {Link} from 'react-router-dom'
 import ReactCSSTransitionGroup from 'react-addons-css-transition-group'
 
 import withStyles from '@material-ui/core/styles/withStyles'
@@ -12,18 +11,18 @@ import Case from 'client/components/Case'
 class Home extends React.Component {    
 
     componentWillMount = () => {
-        const {nameurl} = this.props.match.params
-        console.log('nameurl', nameurl)
+        const {nameUrl} = this.props.match.params
+        console.log('nameUrl', nameUrl)
     }
 
     componentWillReceiveProps = nextProps => {
-        const {nameurl} = nextProps.match.params
-        console.log('nameurl', nameurl)
+        const {nameUrl} = nextProps.match.params
+        console.log('nameUrl', nameUrl)
     }
 
     render() {
         const {classes} = this.props
-        const {nameurl} = this.props.match.params
+        const {nameUrl} = this.props.match.params
         return (
             <div className={classes.root}>
                 <ReactCSSTransitionGroup 
@@ -48,7 +47,7 @@ class Home extends React.Component {
                     >                     
                         <WorkList items={fakeData}/> 
                     </ReactCSSTransitionGroup>
-                {nameurl && <Case nameurl={nameurl}/>}
+                {nameUrl && <Case nameUrl={nameUrl}/>}
             </div>
         )
     }

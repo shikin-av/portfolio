@@ -8,6 +8,10 @@ const WorkSchema = new mongoose.Schema({
 		type: String,
 		required: true,
 	},
+	description: {
+		type: String,
+		required: true,
+	},
 	content: {
 		type: Object,
 		required: true,
@@ -18,6 +22,19 @@ const WorkSchema = new mongoose.Schema({
         unique: true,
         lowercase: true,
         trim: true,
+	},
+	tags: {
+		type: Array,
+		required: false,
+	},
+	image: {
+		type: String,
+        required: true,
+	},
+	sortWeight: {
+		type: Number,
+		required: false,
+		default: 999,
 	}
 })
 

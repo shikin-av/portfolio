@@ -30,29 +30,18 @@ class WorkList extends React.Component {
             classes,
             items
         } = this.props
-
-        /*const works = items.map(item => (
-            <li 
-                className={`${classes.work} work`}
-                key={item.img}
-            >
-                <Link to={item.nameurl}>
-                    <img 
-                        src={`${config.assetsPath}/imgs/content/${item.img}`}
-                        className={classes.img}
-                    /> 
-                    <h3 className={classes.tags}>Lorem ipsum dolor sit amet</h3>
-                </Link>
-            </li>
-        ))*/
+        
         const works = items.map(item => (
             <li 
                 className={`${classes.work} work gridcase`}
                 key={item.img}
             >
-                <Link to={item.nameurl}>
+                <Link to={item.nameUrl}>
                     <figure className={`effect-bubba`}>
-                        <img src={`${config.assetsPath}/imgs/content/${item.img}`}/>
+                        <div className='work-img-wrapper'>
+                            <div className='work-img-inner'></div>
+                            <img src={`${config.assetsPath}/imgs/content/${item.img}`}/>
+                        </div>
                         <figcaption>                            
                             <p>{item.description}</p>
                         </figcaption>			                        
@@ -63,8 +52,7 @@ class WorkList extends React.Component {
         ))
 
         return (
-            <Masonry
-                className={classes.masonry}
+            <Masonry                
                 elementType={'ul'}
                 options={this.masonryOptions}
                 disableImagesLoaded={false}
@@ -79,9 +67,6 @@ class WorkList extends React.Component {
 }
 
 const styles = theme => ({
-    masonry: {
-        //margin: '0 0 2em -1.5em',
-    },
     work: {
         display: 'block',        
         outline: 0,

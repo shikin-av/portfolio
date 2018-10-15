@@ -34,13 +34,21 @@ export default () => {
     api.post('/', async (req, res, next) => {
         const {
             title,
+            description,
             content,
             nameUrl,
+            tags,
+            image,
+            sortWeight,
         } = req.body
         const work = new Work({
             title,
+            description,
             content,
             nameUrl,
+            tags,
+            image,
+            sortWeight,
         })
         
         return await work.save(err => {
@@ -55,8 +63,12 @@ export default () => {
     api.put('/:nameUrl', async (req, res, next) => {
         const {
             title,
+            description,
             content,
             nameUrl,
+            tags,
+            image,
+            sortWeight,
         } = req.body
         return await Work.findOne({
             nameUrl: req.params.nameUrl
@@ -65,9 +77,13 @@ export default () => {
                 if(!work){
                     return next()
                 }
-                work.title    = title   || work.title
-                work.content  = content || work.content
-                work.nameUrl  = nameUrl || work.nameUrl
+                work.title       = title       || work.title
+                work.description = description || work.description
+                work.content     = content     || work.content
+                work.nameUrl     = nameUrl     || work.nameUrl
+                work.tags        = tags        || work.tags
+                work.image       = image       || work.image
+                work.sortWeight  = sortWeight  || work.sortWeight
                 
                 return work.save((err) => {
                     if(!err) {

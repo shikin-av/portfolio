@@ -1,12 +1,13 @@
 import React from 'react'
-import {string} from 'prop-types'
+import {string, func} from 'prop-types'
 import withStyles from '@material-ui/core/styles/withStyles'
 import Dialog from '@material-ui/core/Dialog'
 import DialogContent from '@material-ui/core/DialogContent'
 
 class Case extends React.Component {
     static propTypes = {
-        nameurl: string.isRequired,
+        nameUrl: string.isRequired,
+        save:    func,
     }
 
     state = {
@@ -19,12 +20,17 @@ class Case extends React.Component {
 
     handleClose = () => {
         this.setState({open: false}, () => {
-            document.location.href = '/#/'
+            if(this.props.save)
+            {
+                document.location.href = '/admin#/'
+            } else {
+                document.location.href = '/#/'
+            }
         })
     }
 
     render() {
-        const {classes, nameurl} = this.props
+        const {classes, nameUrl} = this.props
         return (
             <Dialog
                 open={this.state.open}
@@ -33,7 +39,7 @@ class Case extends React.Component {
                 aria-labelledby='scroll-dialog-title'
             >
                 <DialogContent className={classes.root}>
-                    {this.props.nameurl}
+                    {this.props.nameUrl}
                 </DialogContent>
             </Dialog>
         )

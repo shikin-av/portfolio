@@ -1,7 +1,7 @@
 import layout from '../client/layout'
 import getAuth from './resources/auth'
 import getApi from './api'
-//import getPublicApi from './api/publicApi'
+import getPublicApi from './api/publicApi'
 
 export default (app) => {
     const auth = getAuth()
@@ -54,8 +54,8 @@ export default (app) => {
     const api = getApi()
     app.use('/admin/api', api)
 
-    //const publicApi = getPublicApi()
-    //app.use('/publicapi', publicApi)
+    const publicApi = getPublicApi()
+    app.use('/publicapi', publicApi)
 
     app.get('/:something', (req, res) => {
         res.redirect('/#/404')
