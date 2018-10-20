@@ -3,7 +3,7 @@ import ReactCSSTransitionGroup from 'react-addons-css-transition-group'
 
 import withStyles from '@material-ui/core/styles/withStyles'
 
-import fakeData from 'client/fakeData'
+import {worksFake} from 'client/fakeData'
 import Header from 'client/components/Header'
 import WorkList from 'client/components/WorkList'
 import Case from 'client/components/Case'
@@ -32,7 +32,7 @@ class Admin extends React.Component {
                 <div className={classes.header}>
                     <h2>Режим Редактирования</h2>
                 </div>                            
-                <WorkList items={fakeData}/>                 
+                <WorkList items={worksFake}/>                 
                 {
                     nameUrl && 
                     <Case 

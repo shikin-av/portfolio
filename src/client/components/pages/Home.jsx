@@ -3,7 +3,7 @@ import ReactCSSTransitionGroup from 'react-addons-css-transition-group'
 
 import withStyles from '@material-ui/core/styles/withStyles'
 
-import fakeData from 'client/fakeData'
+import {worksFake} from 'client/fakeData'
 import Header from 'client/components/Header'
 import WorkList from 'client/components/WorkList'
 import Case from 'client/components/Case'
@@ -45,7 +45,7 @@ class Home extends React.Component {
                         transitionLeave={true}
                         transitionLeaveTimeout={2900}
                     >                     
-                        <WorkList items={fakeData}/> 
+                        <WorkList items={worksFake}/> 
                     </ReactCSSTransitionGroup>
                 {nameUrl && <Case nameUrl={nameUrl}/>}
             </div>

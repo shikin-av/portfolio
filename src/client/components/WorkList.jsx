@@ -12,7 +12,7 @@ const imagesLoadedOptions = {background: '.my-bg-image-el'}
 class WorkList extends React.Component {
     static propTypes = {
         items: array.isRequired,
-    }
+    }    
 
     masonryOptions = {
         transitionDuration: 0,
@@ -22,7 +22,7 @@ class WorkList extends React.Component {
     }
 
     clickWorkHandler = e => {
-        //console.log(e)
+        document.getElementById('root').style.opacity = 0
     }
 
     render() {
@@ -36,11 +36,19 @@ class WorkList extends React.Component {
                 className={`${classes.work} work gridcase`}
                 key={item.img}
             >
-                <Link to={item.nameUrl}>
+                <Link 
+                    to={item.nameUrl}
+                    onClick={this.clickWorkHandler}
+                >
                     <figure className={`effect-bubba`}>
-                        <div className='work-img-wrapper'>
+                        <div className='work-img-wrapper' style={{
+                            height: item.imgHeight,
+                        }}>
                             <div className='work-img-inner'></div>
-                            <img src={`${config.assetsPath}/imgs/content/${item.img}`}/>
+                            <img 
+                                src={`${config.assetsPath}/imgs/content/${item.img}`}
+                                className={classes.img}    
+                            />
                         </div>
                         <figcaption>                            
                             <p>{item.description}</p>
@@ -54,6 +62,7 @@ class WorkList extends React.Component {
         return (
             <Masonry                
                 elementType={'ul'}
+                className={classes.mansonry}
                 options={this.masonryOptions}
                 disableImagesLoaded={false}
                 updateOnEachImageLoad={false}
@@ -67,6 +76,9 @@ class WorkList extends React.Component {
 }
 
 const styles = theme => ({
+    mansonry: {
+        left: -10,  //TODO check mobile
+    },
     work: {
         display: 'block',        
         outline: 0,
@@ -85,6 +97,15 @@ const styles = theme => ({
             width: '100%',
             left: '0px !important',
         }
+    },
+    img: {
+        position: 'absolute',
+        margin: 'auto',
+        left: 0,
+        top: 0,
+        bottom: 0,
+        right: 0
+
     },
     tags: {
         fontSize: '1em',

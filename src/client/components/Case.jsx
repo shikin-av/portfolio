@@ -3,6 +3,10 @@ import {string, func} from 'prop-types'
 import withStyles from '@material-ui/core/styles/withStyles'
 import Dialog from '@material-ui/core/Dialog'
 import DialogContent from '@material-ui/core/DialogContent'
+import DialogContentText from '@material-ui/core/DialogContentText'
+import Slide from '@material-ui/core/Slide'
+
+import {textFake} from 'client/fakeData'
 
 class Case extends React.Component {
     static propTypes = {
@@ -14,12 +18,17 @@ class Case extends React.Component {
         open: true,
     }
     
+    componentDidMount = () => {
+        document.getElementById('root').style.opacity = 0
+    }
+
     componentWillReceiveProps = nextProps => {        
         this.setState({open: true})
     }
 
     handleClose = () => {
         this.setState({open: false}, () => {
+            document.getElementById('root').style.opacity = 1
             if(this.props.save)
             {
                 document.location.href = '/admin#/'
@@ -29,6 +38,10 @@ class Case extends React.Component {
         })
     }
 
+    dialogTransition = props => (
+        <Slide direction='up' {...props}/>
+    )
+
     render() {
         const {classes, nameUrl} = this.props
         return (
@@ -36,10 +49,12 @@ class Case extends React.Component {
                 open={this.state.open}
                 onClose={this.handleClose}
                 scroll='body'
-                aria-labelledby='scroll-dialog-title'
+                id='casedialog'
+                TransitionComponent={this.dialogTransition}
             >
-                <DialogContent className={classes.root}>
-                    {this.props.nameUrl}
+                <DialogContent className={classes.content}>
+                    <DialogContentText dangerouslySetInnerHTML={{__html: textFake}}>
+                    </DialogContentText>
                 </DialogContent>
             </Dialog>
         )
@@ -47,9 +62,8 @@ class Case extends React.Component {
 }
 
 const styles = () => ({
-    root: {
-        backgroundColor: 'white',
-        color: 'black',
+    content: {        
+        color: 'black',        
     }
 })
 
