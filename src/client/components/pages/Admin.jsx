@@ -3,6 +3,7 @@ import React from 'react'
 import withStyles from '@material-ui/core/styles/withStyles'
 
 import {worksFake} from 'client/fakeData'
+//import administrator from 'client/data/administrator'
 import Header from 'client/components/Header'
 import WorkList from 'client/components/WorkList'
 import Work from 'client/components/Work'
@@ -18,8 +19,8 @@ class Admin extends React.Component {
     }
 
     save = work => {
-        console.log('SAVE')
-    }
+        console.log('SAVE', work)
+    }  
 
     render() {
         const {classes} = this.props

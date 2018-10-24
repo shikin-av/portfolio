@@ -225,6 +225,7 @@ const styles = () => ({
     root: {
         minHeight: 70,
         padding: '29px 20px',
+        zIndex: 1,
     },
     menuButtonPlace: {
         width: 0,

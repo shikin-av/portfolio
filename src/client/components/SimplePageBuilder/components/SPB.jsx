@@ -26,17 +26,19 @@ class App extends React.Component {
         classes:     object.isRequired,
         menu:        bool.isRequired,
         mode:        string,
-        getPageRows: func,
+        pageData:    object,
         theme:       object.isRequired,
     }
 
     state = {
         mode:        this.props.mode || 'preview',
         isShowTools: false,
-        rows:        this.props.getPageRows() || []
+        rows:        this.props.pageData.rows || [],
+        info:        this.props.pageData.info || {}, //TODO make object
     }
 
     tmpRows = this.state.rows   
+    tmpInfo = this.state.info
     
     componentWillMount = () => {
         const {theme} = this.props        
@@ -157,12 +159,7 @@ class App extends React.Component {
             mode,
             rows: this.tmpRows
         })
-    }
-
-    save = () => {
-        const {saveHandler} = this.props
-        saveHandler(this.tmpRows)
-    }
+    }    
 
     appendRowFake = () => (
         <div style={{
@@ -242,8 +239,26 @@ class App extends React.Component {
                     }                        
                 </div>
             )
-        } else return null
-        
+        } else return null        
+    }
+
+    header = () => {
+        const {menu} = this.props
+        if(menu){
+            return (
+                <h1>HEADER SETTINGS</h1>
+            )
+        } else {
+            return (
+                <h1>HEADER</h1>
+            )
+        }
+    }
+
+    save = () => {
+        const {saveHandler} = this.props
+        const page = Object.assign(this.tmpInfo, {rows: this.tmpRows})
+        saveHandler(page)
     }
     
     render() {
@@ -264,6 +279,7 @@ class App extends React.Component {
                     }}
                 >                    
                     {this.menu()}
+                    {this.header()}
                     {
                         mode === 'edit' &&
                         <AppendRow 
@@ -362,6 +378,10 @@ const styles = () => ({
         textAlign: 'center',
         marginBottom: 30,
         paddingTop: 10,
+
+        position: 'absolute',
+        top: 0,
+        width: '100%',
     },
 })
 

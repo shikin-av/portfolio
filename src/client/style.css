@@ -335,15 +335,17 @@ figure {
   }
   .rdw-dropdown-optionwrapper {
     z-index: 100;
-    position: relative;
+    /*position: relative;*/
     border: 1px solid #F1F1F1;
-    width: 98%;
+    /*width: 98%;*/
     background: white;
     border-radius: 2px;
     margin: 0;
     padding: 0;
     max-height: 250px;
     overflow-y: scroll;
+    position: absolute;
+    width: auto;
   }
   .rdw-dropdown-optionwrapper:hover {
     box-shadow: 1px 1px 0px #BFBDBD;
@@ -1081,9 +1083,7 @@ figure {
     margin-bottom: 5px;
     user-select: none;
   }
-  .public-DraftStyleDefault-block {
-    margin: 1em 0;
-  }
+  
   .rdw-editor-wrapper:focus {
     outline: none;
   }
@@ -1347,4 +1347,8 @@ figure.effect-bubba:hover p {
 
 .work:hover {
     box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.25), 0 0 0.5em 0 grey;
+}
+
+#casedialog > div {
+  background-color: #ffffff00; 
 }

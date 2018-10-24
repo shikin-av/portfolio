@@ -1,7 +1,7 @@
 import React from 'react'
 import {EditorState, convertToRaw, ContentState} from 'draft-js'
 import {Editor} from 'react-draft-wysiwyg'
-import 'react-draft-wysiwyg/dist/react-draft-wysiwyg.css'
+//import 'react-draft-wysiwyg/dist/react-draft-wysiwyg.css'
 import draftToHtml from 'draftjs-to-html'
 import htmlToDraft from 'html-to-draftjs'
 import {object, func, number} from 'prop-types'
@@ -103,7 +103,7 @@ class TextEditor extends React.Component {
 					wrapperClassName={classes.wrapper}
 					toolbarClassName={this.isMobile ? classes.toolbarFixed : classes.toolbar}
 					toolbarStyle={
-						showToolbar 
+						showToolbar
 						? {
 							display: 'flex',
 							outline: `1px solid ${theme.palette.constrast}`

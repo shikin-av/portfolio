@@ -2,6 +2,7 @@ import config from 'config/client'
 
 export const worksFake = [
     {   
+        title:          'Header title',
         nameUrl:        '01',     
         miniature:      'remont_mini.png',        
         miniatureHeight: 514,
@@ -9,6 +10,7 @@ export const worksFake = [
         headImg:        'remont-home.png',
     },
     {   
+        title:          'Header title',
         nameUrl:        '02',     
         miniature:      'yami_mini.png',        
         miniatureHeight: 348,
@@ -16,6 +18,7 @@ export const worksFake = [
         headImg:        'remont-home.png',
     },
     {   
+        title:          'Header title',
         nameUrl:        '03',     
         miniature:      'pagebuilder_mini.png',        
         miniatureHeight: 389,
@@ -23,6 +26,7 @@ export const worksFake = [
         headImg:        'remont-home.png',
     },
     {   
+        title:          'Header title',
         nameUrl:        '04',     
         miniature:      'portfolio_mini.png',        
         miniatureHeight: 435,
@@ -30,6 +34,7 @@ export const worksFake = [
         headImg:        'remont-home.png',
     },
     {   
+        title:          'Header title',
         nameUrl:        '05',     
         miniature:      'auction_mini.png',        
         miniatureHeight: 394,
@@ -37,6 +42,7 @@ export const worksFake = [
         headImg:        'remont-home.png',
     },
     {   
+        title:          'Header title',
         nameUrl:        '06',     
         miniature:      'buket_mini.png',        
         miniatureHeight: 268,
@@ -45,7 +51,7 @@ export const worksFake = [
     },
 ]
 
-export const textFake = [            
+export const rowsFake = [            
     {
         id: 10,
         type: 'fullwidth', 

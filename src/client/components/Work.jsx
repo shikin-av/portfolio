@@ -8,7 +8,7 @@ import DialogContentText from '@material-ui/core/DialogContentText'
 import Slide from '@material-ui/core/Slide'
 
 import config from 'config/client'
-import {textFake} from 'client/fakeData'
+import {rowsFake, worksFake} from 'client/fakeData'
 import Animation from 'client/components/Animation'
 import Loading from 'client/components/Loading'
 import SPB from 'client/components/SimplePageBuilder'
@@ -27,19 +27,22 @@ class Work extends React.Component {
     }
 
     loadWork = nameUrl => {
-
+        //TODO
     }
 
-    getPageRows = () => {
-        return textFake
+    getPageData = () => {   //TODO from api
+        return {
+            rows: rowsFake,
+            info: worksFake[0]
+        }
     }
 
     componentDidMount = () => {
-        /*setTimeout(() => {
+        setTimeout(() => {  //TODO delete
             this.setState({
                 work: {},
             })
-        }, 2000)*/
+        }, 500)    
         const {nameUrl} = this.props
         this.loadWork(nameUrl)
         
@@ -87,9 +90,11 @@ class Work extends React.Component {
                 direction='up' 
                 {...props} 
                 style={{
-                    width:    '100%',
-                    maxWidth: maxWidth,
-                    margin:   margin,
+                    width:     '100%',
+                    maxWidth:  maxWidth,
+                    margin:    margin,
+                    minHeight: window.innerHeight,
+                    backgroundColor: '#ffffff',
                 }}
             />
         )
@@ -117,25 +122,27 @@ class Work extends React.Component {
                 TransitionComponent={this.dialogTransition}
             >
             {
-                true &&
+                work ?
                 <Animation animationCssClass='animOpacity' time={1900}>
                     <DialogContent className={classes.content}>                        
-                        {
+                        {/*{
                             work && work.headImg &&
                             <img src={`${config.assetsPath}/imgs/content/${work.headImg}`}/>
-                        }
-                        {/*<DialogContentText dangerouslySetInnerHTML={{__html: textFake}}/>*/}
-                        
+                        }*/}
                         <SPB
                             saveHandler={save || function(){return null}}
                             menu={save ? true : false}
                             mode={save ? 'edit' : 'preview'}
-                            getPageRows={this.getPageRows}
+                            pageData={this.getPageData()}
                             theme={defaultTheme}
                         />
 
                     </DialogContent>
                 </Animation>
+                : 
+                <DialogContent className={classes.content}>
+                    <Loading/>
+                </DialogContent>
             }                
             </Dialog>
         )        
@@ -168,7 +175,8 @@ const styles = () => ({
         color: 'black',   
         padding: 0,
         paddingTop: '0px !important',  
-        minHeight: 700,   
+        minHeight: 700,
+        overflowY: 'hidden',
     },
     headImg: {
         margin: '0 auto',
