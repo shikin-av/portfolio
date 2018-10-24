@@ -1,23 +1,20 @@
 import React from 'react'
-import ReactCSSTransitionGroup from 'react-addons-css-transition-group'
 
 import withStyles from '@material-ui/core/styles/withStyles'
 
 import {worksFake} from 'client/fakeData'
 import Header from 'client/components/Header'
 import WorkList from 'client/components/WorkList'
-import Case from 'client/components/Case'
+import Work from 'client/components/Work'
 
 class Admin extends React.Component {    
 
     componentWillMount = () => {
         const {nameUrl} = this.props.match.params
-        console.log('nameUrl', nameUrl)
     }
 
     componentWillReceiveProps = nextProps => {
         const {nameUrl} = nextProps.match.params
-        console.log('nameUrl', nameUrl)
     }
 
     save = work => {
@@ -27,15 +24,22 @@ class Admin extends React.Component {
     render() {
         const {classes} = this.props
         const {nameUrl} = this.props.match.params
+        const createWork = {
+            miniature:      'create_mini.png',
+            nameUrl:        'create',
+            description:    'Добавить кейс',
+            miniatureHeight: 268,
+        }
+
         return (
             <div className={classes.root}>    
                 <div className={classes.header}>
                     <h2>Режим Редактирования</h2>
                 </div>                            
-                <WorkList items={worksFake}/>                 
+                <WorkList items={[...worksFake, createWork]}/>                 
                 {
                     nameUrl && 
-                    <Case 
+                    <Work 
                         nameUrl={nameUrl} 
                         save={this.save}     //TODO
                     />

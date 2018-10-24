@@ -17,7 +17,6 @@ export default (app) => {
     })
     
     app.get('/admin', (req, res) => {
-        console.log('--> /admin')
         res.send(layout({
             title: 'Портфолио | Панель управления',
             script: config.bundle.js.admin,

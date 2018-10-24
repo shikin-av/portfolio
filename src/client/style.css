@@ -1348,39 +1348,3 @@ figure.effect-bubba:hover p {
 .work:hover {
     box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.25), 0 0 0.5em 0 grey;
 }
-
-#casedialog div:not(:first-child) {
-  max-width: 100%;
-  width: 100%;
-  margin: 0px 0px;
-  /*box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.25), 0 0 10.5em 0 grey;*/
-  /*background: linear-gradient(to bottom, rgba(255,255,255,0) 0%,rgba(255,255,255,0.5) 10%,rgba(255,255,255,1) 19%,rgba(255,255,255,1) 20%,rgba(255,255,255,1) 50%,rgba(255,255,255,1) 80%,rgba(255,255,255,1) 81%,rgba(255,255,255,0.8) 85%,rgba(255,255,255,0) 100%);*/
-  /*background: linear-gradient(to bottom, rgba(255,255,255,0.1) 0%, rgba(241,241,241,0.86) 50%, rgba(225,225,225,0.86) 51%, rgba(225,225,225,1) 100%);*/
-  background: linear-gradient(to bottom, #ececec 1%,#ececec 17%,#ececec 17%,#ececec 30%,#ececec 50%,#ececec 79%,rgba(144,113,142,0.0) 100%);
-  
-}
-#casedialog div:first-child {
-    background-color: #ffffff00;
-}
-
-@media screen and (min-width: 1025px) {
-    #casedialog div:not(:first-child) {
-        max-width: 1024px;
-        margin: 0 auto;
-        margin-top: 40px;
-        margin-bottom: 40px;
-    }
-}
-/*
-@media screen and (max-width: 1024px) {
-  #casedialog div:not(:first-child) {
-      max-width: 100%;
-      width: 100%;
-      margin: 0px 0px;
-      box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.25), 0 0 10.5em 0 grey;
-  }
-}*/
-
-#root {
-    /*transition: opacity 1s ease;*/
-}

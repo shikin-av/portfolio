@@ -41,7 +41,7 @@ export const editWork = async (nameUrl, params) => {
     .then(res => res.json())
 }
 
-export const deleteWork = async (nameUrl) => {
+export const deleteWork = async nameUrl => {
     return fetch(`${apiPath}/works/${nameUrl}`, {
         method: 'DELETE',
         headers: {

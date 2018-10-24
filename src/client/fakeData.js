@@ -1,66 +1,112 @@
 import config from 'config/client'
 
 export const worksFake = [
-    {        
-        img:         'remont_mini.png',
-        title:       'Crazy Shark',
-        nameUrl:     '01',
-        description: 'Lily likes to play with crayons and pencils',
-        imgHeight:   514,
+    {   
+        nameUrl:        '01',     
+        miniature:      'remont_mini.png',        
+        miniatureHeight: 514,
+        description:    'Lily likes to play with crayons and pencils',
+        headImg:        'remont-home.png',
     },
-    {        
-        img:         'yami_mini.png',
-        title:       'Crazy Shark',
-        nameUrl:     '02',
-        description: 'Lily likes to play with crayons and pencils',
-        imgHeight:   348,
+    {   
+        nameUrl:        '02',     
+        miniature:      'yami_mini.png',        
+        miniatureHeight: 348,
+        description:    'Lily likes to play with crayons and pencils',
+        headImg:        'remont-home.png',
     },
-    {        
-        img:         'pagebuilder_mini.png',
-        title:       'Crazy Shark',
-        nameUrl:     '03',
-        description: 'Lily likes to play with crayons and pencils',
-        imgHeight:   389,
+    {   
+        nameUrl:        '03',     
+        miniature:      'pagebuilder_mini.png',        
+        miniatureHeight: 389,
+        description:    'Lily likes to play with crayons and pencils',
+        headImg:        'remont-home.png',
     },
-    {        
-        img:         'portfolio_mini.png',
-        title:       'Crazy Shark',
-        nameUrl:     '04',
-        description: 'Lily likes to play with crayons and pencils',
-        imgHeight:   435,
+    {   
+        nameUrl:        '04',     
+        miniature:      'portfolio_mini.png',        
+        miniatureHeight: 435,
+        description:    'Lily likes to play with crayons and pencils',
+        headImg:        'remont-home.png',
     },
-    {        
-        img:         'auction_mini.png',
-        title:       'Crazy Shark',
-        nameUrl:     '05',
-        description: 'Lily likes to play with crayons and pencils',
-        imgHeight:   394,
+    {   
+        nameUrl:        '05',     
+        miniature:      'auction_mini.png',        
+        miniatureHeight: 394,
+        description:    'Lily likes to play with crayons and pencils',
+        headImg:        'remont-home.png',
     },
-    {        
-        img:         'buket_mini.png',
-        title:       'Crazy Shark',
-        nameUrl:     '06',
-        description: 'Lily likes to play with crayons and pencils',
-        imgHeight:   268,
+    {   
+        nameUrl:        '06',     
+        miniature:      'buket_mini.png',        
+        miniatureHeight: 268,
+        description:    'Lily likes to play with crayons and pencils',
+        headImg:        'remont-home.png',
     },
 ]
 
-const imgStyle = `
-    opacity: 0.8;
-    margin: 0 auto;
-    display: flex;
-`.trim()
-
-
-
-export const textFake = `
-    <img src='/assets/imgs/content/remont_mini.png' style='${imgStyle}'>
-    <p>It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English. Many desktop publishing packages and web page editors now use Lorem Ipsum as their default model text, and a search for 'lorem ipsum' will uncover many web sites still in their infancy. Various versions have evolved over the years, sometimes by accident, sometimes on purpose </p>
-    <p>It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English. Many desktop publishing packages and web page editors now use Lorem Ipsum as their default model text, and a search for 'lorem ipsum' will uncover many web sites still in their infancy. Various versions have evolved over the years, sometimes by accident, sometimes on purpose </p>
-    <p>It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English. Many desktop publishing packages and web page editors now use Lorem Ipsum as their default model text, and a search for 'lorem ipsum' will uncover many web sites still in their infancy. Various versions have evolved over the years, sometimes by accident, sometimes on purpose </p>
-    <p>It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English. Many desktop publishing packages and web page editors now use Lorem Ipsum as their default model text, and a search for 'lorem ipsum' will uncover many web sites still in their infancy. Various versions have evolved over the years, sometimes by accident, sometimes on purpose </p>
-    <p>It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English. Many desktop publishing packages and web page editors now use Lorem Ipsum as their default model text, and a search for 'lorem ipsum' will uncover many web sites still in their infancy. Various versions have evolved over the years, sometimes by accident, sometimes on purpose </p>
-    <p>It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English. Many desktop publishing packages and web page editors now use Lorem Ipsum as their default model text, and a search for 'lorem ipsum' will uncover many web sites still in their infancy. Various versions have evolved over the years, sometimes by accident, sometimes on purpose </p>
-    <p>It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English. Many desktop publishing packages and web page editors now use Lorem Ipsum as their default model text, and a search for 'lorem ipsum' will uncover many web sites still in their infancy. Various versions have evolved over the years, sometimes by accident, sometimes on purpose </p>
-    <p>It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English. Many desktop publishing packages and web page editors now use Lorem Ipsum as their default model text, and a search for 'lorem ipsum' will uncover many web sites still in their infancy. Various versions have evolved over the years, sometimes by accident, sometimes on purpose </p>
-`
+export const textFake = [            
+    {
+        id: 10,
+        type: 'fullwidth', 
+        color: 'rgb(63, 81, 181)',
+        elements: [
+            {
+                id: 111,
+                type: 'texteditor',
+                content: `
+                <h2 style="color: rgb(239, 239, 239); text-align: center;">Скороговорки</h2>
+                <h3 style="color: rgb(239, 239, 239); text-align: center;">Вместо текста-рыбы</h3>`.trim()
+            }
+        ]
+    },
+    {
+        id: 11,
+        type: 'column_2',
+        color: 'rgb(238, 238, 238)',
+        elements: [
+            {
+                id: 222,
+                type: 'texteditor',
+                content: `
+                <p style="color: rgb(40,50,78);">Баркас приехал в порт Мадрас.</p>
+                <p style="color: rgb(40,50,78);">Матрос принёс на борт матрас.</p>
+                <p style="color: rgb(40,50,78);">В порту Мадрас матрас матроса</p>
+                <p style="color: rgb(40,50,78);">Порвали в драке альбатросы.</p>
+                `.trim()
+            },
+            {
+                id: 333,
+                type: 'texteditor',
+                content: `
+                <p style="color: rgb(40,50,78);">Ехал Грека через реку,</p>
+                <p style="color: rgb(40,50,78);">Видит Грека - в реке рак.</p>
+                <p style="color: rgb(40,50,78);">Сунул Грека руку в реку,</p>
+                <p style="color: rgb(40,50,78);">Рак за руку Грека - цап!</p>
+                `.trim()
+            }
+        ]
+    },
+    {
+        id: 12,
+        type: 'column_3',
+        elements: [
+            {
+                id: 444,
+                type: 'texteditor',
+                content: '<p style="color: rgb(40, 50, 78);">Корабли лавировали, лавировали, да не вылавировали.</p>'
+            },
+            {
+                id: 555,
+                type: 'texteditor',
+                content: '<p style="color: rgb(40, 50, 78);">На дворе трава, на траве дрова. Не руби дрова на траве двора.</p>'
+            },
+            {
+                id: 666,
+                type: 'texteditor',
+                content: '<p style="color: rgb(40, 50, 78);">Карл у Клары украл кораллы, Клара у Карла украла кларнет.</p>'
+            }
+        ]
+    },
+    
+]

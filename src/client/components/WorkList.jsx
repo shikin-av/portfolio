@@ -16,13 +16,12 @@ class WorkList extends React.Component {
 
     masonryOptions = {
         transitionDuration: 0,
-        //columnWidth: 6,
         gutter: 24,
         isResizeBound: true,
     }
 
     clickWorkHandler = e => {
-        document.getElementById('root').style.opacity = 0
+        
     }
 
     render() {
@@ -34,7 +33,7 @@ class WorkList extends React.Component {
         const works = items.map(item => (
             <li 
                 className={`${classes.work} work gridcase`}
-                key={item.img}
+                key={item.miniature}
             >
                 <Link 
                     to={item.nameUrl}
@@ -42,11 +41,11 @@ class WorkList extends React.Component {
                 >
                     <figure className={`effect-bubba`}>
                         <div className='work-img-wrapper' style={{
-                            height: item.imgHeight,
+                            height: item.miniatureHeight,
                         }}>
                             <div className='work-img-inner'></div>
                             <img 
-                                src={`${config.assetsPath}/imgs/content/${item.img}`}
+                                src={`${config.assetsPath}/imgs/content/${item.miniature}`}
                                 className={classes.img}    
                             />
                         </div>
@@ -67,7 +66,6 @@ class WorkList extends React.Component {
                 disableImagesLoaded={false}
                 updateOnEachImageLoad={false}
                 imagesLoadedOptions={imagesLoadedOptions}
-                onClick={this.clickWorkHandler}
             >
                 {works}
             </Masonry>
