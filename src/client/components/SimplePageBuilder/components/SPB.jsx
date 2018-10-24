@@ -1,7 +1,7 @@
 import React from 'react'
 //import 'typeface-roboto'
 import _ from 'lodash'
-import {object, func, bool, string} from 'prop-types'
+import {object, func, bool, string, array} from 'prop-types'
 import ReactCSSTransitionGroup from 'react-addons-css-transition-group'
 import ReactDOM from 'react-dom'
 
@@ -26,19 +26,17 @@ class App extends React.Component {
         classes:     object.isRequired,
         menu:        bool.isRequired,
         mode:        string,
-        pageData:    object,
+        rowsData:    array,
         theme:       object.isRequired,
     }
 
     state = {
         mode:        this.props.mode || 'preview',
         isShowTools: false,
-        rows:        this.props.pageData.rows || [],
-        info:        this.props.pageData.info || {}, //TODO make object
+        rows:        this.props.rowsData || [],
     }
 
     tmpRows = this.state.rows   
-    tmpInfo = this.state.info
     
     componentWillMount = () => {
         const {theme} = this.props        
@@ -240,25 +238,11 @@ class App extends React.Component {
                 </div>
             )
         } else return null        
-    }
-
-    header = () => {
-        const {menu} = this.props
-        if(menu){
-            return (
-                <h1>HEADER SETTINGS</h1>
-            )
-        } else {
-            return (
-                <h1>HEADER</h1>
-            )
-        }
-    }
+    }    
 
     save = () => {
         const {saveHandler} = this.props
-        const page = Object.assign(this.tmpInfo, {rows: this.tmpRows})
-        saveHandler(page)
+        saveHandler(this.tmpRows)
     }
     
     render() {
@@ -278,8 +262,7 @@ class App extends React.Component {
                         color: `${theme.palette.contrast}`,
                     }}
                 >                    
-                    {this.menu()}
-                    {this.header()}
+                    {this.menu()}                    
                     {
                         mode === 'edit' &&
                         <AppendRow 

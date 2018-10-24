@@ -29,13 +29,7 @@ class Work extends React.Component {
     loadWork = nameUrl => {
         //TODO
     }
-
-    getPageData = () => {   //TODO from api
-        return {
-            rows: rowsFake,
-            info: worksFake[0]
-        }
-    }
+    
 
     componentDidMount = () => {
         setTimeout(() => {  //TODO delete
@@ -100,7 +94,28 @@ class Work extends React.Component {
         )
     }
 
-    
+    header = () => {
+        const {save} = this.props
+        if(save){
+            return (
+                <h1>HEADER SETTINGS</h1>
+            )
+        } else {
+            return (
+                <h1>HEADER</h1>
+            )
+        }
+    }
+
+    saveRows = rows => {
+        const {save} = this.props
+
+        //TODO make work info
+        const workInfo = worksFake[0]
+        
+        const work = Object.assign(workInfo, {rows})
+        save(work)
+    }
 
     render() {
         const {
@@ -124,19 +139,15 @@ class Work extends React.Component {
             {
                 work ?
                 <Animation animationCssClass='animOpacity' time={1900}>
-                    <DialogContent className={classes.content}>                        
-                        {/*{
-                            work && work.headImg &&
-                            <img src={`${config.assetsPath}/imgs/content/${work.headImg}`}/>
-                        }*/}
+                    <DialogContent className={classes.content}>  
+                        {this.header()}                                              
                         <SPB
-                            saveHandler={save || function(){return null}}
+                            saveHandler={this.saveRows}
                             menu={save ? true : false}
                             mode={save ? 'edit' : 'preview'}
-                            pageData={this.getPageData()}
+                            rowsData={rowsFake}     //TODO from api
                             theme={defaultTheme}
                         />
-
                     </DialogContent>
                 </Animation>
                 : 
@@ -153,20 +164,8 @@ const showRootContent = isShow => {
     const root = document.getElementById('root')
     if(isShow){
         document.getElementById('root').style.opacity = 1
-        /*if(root.classList.contains('hide')){
-            root.classList.remove('hide')
-            if(!root.classList.contains('show')){
-                root.classList.add('show')
-            }
-        }*/
     } else {
         document.getElementById('root').style.opacity = 0
-        /*if(root.classList.contains('show')){
-            root.classList.remove('show')
-            if(!root.classList.contains('hide')){
-                root.classList.add('hide')
-            }
-        }*/
     }
 }
 
