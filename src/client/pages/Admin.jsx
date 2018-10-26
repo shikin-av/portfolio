@@ -5,8 +5,9 @@ import withStyles from '@material-ui/core/styles/withStyles'
 import {worksFake} from 'client/fakeData'
 //import administrator from 'client/data/administrator'
 import Header from 'client/components/Header'
-import WorkList from 'client/components/WorkList'
-import Work from 'client/components/Work'
+import WorkList from 'client/components/Work/WorkList'
+import Work from 'client/components/Work/Work'
+import WorkAdmin from 'client/components/Work/WorkAdmin'
 
 class Admin extends React.Component {    
 
@@ -40,9 +41,9 @@ class Admin extends React.Component {
                 <WorkList items={[...worksFake, createWork]}/>                 
                 {
                     nameUrl && 
-                    <Work 
+                    <WorkAdmin 
                         nameUrl={nameUrl} 
-                        save={this.save}     //TODO
+                        save={this.save}
                     />
                 }
             </div>

@@ -14,7 +14,7 @@ import CssBaseline from '@material-ui/core/CssBaseline'
 
 import 'client/style.css'
 import reducers from 'client/data/reducers/site'
-import SiteRouter from 'client/components/routes/SiteRouter'
+import SiteRouter from 'client/routes/SiteRouter'
 
 const history = createHistory()
 const historyMiddleware = routerMiddleware(history)

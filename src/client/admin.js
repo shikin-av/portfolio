@@ -11,7 +11,7 @@ import 'babel-polyfill'
 
 import CssBaseline from '@material-ui/core/CssBaseline'
 import reducers from 'client/data/reducers/admin'
-import AdminRouter from 'client/components/routes/AdminRouter'
+import AdminRouter from 'client/routes/AdminRouter'
 import 'client/style.css'
 
 const history = createHistory()

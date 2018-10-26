@@ -3,14 +3,19 @@ import {Switch, Route} from 'react-router-dom'
 
 import withStyles from '@material-ui/core/styles/withStyles'
 
-import Admin from 'client/components/pages/Admin.jsx'
-import Page404 from 'client/components/pages/Page404.jsx'
+import Home from 'client/pages/Home.jsx'
+import Login from 'client/pages/Login.jsx'
+import Page404 from 'client/pages/Page404.jsx'
 
-const AdminRouter = props => (
-    <Switch className={props.classes.root}>        
+const SiteRouter = props => (
+    <Switch className={props.classes.root}>
+        <Route 
+            exact path='/login'
+            component={Login}
+        />
         <Route
             exact path='/:nameUrl?'
-            component={Admin}
+            component={Home}
         />                
         <Route component={Page404}/>
     </Switch>   
@@ -24,4 +29,4 @@ const styles = () => ({
     },
 })
 
-export default withStyles(styles)(AdminRouter)
+export default withStyles(styles)(SiteRouter)

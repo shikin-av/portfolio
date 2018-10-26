@@ -2,7 +2,7 @@ import React from 'react'
 import withStyles from '@material-ui/core/styles/withStyles'
 import CircularProgress from '@material-ui/core/CircularProgress'
 
-const Loading = props => (
+const LoadingSpin = props => (
     <CircularProgress className={props.classes.root}/>
 )
 
@@ -15,4 +15,4 @@ const styles = () => ({
     }
 })
 
-export default withStyles(styles)(Loading)
+export default withStyles(styles)(LoadingSpin)

@@ -1,12 +1,12 @@
 import React from 'react'
-import Animation from 'client/components/Animation'
+import Animation from 'client/components/common/Animation'
 
 import withStyles from '@material-ui/core/styles/withStyles'
 
 import {worksFake} from 'client/fakeData'
 import Header from 'client/components/Header'
-import WorkList from 'client/components/WorkList'
-import Work from 'client/components/Work'
+import WorkList from 'client/components/Work/WorkList'
+import Work from 'client/components/Work/Work'
 
 class Home extends React.Component {    
 

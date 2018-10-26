@@ -1,53 +1,59 @@
 import config from 'config/client'
 
 export const worksFake = [
-    {   
-        title:          'Header title',
+    {           
         nameUrl:        '01',     
+        siteUrl:        'ya.ru',
         miniature:      'remont_mini.png',        
         miniatureHeight: 514,
         description:    'Lily likes to play with crayons and pencils',
         headImg:        'remont-home.png',
+        tags:           'react, express',
     },
-    {   
-        title:          'Header title',
+    {           
         nameUrl:        '02',     
+        siteUrl:        'ya.ru',
         miniature:      'yami_mini.png',        
         miniatureHeight: 348,
         description:    'Lily likes to play with crayons and pencils',
         headImg:        'remont-home.png',
+        tags:           'react, express',
     },
-    {   
-        title:          'Header title',
+    {           
         nameUrl:        '03',     
+        siteUrl:        'ya.ru',
         miniature:      'pagebuilder_mini.png',        
         miniatureHeight: 389,
         description:    'Lily likes to play with crayons and pencils',
         headImg:        'remont-home.png',
+        tags:           'react, express',
     },
-    {   
-        title:          'Header title',
+    {           
         nameUrl:        '04',     
+        siteUrl:        'ya.ru',
         miniature:      'portfolio_mini.png',        
         miniatureHeight: 435,
         description:    'Lily likes to play with crayons and pencils',
         headImg:        'remont-home.png',
+        tags:           'react, express',
     },
-    {   
-        title:          'Header title',
+    {           
         nameUrl:        '05',     
+        siteUrl:        'ya.ru',
         miniature:      'auction_mini.png',        
         miniatureHeight: 394,
         description:    'Lily likes to play with crayons and pencils',
         headImg:        'remont-home.png',
+        tags:           'react, express',
     },
-    {   
-        title:          'Header title',
+    {           
         nameUrl:        '06',     
+        siteUrl:        'ya.ru',
         miniature:      'buket_mini.png',        
         miniatureHeight: 268,
         description:    'Lily likes to play with crayons and pencils',
         headImg:        'remont-home.png',
+        tags:           'react, express',
     },
 ]
 

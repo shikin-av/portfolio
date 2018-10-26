@@ -6,13 +6,17 @@ import Dialog from '@material-ui/core/Dialog'
 import DialogContent from '@material-ui/core/DialogContent'
 import DialogContentText from '@material-ui/core/DialogContentText'
 import Slide from '@material-ui/core/Slide'
+import TextField from '@material-ui/core/TextField'
 
 import config from 'config/client'
 import {rowsFake, worksFake} from 'client/fakeData'
-import Animation from 'client/components/Animation'
-import Loading from 'client/components/Loading'
+import Animation from 'client/components/common/Animation'
+import LoadingSpin from 'client/components/common/LoadingSpin'
 import SPB from 'client/components/SimplePageBuilder'
 import defaultTheme from 'client/components/themes/default'
+import InputCustom from 'client/components/common/InputCustom'
+import workInputs from 'client/components/Work/workInputs'
+
 
 
 class Work extends React.Component {
@@ -24,30 +28,16 @@ class Work extends React.Component {
     state = {
         open: true,
         work: null,
-    }
-
-    loadWork = nameUrl => {
-        //TODO
-    }
-    
+    }    
 
     componentDidMount = () => {
-        setTimeout(() => {  //TODO delete
-            this.setState({
-                work: {},
-            })
-        }, 500)    
         const {nameUrl} = this.props
-        this.loadWork(nameUrl)
-        
+        this.loadWork(nameUrl)          
     }
     
     componentWillReceiveProps = nextProps => {
         const {nameUrl} = nextProps
-        this.setState({
-            open: true,
-            //work: {},
-        })  //TODO
+        this.loadWork(nameUrl)
     }
 
     handleClose = () => {
@@ -94,26 +84,73 @@ class Work extends React.Component {
         )
     }
 
-    header = () => {
-        const {save} = this.props
-        if(save){
-            return (
-                <h1>HEADER SETTINGS</h1>
+    handleFieldCHange = type => e => {
+        const {work} = this.state
+        this.setState({
+            work: Object.assign(
+                work, {[type]: e.target.value}
             )
-        } else {
-            return (
-                <h1>HEADER</h1>
-            )
-        }
+        })
     }
 
-    saveRows = rows => {
+    header = () => {
+        const {save, classes} = this.props
+        const {work} = this.state
+        if(work){
+            if(save){
+                return (
+                    <div className={classes.formContainer}>
+                        {
+                            workInputs.map(input => (
+                                <InputCustom
+                                    key={input.id}
+                                    id={input.id}
+                                    label={input.label}
+                                    value={work[input.id]}
+                                    onChange={this.handleFieldCHange(input.id)}                            
+                                    required={input.required || false}
+                                    multiline={input.multiline || false}
+                                    size={input.size || null}
+                                    type={input.type || null}
+                                />
+                            ))
+                        }                        
+                    </div>
+                )
+            } else {
+                return (
+                    <div>
+                        {   
+                            work.headImg &&
+                            <img 
+                                src={`${config.assetsPath}/imgs/content/${work.headImg}`} 
+                                className={classes.headImg}
+                            />                            
+                        }
+                        {/*TODO tags*/}
+                    </div>
+                )
+            }
+        } else return null        
+    }
+
+    loadWork = nameUrl => {
+        //TODO fetch from api        
+        const workInfo = worksFake[0]
+        setTimeout(() => {
+            this.setState({
+                work: Object.assign(workInfo, {rows: rowsFake}),
+            })
+        }, 500)
+    }
+
+    saveRows = rows => {    // get rows from SPB
         const {save} = this.props
 
         //TODO make work info
         const workInfo = worksFake[0]
-        
         const work = Object.assign(workInfo, {rows})
+
         save(work)
     }
 
@@ -123,7 +160,10 @@ class Work extends React.Component {
             nameUrl,
             save,
         } = this.props
-        const {open, work} = this.state
+        const {
+            open, 
+            work,
+        } = this.state
         
         if(open){
             showRootContent(false)
@@ -145,14 +185,14 @@ class Work extends React.Component {
                             saveHandler={this.saveRows}
                             menu={save ? true : false}
                             mode={save ? 'edit' : 'preview'}
-                            rowsData={rowsFake}     //TODO from api
+                            rowsData={work.rows || []}
                             theme={defaultTheme}
                         />
                     </DialogContent>
                 </Animation>
                 : 
                 <DialogContent className={classes.content}>
-                    <Loading/>
+                    <LoadingSpin/>
                 </DialogContent>
             }                
             </Dialog>
@@ -169,7 +209,7 @@ const showRootContent = isShow => {
     }
 }
 
-const styles = () => ({
+const styles = theme => ({
     content: {        
         color: 'black',   
         padding: 0,
@@ -181,7 +221,16 @@ const styles = () => ({
         margin: '0 auto',
         width: '100%',
         display: 'flex',
-    }
+    },
+    tag: {
+
+    },
+    formContainer: {
+        display: 'flex',
+        flexWrap: 'wrap',
+        marginTop: 70,
+        marginBottom: 50,
+    },    
 })
 
 export default withStyles(styles)(Work)
