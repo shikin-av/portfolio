@@ -42,13 +42,13 @@ const InputCustom = props => {
                 id={id}
                 value={value}
                 onChange={onChange}        
-                required={required || false}
+                required={required}
                 classes={customClasses || {
                     root:  classes.root,
                     input: classes.input,
                 }}
-                type={type || null}
-                multiline={multiline || false}
+                type={type}
+                multiline={multiline}
                 style={
                     multiline ? {
                         padding: 0,
@@ -69,6 +69,12 @@ InputCustom.propTypes = {
     type:            string,
     multiline:       bool,
     size:            string,
+}
+
+InputCustom.defaultProps = {
+    required:  false,
+    type:      null,
+    multiline: false,
 }
 
 const styles = theme => ({
