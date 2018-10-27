@@ -23,15 +23,17 @@ class Home extends React.Component {
         const {nameUrl} = this.props.match.params
         return (
             <div className={classes.root}>                
-                <Animation animationCssClass='animOpacity'>
-                    <Header/>
-                </Animation>      
-                <Animation 
-                    animationCssClass='animOpacityLong' 
-                    time={2900}
-                >                
-                    <WorkList items={worksFake}/> 
-                </Animation>          
+                <div id={'homeContent'}>
+                    <Animation animationCssClass='animOpacity'>
+                        <Header/>
+                    </Animation>      
+                    <Animation 
+                        animationCssClass='animOpacityLong' 
+                        time={2900}
+                    >                
+                        <WorkList items={worksFake}/> 
+                    </Animation>  
+                </div>
                 {nameUrl && <Work nameUrl={nameUrl}/>}
             </div>
         )

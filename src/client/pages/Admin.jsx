@@ -19,9 +19,9 @@ class Admin extends React.Component {
         const {nameUrl} = nextProps.match.params
     }
 
-    save = work => {
+    /*save = work => {
         console.log('SAVE', work)
-    }  
+    }*/  
 
     render() {
         const {classes} = this.props
@@ -35,15 +35,17 @@ class Admin extends React.Component {
 
         return (
             <div className={classes.root}>    
-                <div className={classes.header}>
-                    <h2>Режим Редактирования</h2>
-                </div>                            
-                <WorkList items={[...worksFake, createWork]}/>                 
+                <div id={'homeContent'}>
+                    <div className={classes.header}>
+                        <h2>Режим Редактирования</h2>
+                    </div>                            
+                    <WorkList items={[...worksFake, createWork]}/>                 
+                </div>
                 {
                     nameUrl && 
                     <WorkAdmin 
                         nameUrl={nameUrl} 
-                        save={this.save}
+                        //save={this.save}
                     />
                 }
             </div>

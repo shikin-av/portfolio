@@ -280,6 +280,7 @@ const styles = () => ({
         right: 28,
         top: 3,
         borderRadius: 0,
+        padding: 6,
     }
 })
 

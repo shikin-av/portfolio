@@ -32,22 +32,27 @@ export default () => {
     })
 
     api.post('/', async (req, res, next) => {
-        const {
-            title,
+        const {            
+            nameUrl,
+            miniature,
+            miniatureHeight,
+            headImg,
+            tags,
+            siteUrl,
             description,
             content,
-            nameUrl,
-            tags,
-            image,
             sortWeight,
         } = req.body
+        
         const work = new Work({
-            title,
+            nameUrl,
+            miniature,
+            miniatureHeight,
+            headImg,
+            tags,
+            siteUrl,
             description,
             content,
-            nameUrl,
-            tags,
-            image,
             sortWeight,
         })
         
@@ -62,12 +67,14 @@ export default () => {
 
     api.put('/:nameUrl', async (req, res, next) => {
         const {
-            title,
+            nameUrl,
+            miniature,
+            miniatureHeight,
+            headImg,
+            tags,
+            siteUrl,
             description,
             content,
-            nameUrl,
-            tags,
-            image,
             sortWeight,
         } = req.body
         return await Work.findOne({
@@ -77,13 +84,15 @@ export default () => {
                 if(!work){
                     return next()
                 }
-                work.title       = title       || work.title
-                work.description = description || work.description
-                work.content     = content     || work.content
-                work.nameUrl     = nameUrl     || work.nameUrl
-                work.tags        = tags        || work.tags
-                work.image       = image       || work.image
-                work.sortWeight  = sortWeight  || work.sortWeight
+                work.nameUrl         = nameUrl         || work.nameUrl
+                work.miniature       = miniature       || work.miniature
+                work.miniatureHeight = miniatureHeight || work.miniatureHeight
+                work.headImg         = headImg         || work.headImg
+                work.tags            = tags            || work.tags
+                work.siteUrl         = siteUrl         || work.siteUrl
+                work.description     = description     || work.description
+                work.content         = content         || work.content
+                work.sortWeight      = sortWeight      || work.sortWeight
                 
                 return work.save((err) => {
                     if(!err) {

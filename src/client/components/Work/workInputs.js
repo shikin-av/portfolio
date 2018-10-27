@@ -17,6 +17,7 @@ export default [
         required: true,        
         type: 'number',
         size: '1/4',
+        default: 268,
     },
     {
         id: 'headImg',
@@ -28,18 +29,25 @@ export default [
         id: 'tags',
         label: 'Инструменты',
         required: true,     
-        size: '1/3',   
+        size: '1/2',   
     },
     {
         id: 'siteUrl',
         label: 'Адрес сайта',   
-        size: '1/3',            
+        size: '1/4',            
+    },
+    {
+        id: 'sortWeight',
+        label: 'Вес',
+        type: 'number',
+        default: 99,
+        size: '1/4',
     },
     {
         id: 'description',
         label: 'Краткое описание',
         required: true,
-        //multiline: true,
-        size: '1/3',
+        size: 'full',
     },
+    
 ]

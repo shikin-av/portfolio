@@ -9,6 +9,7 @@ export const worksFake = [
         description:    'Lily likes to play with crayons and pencils',
         headImg:        'remont-home.png',
         tags:           'react, express',
+        sortWeight:     '1',
     },
     {           
         nameUrl:        '02',     
@@ -18,6 +19,7 @@ export const worksFake = [
         description:    'Lily likes to play with crayons and pencils',
         headImg:        'remont-home.png',
         tags:           'react, express',
+        sortWeight:     '2',
     },
     {           
         nameUrl:        '03',     
@@ -27,6 +29,7 @@ export const worksFake = [
         description:    'Lily likes to play with crayons and pencils',
         headImg:        'remont-home.png',
         tags:           'react, express',
+        sortWeight:     '3',
     },
     {           
         nameUrl:        '04',     
@@ -36,6 +39,7 @@ export const worksFake = [
         description:    'Lily likes to play with crayons and pencils',
         headImg:        'remont-home.png',
         tags:           'react, express',
+        sortWeight:     '4',
     },
     {           
         nameUrl:        '05',     
@@ -45,6 +49,7 @@ export const worksFake = [
         description:    'Lily likes to play with crayons and pencils',
         headImg:        'remont-home.png',
         tags:           'react, express',
+        sortWeight:     '5',
     },
     {           
         nameUrl:        '06',     
@@ -54,6 +59,7 @@ export const worksFake = [
         description:    'Lily likes to play with crayons and pencils',
         headImg:        'remont-home.png',
         tags:           'react, express',
+        sortWeight:     '6',
     },
 ]
 

@@ -1,23 +1,21 @@
 import React from 'react'
 import {string, func} from 'prop-types'
+import ReactDOM from 'react-dom'
 
 import withStyles from '@material-ui/core/styles/withStyles'
 import Dialog from '@material-ui/core/Dialog'
 import DialogContent from '@material-ui/core/DialogContent'
-import DialogContentText from '@material-ui/core/DialogContentText'
 import Slide from '@material-ui/core/Slide'
-import TextField from '@material-ui/core/TextField'
+import IconButton from '@material-ui/core/IconButton'
+import CloseIcon from '@material-ui/icons/Close'
 
-import config from 'config/client'
 import {rowsFake, worksFake} from 'client/fakeData'
 import Animation from 'client/components/common/Animation'
 import LoadingSpin from 'client/components/common/LoadingSpin'
 import SPB from 'client/components/SimplePageBuilder'
 import defaultTheme from 'client/components/themes/default'
-import InputCustom from 'client/components/common/InputCustom'
+import WorkHeader from 'client/components/Work/WorkHeader'
 import workInputs from 'client/components/Work/workInputs'
-
-
 
 class Work extends React.Component {
     static propTypes = {        
@@ -32,12 +30,20 @@ class Work extends React.Component {
 
     componentDidMount = () => {
         const {nameUrl} = this.props
-        this.loadWork(nameUrl)          
+        const {open} = this.state
+        this.loadWork(nameUrl)   
+        if(open){
+            showHomeContent(false)
+        }       
     }
     
     componentWillReceiveProps = nextProps => {
         const {nameUrl} = nextProps
+        const {open} = this.state
         this.loadWork(nameUrl)
+        if(open){
+            showHomeContent(false)
+        }
     }
 
     handleClose = () => {
@@ -45,7 +51,7 @@ class Work extends React.Component {
             open: false,
             work: null,
         }, () => {
-            showRootContent(true)
+            showHomeContent(true)
             setTimeout(() => {
                 if(this.props.save){
                     document.location.href = '/admin#/'
@@ -93,65 +99,30 @@ class Work extends React.Component {
         })
     }
 
-    header = () => {
-        const {save, classes} = this.props
-        const {work} = this.state
-        if(work){
-            if(save){
-                return (
-                    <div className={classes.formContainer}>
-                        {
-                            workInputs.map(input => (
-                                <InputCustom
-                                    key={input.id}
-                                    id={input.id}
-                                    label={input.label}
-                                    value={work[input.id]}
-                                    onChange={this.handleFieldCHange(input.id)}                            
-                                    required={input.required || false}
-                                    multiline={input.multiline || false}
-                                    size={input.size || null}
-                                    type={input.type || null}
-                                />
-                            ))
-                        }                        
-                    </div>
-                )
-            } else {
-                return (
-                    <div>
-                        {   
-                            work.headImg &&
-                            <img 
-                                src={`${config.assetsPath}/imgs/content/${work.headImg}`} 
-                                className={classes.headImg}
-                            />                            
-                        }
-                        {/*TODO tags*/}
-                    </div>
-                )
-            }
-        } else return null        
-    }
-
     loadWork = nameUrl => {
-        //TODO fetch from api        
-        const workInfo = worksFake[0]
-        setTimeout(() => {
+        if(nameUrl === 'create'){
+            const work = {}
+            work.rows = []
+            for(let input of workInputs){
+                work[input.id] = input.default || ''
+            }
+            this.setState({work})            
+        } else {
+            const workInfo = worksFake[0]   //TODO get from API
             this.setState({
                 work: Object.assign(workInfo, {rows: rowsFake}),
             })
-        }, 500)
+        }
     }
 
     saveRows = rows => {    // get rows from SPB
         const {save} = this.props
+        const {work} = this.state
 
-        //TODO make work info
-        const workInfo = worksFake[0]
-        const work = Object.assign(workInfo, {rows})
+        work.rows = []  //!!!
+        const savingWork = Object.assign(work, {rows})
 
-        save(work)
+        save(savingWork)
     }
 
     render() {
@@ -164,10 +135,7 @@ class Work extends React.Component {
             open, 
             work,
         } = this.state
-        
-        if(open){
-            showRootContent(false)
-        }
+                
         return (
             <Dialog
                 open={open}
@@ -176,36 +144,46 @@ class Work extends React.Component {
                 id='casedialog'
                 TransitionComponent={this.dialogTransition}
             >
-            {
-                work ?
-                <Animation animationCssClass='animOpacity' time={1900}>
-                    <DialogContent className={classes.content}>  
-                        {this.header()}                                              
-                        <SPB
-                            saveHandler={this.saveRows}
-                            menu={save ? true : false}
-                            mode={save ? 'edit' : 'preview'}
-                            rowsData={work.rows || []}
-                            theme={defaultTheme}
-                        />
+                <IconButton 
+                    onClick={this.handleClose}
+                    className={classes.closeBtn}
+                >
+                    <CloseIcon />
+                </IconButton>
+                {
+                    work ?
+                    <Animation animationCssClass='animOpacity' time={1900}>
+                        <DialogContent className={classes.content}>  
+                            <WorkHeader
+                                save={save}
+                                handleFieldCHange={this.handleFieldCHange}
+                                work={work}
+                            />                                             
+                            <SPB
+                                saveHandler={this.saveRows}
+                                menu={save ? true : false}
+                                mode={save ? 'edit' : 'preview'}
+                                rowsData={work.rows || []}
+                                theme={defaultTheme}
+                            />
+                        </DialogContent>
+                    </Animation>
+                    : 
+                    <DialogContent className={classes.content}>
+                        <LoadingSpin/>
                     </DialogContent>
-                </Animation>
-                : 
-                <DialogContent className={classes.content}>
-                    <LoadingSpin/>
-                </DialogContent>
-            }                
+                }                
             </Dialog>
         )        
     }
 }
 
-const showRootContent = isShow => {
-    const root = document.getElementById('root')
+const showHomeContent = isShow => {
+    const homeContent = document.getElementById('homeContent')
     if(isShow){
-        document.getElementById('root').style.opacity = 1
+        homeContent.style.opacity = 1
     } else {
-        document.getElementById('root').style.opacity = 0
+        homeContent.style.opacity = 0
     }
 }
 
@@ -216,21 +194,18 @@ const styles = theme => ({
         paddingTop: '0px !important',  
         minHeight: 700,
         overflowY: 'hidden',
+    },  
+    closeBtn: {
+        width: 36,
+        height: 36,
+        paddingTop: 6,
+        display: 'block',
+        transition: '0.9s',
+        zIndex: 10000,
+        position: 'absolute',
+        right: 0,
+        borderRadius: 4,
     },
-    headImg: {
-        margin: '0 auto',
-        width: '100%',
-        display: 'flex',
-    },
-    tag: {
-
-    },
-    formContainer: {
-        display: 'flex',
-        flexWrap: 'wrap',
-        marginTop: 70,
-        marginBottom: 50,
-    },    
 })
 
 export default withStyles(styles)(Work)

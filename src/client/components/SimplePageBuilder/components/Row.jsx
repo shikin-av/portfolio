@@ -231,7 +231,7 @@ const styles = () => ({
         width: 0,
         height: 0,
         right: 0,
-        position: 'absolute',
+        position: 'absolute',        
     },
     menuButton: {
         top: 1,
@@ -241,6 +241,7 @@ const styles = () => ({
         width: 35,
         height: 36,
         right: 0,
+        padding: 6,
     },
 })
 

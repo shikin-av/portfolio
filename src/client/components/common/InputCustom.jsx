@@ -27,8 +27,6 @@ const InputCustom = props => {
         size,
     } = props
 
-
-
     return (
         <FormControl className={`${classes.formControl} ${size ? classes[size] : null}`}>
             <InputLabel
@@ -38,7 +36,7 @@ const InputCustom = props => {
                     focused: classes.cssFocused,
                 }}
             >
-                {label}
+                {`${label}${required ? '*' : ''}`}
             </InputLabel>
             <InputBase
                 id={id}
@@ -77,8 +75,8 @@ const styles = theme => ({
     formControl: {        
         marginLeft: '1%',
         marginRight: '1%',
-        marginTop: 16,
-        marginBottom: 8,        
+        marginTop: 7,
+        marginBottom: 7,        
         [theme.breakpoints.down('xs')]: {
             width: '98%',
         },
@@ -115,6 +113,7 @@ const styles = theme => ({
         }
     },
     cssLabel: {
+        padding: 6,
         '&$cssFocused': {
             color: 'black',
         },

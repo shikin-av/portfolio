@@ -2,7 +2,7 @@ import React from 'react'
 import {array} from 'prop-types'
 import {Link} from 'react-router-dom'
 import Masonry from 'react-masonry-component'
-
+import _ from 'lodash'
 import withStyles from '@material-ui/core/styles/withStyles'
 
 import config from 'config/client'
@@ -30,7 +30,7 @@ class WorkList extends React.Component {
             items
         } = this.props
         
-        const works = items.map(item => (
+        const works = _.sortBy(items, 'sortWeight').map(item => (
             <li 
                 className={`${classes.work} work gridcase`}
                 key={item.miniature}

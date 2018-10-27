@@ -4,9 +4,33 @@ import uniqueValidator from 'mongoose-unique-validator'
 import clearSpecialSymbols from '../resources/clearSpecialSymbols'
 
 const WorkSchema = new mongoose.Schema({
-	title: {
+	nameUrl: {
 		type: String,
-		required: true,
+        required: true,
+        unique: true,
+        lowercase: true,
+        trim: true,
+	},
+	miniature: {
+		type: String,
+        required: true,
+	},
+	miniatureHeight: {
+		type: Number,
+		required: false,
+		default: 268,
+	},
+	headImg: {
+		type: String,
+        required: true,
+	},
+	tags: {
+		type: String,
+        required: true,
+	},
+	siteUrl: {
+		type: String,
+        required: false,
 	},
 	description: {
 		type: String,
@@ -16,25 +40,10 @@ const WorkSchema = new mongoose.Schema({
 		type: Object,
 		required: true,
 	},
-	nameUrl: {
-		type: String,
-        required: true,
-        unique: true,
-        lowercase: true,
-        trim: true,
-	},
-	tags: {
-		type: Array,
-		required: false,
-	},
-	image: {
-		type: String,
-        required: true,
-	},
 	sortWeight: {
 		type: Number,
 		required: false,
-		default: 999,
+		default: 99,
 	}
 })
 
