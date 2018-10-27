@@ -1,12 +1,10 @@
 import React from 'react'
-
 import withStyles from '@material-ui/core/styles/withStyles'
 import TextField from '@material-ui/core/TextField'
 import Button from '@material-ui/core/Button'
-import IconButton from '@material-ui/core/IconButton'
-import CloseIcon from '@material-ui/icons/Close'
-import WarningIcon from '@material-ui/icons/Warning'
 
+import InputCustom from 'client/components/common/InputCustom'
+import Message from 'client/components/common/Message'
 
 class Login extends React.Component {
     state = {
@@ -27,8 +25,6 @@ class Login extends React.Component {
             password,
         } = this.state
 
-        //this.setState({message: 'hi peoplee'})
-
         if(login && password){
             try {
                 return fetch('/login',{
@@ -47,12 +43,18 @@ class Login extends React.Component {
                 .then(res => res.json())
                 .then(data => {
                     if(data.error){
-                        this.setState({ message: 'Ошибка сервера. Попробуйте позже, или обратитесь к администратору сайта' })
+                        this.openMessage({
+                            message: 'Ошибка сервера. Попробуйте позже, или обратитесь к администратору сайта',
+                            type:    'warning',
+                        })
                     } else if(data.redirectTo){
                         console.log(data.redirectTo)
                         window.location.replace(data.redirectTo)
                     } else if(data.message){
-                        this.setState({ message: data.message })
+                        this.openMessage({
+                            message: data.message,
+                            type:    'warning',
+                        })
                     }
                 })
             } catch(err) {
@@ -62,6 +64,13 @@ class Login extends React.Component {
         }
     }
 
+    openMessage = ({message, type}) => {
+        const properties = {message, type}
+        this.setState({
+            message: <Message {...properties}/>
+        })
+    }
+
     render(){
         const {classes} = this.props
         const {
@@ -69,47 +78,59 @@ class Login extends React.Component {
             password,
             message,
         } = this.state
+
+        const inputStyle = {
+            root: {
+                marginTop: 0,
+                marginBottom: 0,
+                display: 'flex',
+            }
+        }        
+
         return (
-            <div className={classes.root}>
-                <TextField
-                    label='Логин'
-                    value={this.state.login}
-                    onChange={this.handleChange('login')}
-                    variant='outlined'
-                />
-                <br/>
-                <TextField
-                    label='Пароль'
-                    value={this.state.password}
-                    onChange={this.handleChange('password')}                    
-                    type='password'
-                    variant='outlined'
-                />
-                <br/>
-                <Button
-                    variant='contained'
-                    onClick={this.handleSubmit}
-                    disabled={(!login || !password) ? true : false}
-                >
-                    Вход
-                </Button>
-                {
-                    message &&
-                    <div className={classes.message}>
-                        {message}
-                    </div>
-                }             
+            <div>
+                {message}
+                <div className={classes.authorize}>
+                    <InputCustom
+                        label='Логин'
+                        value={this.state.login}
+                        onChange={this.handleChange('login')}
+                        styleRoot={inputStyle.root}
+                    />                
+                    <InputCustom
+                        label='Пароль'
+                        value={this.state.password}
+                        onChange={this.handleChange('password')}                    
+                        type='password'
+                        styleRoot={inputStyle.root}
+                    />
+                    <Button
+                        variant='contained'
+                        onClick={this.handleSubmit}
+                        disabled={(!login || !password) ? true : false}
+                        className={classes.submit}
+                    >
+                        Вход
+                    </Button>
+                </div>
             </div>
         )
     }
 }
 
 const styles = () => ({
-    root: {
-        margin: '25%',
-    },
-    message: {
-
+    authorize: {
+        top: '40%',
+        left: '50%',
+        right: 'auto',
+        transform: 'translateX(-50%)',
+        position: 'fixed',
+    },    
+    submit: {
+        marginTop: 16,
+        width: '98%',
+        marginLeft: '1%',
+        height: 38,
     }
 })
 

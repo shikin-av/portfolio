@@ -1,13 +1,13 @@
 import React from 'react'
-import Message from 'client/components/common/Message'
 
+import Message from 'client/components/common/Message'
 import Work from 'client/components/Work/Work'
 import workInputs from 'client/components/Work/workInputs'
 
 const WorkAdmin = Work => 
     class extends React.Component {
         state = {
-            message:        null,
+            message: null,
         }
 
         openMessage = ({message, type}) => {

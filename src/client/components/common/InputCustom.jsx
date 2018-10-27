@@ -25,10 +25,24 @@ const InputCustom = props => {
         type,
         multiline,
         size,
+        styleInput,
+        styleRoot,
     } = props
 
+    if(multiline && !style.padding){
+        style.padding = 0
+    }
+
+    const defaultClasses = {
+        root:  classes.root,
+        input: classes.input,
+    }
+
     return (
-        <FormControl className={`${classes.formControl} ${size ? classes[size] : null}`}>
+        <FormControl 
+            className={`${classes.formControl} ${size ? classes[size] : null}`}
+            style={styleRoot}
+        >
             <InputLabel
                 htmlFor={id}
                 FormLabelClasses={{
@@ -43,17 +57,14 @@ const InputCustom = props => {
                 value={value}
                 onChange={onChange}        
                 required={required}
-                classes={customClasses || {
-                    root:  classes.root,
-                    input: classes.input,
-                }}
+                classes={
+                    customClasses 
+                    ? Object.assign(defaultClasses, customClasses) 
+                    : defaultClasses
+                }
                 type={type}
                 multiline={multiline}
-                style={
-                    multiline ? {
-                        padding: 0,
-                    } : null
-                }
+                style={styleInput}
             /> 
         </FormControl>
     )
@@ -69,12 +80,16 @@ InputCustom.propTypes = {
     type:            string,
     multiline:       bool,
     size:            string,
+    styleInput:      object,
+    styleRoot:       object,
 }
 
 InputCustom.defaultProps = {
-    required:  false,
-    type:      null,
-    multiline: false,
+    required:   false,
+    type:       null,
+    multiline:  false,
+    styleInput: {},
+    styleRoot:  {},
 }
 
 const styles = theme => ({
