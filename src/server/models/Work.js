@@ -36,7 +36,7 @@ const WorkSchema = new mongoose.Schema({
 		type: String,
 		required: true,
 	},
-	content: {
+	rows: {
 		type: Object,
 		required: true,
 	},

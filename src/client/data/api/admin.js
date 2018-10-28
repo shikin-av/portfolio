@@ -17,26 +17,26 @@ export const getWork = async nameUrl => {
     .then(res => res.json())
 }
 
-export const createWork = async params => {
+export const createWork = async work => {
     return fetch(`${apiPath}/works`, {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json'
         },
         credentials: 'include',
-        body: JSON.stringify(params)
+        body: JSON.stringify(work)
     })
     .then(res => res.json())
 }
 
-export const editWork = async (nameUrl, params) => {
+export const editWork = async (nameUrl, work) => {
     return fetch(`${apiPath}/works/${nameUrl}`, {
         method: 'PUT',
         headers: {
             'Content-Type': 'application/json'
         },
         credentials: 'include',
-        body: JSON.stringify(params)
+        body: JSON.stringify(work)
     })
     .then(res => res.json())
 }

@@ -25,6 +25,7 @@ export default (app) => {
     })
 
     app.post('/login', async (req, res) => {        
+        console.log('LOGIN ', req.body.login, req.body.password)
         if(req.body.login && req.body.password){
             const login = req.body.login
             const password = req.body.password

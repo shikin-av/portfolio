@@ -116,13 +116,18 @@ class Work extends React.Component {
     }
 
     saveRows = rows => {    // get rows from SPB
-        const {save} = this.props
+        const {save, nameUrl} = this.props
         const {work} = this.state
 
         work.rows = []  //!!!
         const savingWork = Object.assign(work, {rows})
 
-        save(savingWork)
+        const isCreate = nameUrl === 'create'
+
+        save({
+            work:    savingWork,
+            nameUrl: isCreate ? 'create' : work.nameUrl
+        })
     }
 
     render() {
@@ -178,7 +183,7 @@ class Work extends React.Component {
     }
 }
 
-const showHomeContent = isShow => {
+export const showHomeContent = isShow => {
     const homeContent = document.getElementById('homeContent')
     if(isShow){
         homeContent.style.opacity = 1

@@ -31,7 +31,7 @@ export default () => {
         })
     })
 
-    api.post('/', async (req, res, next) => {
+    api.post('/', async (req, res, next) => {        
         const {            
             nameUrl,
             miniature,
@@ -40,10 +40,12 @@ export default () => {
             tags,
             siteUrl,
             description,
-            content,
+            rows,
             sortWeight,
         } = req.body
         
+        console.log('CREATE  ', req.body)
+
         const work = new Work({
             nameUrl,
             miniature,
@@ -52,7 +54,7 @@ export default () => {
             tags,
             siteUrl,
             description,
-            content,
+            rows,
             sortWeight,
         })
         
@@ -60,6 +62,7 @@ export default () => {
             if(!err) {
                 return res.status(201).json(work)
             } else {
+                console.log('ERROR', err)
                 return next(err)
             }
         })
@@ -74,7 +77,7 @@ export default () => {
             tags,
             siteUrl,
             description,
-            content,
+            rows,
             sortWeight,
         } = req.body
         return await Work.findOne({
@@ -91,7 +94,7 @@ export default () => {
                 work.tags            = tags            || work.tags
                 work.siteUrl         = siteUrl         || work.siteUrl
                 work.description     = description     || work.description
-                work.content         = content         || work.content
+                work.rows            = rows            || work.rows
                 work.sortWeight      = sortWeight      || work.sortWeight
                 
                 return work.save((err) => {

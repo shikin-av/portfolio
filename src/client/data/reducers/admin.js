@@ -4,7 +4,7 @@ import _ from 'lodash'
 
 import * as types from 'client/data/actions/actionTypes'
 
-const works = (state=[], {type, payload}) => {
+const works = (state=[], {type, payload}) => {    
     switch(type){
         case types.GET_WORKS_SUCCESS:   return payload
 
