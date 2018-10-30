@@ -33,8 +33,9 @@ class WorkList extends React.Component {
         const works = _.sortBy(items, 'sortWeight').map(item => (
             <li 
                 className={`${classes.work} work gridcase`}
-                key={item.miniature}
+                key={item.nameUrl}
             >
+                {console.log(item)}
                 <Link 
                     to={item.nameUrl}
                     onClick={this.clickWorkHandler}
@@ -52,7 +53,7 @@ class WorkList extends React.Component {
                         <figcaption>                            
                             <p>{item.description}</p>
                         </figcaption>			                        
-                        <h3 className={classes.tags}>Lorem ipsum dolor sit amet</h3>
+                        <h3 className={classes.tags}>{item.tags}</h3>
                     </figure>                    
                 </Link>
             </li>

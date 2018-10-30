@@ -16,6 +16,9 @@ import SPB from 'client/components/SimplePageBuilder'
 import defaultTheme from 'client/components/themes/default'
 import WorkHeader from 'client/components/Work/WorkHeader'
 import workInputs from 'client/components/Work/workInputs'
+import Message from 'client/components/common/Message'
+
+import {getWork as getWorkApi} from 'client/data/api/site'
 
 class Work extends React.Component {
     static propTypes = {        
@@ -64,26 +67,9 @@ class Work extends React.Component {
         })
     }
 
-    dialogTransition = props => {
-        let maxWidth = '100%'
-        let margin   = '0 auto'
-        switch(true){
-            case (window.innerWidth == 768):
-                maxWidth = '90%'
-                margin   = '48px auto'
-                break            
-            case (window.innerWidth > 768):
-                maxWidth = 1024
-                margin   = '48px auto'
-                break
-        }
-        return (
-            <Slide 
-                direction='up' 
-                {...props}                
-            />
-        )
-    }
+    dialogTransition = props => (
+        <Slide direction='up' {...props}/>
+    )
 
     handleFieldCHange = type => e => {
         const {work} = this.state
@@ -94,7 +80,7 @@ class Work extends React.Component {
         })
     }
 
-    loadWork = nameUrl => {
+    loadWork = async nameUrl => {
         if(nameUrl === 'create'){
             const work = {}
             work.rows = []
@@ -103,10 +89,23 @@ class Work extends React.Component {
             }
             this.setState({work})            
         } else {
-            const workInfo = worksFake[0]   //TODO get from API
-            this.setState({
-                work: Object.assign(workInfo, {rows: rowsFake}),
-            })
+            try {
+                const work = await getWorkApi(nameUrl)
+                if(!work.error){
+                    this.setState({work})
+                } else {
+                    this.openMessage({
+                        message: 'Не удалось загрузить кейс',
+                        type: 'warning',
+                    })
+                }
+                
+            } catch(err) {
+                this.openMessage({
+                    message: 'Не удалось загрузить кейс',
+                    type: 'warning',
+                })
+            }
         }
     }
 
@@ -122,6 +121,13 @@ class Work extends React.Component {
         save({
             work:    savingWork,
             nameUrl: isCreate ? 'create' : work.nameUrl
+        })
+    }
+
+    openMessage = ({message, type}) => {
+        const properties = {message, type}
+        this.setState({
+            message: <Message {...properties}/>
         })
     }
 

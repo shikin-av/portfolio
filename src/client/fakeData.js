@@ -17,7 +17,7 @@ export const worksFake = [
         miniature:      '/assets/imgs/content/yami_mini.png',        
         miniatureHeight: 348,
         description:    'Lily likes to play with crayons and pencils',
-        headImg:        'remont-home.png',
+        headImg:        '/assets/imgs/content/yami-home.png',
         tags:           'react, express',
         sortWeight:     '2',
     },
@@ -27,7 +27,7 @@ export const worksFake = [
         miniature:      '/assets/imgs/content/pagebuilder_mini.png',        
         miniatureHeight: 389,
         description:    'Lily likes to play with crayons and pencils',
-        headImg:        'remont-home.png',
+        headImg:        '/assets/imgs/content/spb-home.png',
         tags:           'react, express',
         sortWeight:     '3',
     },
@@ -67,7 +67,9 @@ export const rowsFake = [
     {
         id: 10,
         type: 'fullwidth', 
-        color: 'rgb(63, 81, 181)',
+        //color: '#1890ff',
+        //color: '#CC3333',
+        color: '#000000de',
         elements: [
             {
                 id: 111,

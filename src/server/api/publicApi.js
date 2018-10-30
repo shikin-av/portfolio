@@ -12,7 +12,7 @@ export default () => {
         return await Work.find((err, works) => {
             if(!err){
                 const result = works.map(work => {
-                    return _.pick(work, ['nameUrl', 'description', 'tags', 'image'])
+                    return _.pick(work, ['nameUrl', 'description', 'tags', 'miniature', 'miniatureHeight', 'sortWeight'])
                 })
                 return res.json(result)
             } else {

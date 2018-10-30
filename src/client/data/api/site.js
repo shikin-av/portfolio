@@ -6,3 +6,10 @@ export const getWorks = async () => {
     })
     .then(res => res.json())
 }
+
+export const getWork = async nameUrl => {
+    return fetch(`${apiPath}/works/${nameUrl}`, {
+        method: 'GET'
+    })
+    .then(res => res.json())
+}

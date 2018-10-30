@@ -9,6 +9,7 @@ body {
     font-size: 12pt;
     font-weight: 200;
     line-height: 1.65;
+    background-color: #373c5c;
     background-image: url(/assets/imgs/design/background.jpg);
     background-size: cover;
     background-position: top center;    
