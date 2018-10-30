@@ -80,14 +80,7 @@ class Work extends React.Component {
         return (
             <Slide 
                 direction='up' 
-                {...props} 
-                style={{
-                    width:     '100%',
-                    maxWidth:  maxWidth,
-                    margin:    margin,
-                    minHeight: window.innerHeight,
-                    backgroundColor: '#ffffff',
-                }}
+                {...props}                
             />
         )
     }
@@ -154,6 +147,10 @@ class Work extends React.Component {
                 scroll='body'
                 id='casedialog'
                 TransitionComponent={this.dialogTransition}
+                fullScreen={window.innerWidth < 768 ? true : false}
+                classes={{
+                    paper: classes.dialogPaper
+                }}
             >
                 <IconButton 
                     onClick={this.handleClose}
@@ -218,6 +215,17 @@ const styles = theme => ({
         position: 'absolute',
         right: 0,
         borderRadius: 4,
+    },
+    dialogPaper: {
+        maxWidth: 1024,
+        [theme.breakpoints.down('md')]: {
+            maxWidth: '90%',
+            margin: '0px auto',
+        },
+        [theme.breakpoints.down('sm')]: {
+            maxWidth: '100%',
+            margin: '0px auto',
+        }
     },
 })
 

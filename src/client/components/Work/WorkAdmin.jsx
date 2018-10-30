@@ -59,7 +59,6 @@ class WorkAdmin extends React.Component {
     }
 
     changeMode = mode => {
-        //console.log(mode)
         this.setState({mode})
     }
 
