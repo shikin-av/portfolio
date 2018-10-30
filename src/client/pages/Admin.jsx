@@ -3,11 +3,9 @@ import React from 'react'
 import withStyles from '@material-ui/core/styles/withStyles'
 
 import {worksFake} from 'client/fakeData'
-//import administrator from 'client/data/administrator'
-import Header from 'client/components/Header'
 import WorkList from 'client/components/Work/WorkList'
-import Work from 'client/components/Work/Work'
 import WorkAdmin from 'client/components/Work/WorkAdmin'
+import config from 'config/client'
 
 class Admin extends React.Component {    
 
@@ -23,7 +21,7 @@ class Admin extends React.Component {
         const {classes} = this.props
         const {nameUrl} = this.props.match.params
         const createWork = {
-            miniature:      'create_mini.png',
+            miniature:      `${config.assetsPath}/imgs/design/create_mini.png`,
             nameUrl:        'create',
             description:    'Добавить кейс',
             miniatureHeight: 268,

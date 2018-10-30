@@ -45,7 +45,7 @@ class WorkList extends React.Component {
                         }}>
                             <div className='work-img-inner'></div>
                             <img 
-                                src={`${config.assetsPath}/imgs/content/${item.miniature}`}
+                                src={item.miniature}
                                 className={classes.img}    
                             />
                         </div>

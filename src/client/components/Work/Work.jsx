@@ -19,8 +19,10 @@ import workInputs from 'client/components/Work/workInputs'
 
 class Work extends React.Component {
     static propTypes = {        
-        nameUrl: string.isRequired,
-        save:    func,
+        nameUrl:    string.isRequired,
+        save:       func,
+        changeMode: func,
+        mode:       string,
     }
 
     state = {
@@ -130,11 +132,15 @@ class Work extends React.Component {
         })
     }
 
+    changeMode = () => null
+
     render() {
         const {
             classes, 
             nameUrl,
             save,
+            changeMode,
+            mode,
         } = this.props
         const {
             open, 
@@ -163,6 +169,7 @@ class Work extends React.Component {
                                 save={save}
                                 handleFieldCHange={this.handleFieldCHange}
                                 work={work}
+                                mode={mode || 'preview'}
                             />                                             
                             <SPB
                                 saveHandler={this.saveRows}
@@ -170,6 +177,7 @@ class Work extends React.Component {
                                 mode={save ? 'edit' : 'preview'}
                                 rowsData={work.rows || []}
                                 theme={defaultTheme}
+                                changeMode={changeMode || this.changeMode}
                             />
                         </DialogContent>
                     </Animation>

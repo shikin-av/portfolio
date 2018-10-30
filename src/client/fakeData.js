@@ -4,17 +4,17 @@ export const worksFake = [
     {           
         nameUrl:        '01',     
         siteUrl:        'ya.ru',
-        miniature:      'remont_mini.png',        
+        miniature:      '/assets/imgs/content/remont_mini.png',        
         miniatureHeight: 514,
         description:    'Lily likes to play with crayons and pencils',
-        headImg:        'remont-home.png',
+        headImg:        '/assets/imgs/content/remont-home.png',
         tags:           'react, express',
         sortWeight:     '1',
     },
     {           
         nameUrl:        '02',     
         siteUrl:        'ya.ru',
-        miniature:      'yami_mini.png',        
+        miniature:      '/assets/imgs/content/yami_mini.png',        
         miniatureHeight: 348,
         description:    'Lily likes to play with crayons and pencils',
         headImg:        'remont-home.png',
@@ -24,7 +24,7 @@ export const worksFake = [
     {           
         nameUrl:        '03',     
         siteUrl:        'ya.ru',
-        miniature:      'pagebuilder_mini.png',        
+        miniature:      '/assets/imgs/content/pagebuilder_mini.png',        
         miniatureHeight: 389,
         description:    'Lily likes to play with crayons and pencils',
         headImg:        'remont-home.png',
@@ -34,7 +34,7 @@ export const worksFake = [
     {           
         nameUrl:        '04',     
         siteUrl:        'ya.ru',
-        miniature:      'portfolio_mini.png',        
+        miniature:      '/assets/imgs/content/portfolio_mini.png',        
         miniatureHeight: 435,
         description:    'Lily likes to play with crayons and pencils',
         headImg:        'remont-home.png',
@@ -44,7 +44,7 @@ export const worksFake = [
     {           
         nameUrl:        '05',     
         siteUrl:        'ya.ru',
-        miniature:      'auction_mini.png',        
+        miniature:      '/assets/imgs/content/auction_mini.png',        
         miniatureHeight: 394,
         description:    'Lily likes to play with crayons and pencils',
         headImg:        'remont-home.png',
@@ -54,7 +54,7 @@ export const worksFake = [
     {           
         nameUrl:        '06',     
         siteUrl:        'ya.ru',
-        miniature:      'buket_mini.png',        
+        miniature:      '/assets/imgs/content/buket_mini.png',        
         miniatureHeight: 268,
         description:    'Lily likes to play with crayons and pencils',
         headImg:        'remont-home.png',

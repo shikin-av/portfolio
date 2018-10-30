@@ -13,6 +13,7 @@ import {
 class WorkAdmin extends React.Component {
     state = {
         message: null,
+        mode:    'edit',
     }
 
     openMessage = ({message, type}) => {
@@ -57,9 +58,15 @@ class WorkAdmin extends React.Component {
         }, 500)  
     }
 
+    changeMode = mode => {
+        //console.log(mode)
+        this.setState({mode})
+    }
+
     render() {
         const {
             message,
+            mode,
         } = this.state
         const {classes} = this.props
         return (
@@ -67,6 +74,8 @@ class WorkAdmin extends React.Component {
                 <Work 
                     {...this.props}
                     save={this.save}     //TODO + this.edit , this.delete 
+                    changeMode={this.changeMode}
+                    mode={mode}
                 />                    
                 {message}
             </div>

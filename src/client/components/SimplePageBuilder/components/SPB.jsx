@@ -1,5 +1,4 @@
 import React from 'react'
-//import 'typeface-roboto'
 import _ from 'lodash'
 import {object, func, bool, string, array} from 'prop-types'
 import ReactCSSTransitionGroup from 'react-addons-css-transition-group'
@@ -10,19 +9,17 @@ import {
     MuiThemeProvider
 } from '@material-ui/core/styles'
 import CssBaseline from '@material-ui/core/CssBaseline'
-import Tooltip from '@material-ui/core/Tooltip'
-import Button from '@material-ui/core/Button'
-import ViewIcon from '@material-ui/icons/Pageview'
-import SaveIcon from '@material-ui/icons/Save'
 
 import Row from './Row'
 import rowTypes from './rows'
 import AppendRow from './AppendRow'
 import DividerGorizontal from './DividerGorizontal'
+import Menu from './Menu'
 
 class App extends React.Component {
     static propTypes = {
         saveHandler: func.isRequired,
+        changeMode:  func.isRequired,
         classes:     object.isRequired,
         menu:        bool.isRequired,
         mode:        string,
@@ -156,7 +153,7 @@ class App extends React.Component {
         this.setState({
             mode,
             rows: this.tmpRows
-        })
+        }, () => this.props.changeMode(mode))
     }    
 
     appendRowFake = () => (
@@ -167,86 +164,17 @@ class App extends React.Component {
         }}></div>
     )
 
-    menu = () => {
-        const {
-            classes, 
-            menu,
-            theme,
-        } = this.props
-        const {mode} = this.state        
-        if(menu){
-            return (
-                <div className={classes.menu}>
-                    <Tooltip title='Сохранить страницу'>
-                        <Button                                
-                            onClick={this.save}
-                            className={classes.menuButton}
-                            ref={'saveBtn'}
-                            style={{color: theme.palette.contrast}}
-                            onMouseEnter={() => {
-                                const el = ReactDOM.findDOMNode(this.refs.saveBtn)
-                                el.style.color = theme.palette.primary.main
-                            }}
-                            onMouseLeave={() => {
-                                const el = ReactDOM.findDOMNode(this.refs.saveBtn)
-                                el.style.color = theme.palette.contrast
-                            }}
-                        >
-                            <SaveIcon/>Сохранить
-                        </Button>   
-                    </Tooltip>
-                    {
-                        mode === 'edit' &&
-                        <Tooltip title='Предпросмотр страницы'>
-                            <Button
-                                onClick={() => this.changeMode('preview')}
-                                ref={'previewBtn'}
-                                style={{color: theme.palette.contrast}}
-                                onMouseEnter={() => {
-                                    const el = ReactDOM.findDOMNode(this.refs.previewBtn)
-                                    el.style.color = theme.palette.primary.main
-                                }}
-                                onMouseLeave={() => {
-                                    const el = ReactDOM.findDOMNode(this.refs.previewBtn)
-                                    el.style.color = theme.palette.contrast
-                                }}
-                            >
-                                <ViewIcon/>Предпросмотр
-                            </Button>
-                        </Tooltip>
-                    }
-                    {
-                        mode === 'preview' &&
-                        <Tooltip title='Редактирование страницы'>
-                            <Button
-                                onClick={() => this.changeMode('edit')}
-                                ref={'editBtn'}
-                                style={{color: theme.palette.contrast}}
-                                onMouseEnter={() => {
-                                    const el = ReactDOM.findDOMNode(this.refs.editBtn)
-                                    el.style.color = theme.palette.primary.main
-                                }}
-                                onMouseLeave={() => {
-                                    const el = ReactDOM.findDOMNode(this.refs.editBtn)
-                                    el.style.color = theme.palette.contrast
-                                }}
-                            >
-                                <ViewIcon/>Редактор
-                            </Button>
-                        </Tooltip>
-                    }                        
-                </div>
-            )
-        } else return null        
-    }    
-
     save = () => {
         const {saveHandler} = this.props
         saveHandler(this.tmpRows)
     }
     
     render() {
-        const {classes, theme} = this.props
+        const {
+            classes, 
+            theme,
+            menu
+        } = this.props
         const {
             mode, 
             rows, 
@@ -262,7 +190,13 @@ class App extends React.Component {
                         color: `${theme.palette.contrast}`,
                     }}
                 >                    
-                    {this.menu()}                    
+                    <Menu
+                        menu={menu}
+                        theme={theme}
+                        mode={mode}
+                        save={this.save}
+                        changeMode={this.changeMode}
+                    />                   
                     {
                         mode === 'edit' &&
                         <AppendRow 
@@ -356,15 +290,6 @@ const styles = () => ({
         top: 0,
         left: 0,
         width: '100%',        
-    },
-    menu: {
-        textAlign: 'center',
-        marginBottom: 30,
-        paddingTop: 10,
-
-        position: 'absolute',
-        top: 0,
-        width: '100%',
     },
 })
 

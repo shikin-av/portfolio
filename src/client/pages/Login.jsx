@@ -131,6 +131,7 @@ const styles = () => ({
         width: '98%',
         marginLeft: '1%',
         height: 38,
+        boxShadow: 'none',
     }
 })
 
