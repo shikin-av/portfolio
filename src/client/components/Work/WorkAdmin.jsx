@@ -6,8 +6,9 @@ import Work, {showHomeContent} from 'client/components/Work/Work'
 import workInputs from 'client/components/Work/workInputs'
 
 import {
-    appendWork as appendWorkAction,
-    editWork   as editWorkAction
+    appendWork  as appendWorkAction,
+    editWork    as editWorkAction,
+    deleteWork  as deleteWorkAction,
 } from 'client/data/actions/admin'
 
 class WorkAdmin extends React.Component {
@@ -41,12 +42,12 @@ class WorkAdmin extends React.Component {
         if(nameUrl === 'create'){
             appendWorkAction(work, ({message, type}) => {
                 this.openMessage({message, type})
-                this.closeDialog()
+                //this.closeDialog()
             })                
         } else {
             editWorkAction(nameUrl, work, ({message, type}) => {
                 this.openMessage({message, type})
-                this.closeDialog()
+                //this.closeDialog()
             })                
         }                      
     }
@@ -89,7 +90,7 @@ const mapStateToProps = state => ({
 const mapDispatchToProps = {
     appendWorkAction,
     editWorkAction,
+    deleteWorkAction,
 }
 
-//export default connect(mapStateToProps, mapDispatchToProps)(WorkAdmin(Work))
 export default connect(mapStateToProps, mapDispatchToProps)(WorkAdmin)

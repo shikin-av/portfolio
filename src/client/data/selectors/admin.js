@@ -1,0 +1,1 @@
+export const getWorks = state => state.works

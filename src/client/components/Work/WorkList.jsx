@@ -5,8 +5,6 @@ import Masonry from 'react-masonry-component'
 import _ from 'lodash'
 import withStyles from '@material-ui/core/styles/withStyles'
 
-import config from 'config/client'
-
 const imagesLoadedOptions = {background: '.my-bg-image-el'}
 
 class WorkList extends React.Component {
@@ -18,10 +16,6 @@ class WorkList extends React.Component {
         transitionDuration: 0,
         gutter: 24,
         isResizeBound: true,
-    }
-
-    clickWorkHandler = e => {
-        
     }
 
     render() {
@@ -37,7 +31,6 @@ class WorkList extends React.Component {
             >
                 <Link 
                     to={item.nameUrl}
-                    onClick={this.clickWorkHandler}
                 >
                     <figure className={`effect-bubba`}>
                         <div className='work-img-wrapper' style={{
@@ -52,7 +45,19 @@ class WorkList extends React.Component {
                         <figcaption>                            
                             <p>{item.description}</p>
                         </figcaption>			                        
-                        <h3 className={classes.tags}>{item.tags}</h3>
+                        <h3 className={classes.tags}>
+                            {
+                                item.tags &&
+                                item.tags.split(',').map(tag => 
+                                    <span 
+                                        className={classes.tag}
+                                        key={tag}
+                                    >
+                                        {tag}
+                                    </span>
+                                )
+                            }
+                        </h3>
                     </figure>                    
                 </Link>
             </li>
@@ -112,6 +117,9 @@ const styles = theme => ({
         color: 'rgba(255, 255, 255, 0.65)',
         textDecoration: 'none',
     },
+    tag: {
+        padding: 5,
+    }
 })
 
 export default withStyles(styles)(WorkList)

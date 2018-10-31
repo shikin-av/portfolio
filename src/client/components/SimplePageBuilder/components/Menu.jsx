@@ -19,6 +19,7 @@ class Menu extends React.Component {
     }
 
     render(){
+        console.log('MODE', mode)
         const {
             classes, 
             menu,

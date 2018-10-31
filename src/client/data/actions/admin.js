@@ -23,74 +23,74 @@ export const getWorks = () => async dispatch => {
 export const appendWork = (work, callback=defaultCallback) => async dispatch => {
     dispatch({type: types.APPEND_WORK_START})
     try {
-        const newWork = await api.createWork(work)
-        .then(() => callback({
-            message: 'Кейс создан',
-            type:    'success',
-        }))
+        const newWork = await api.createWork(work)        
         dispatch({
             type:    types.APPEND_WORK_SUCCESS,
             payload: newWork,
         })        
-    } catch(err) {
         callback({
-            message: 'Ошибка создания кейса',
-            type:    'warning',
+            message: 'Кейс создан',
+            type:    'success',
         })
+    } catch(err) {
         dispatch({
             type:    types.APPEND_WORK_FAIL,
             payload: err,
             error:   true,
         })
+        callback({
+            message: 'Ошибка создания кейса',
+            type:    'warning',
+        })        
     }
 }
 
 export const editWork = (nameUrl, work, callback=defaultCallback) => async dispatch => {
     dispatch({type: types.EDIT_WORK_START})
     try {
-        const editedWork = await api.editWork(nameUrl, work)
-        .then(() => callback({
-            message: 'Кейс отредактирован',
-            type:    'success',
-        }))
+        const editedWork = await api.editWork(nameUrl, work)        
         dispatch({
             type:    types.EDIT_WORK_SUCCESS,
             payload: editedWork,
         })
-    } catch(err) {
         callback({
-            message: 'Ошибка редактирования кейса',
-            type:    'warning',
-        })
+            message: 'Кейс отредактирован',
+            type:    'success',
+        }) 
+    } catch(err) {
         dispatch({
             type:    types.EDIT_WORK_FAIL,
             payload: err,
             error:   true,
         })
+        callback({
+            message: 'Ошибка редактирования кейса',
+            type:    'warning',
+        })        
     }
 }
 
 export const deleteWork = (nameUrl, callback=defaultCallback) => async dispatch => {
     dispatch({type: types.DELETE_WORK_START})
     try {
-        const deletedWork = await api.deleteWork(nameUrl)
-        .then(() => callback({
-            message: 'Кейс удален',
-            type:    'success',
-        }))
+        const deletedWork = await api.deleteWork(nameUrl)        
         dispatch({
             type:    types.DELETE_WORK_SUCCESS,
             payload: deletedWork,
         })
-    } catch(err) {
         callback({
-            message: 'Ошибка удаления кейса',
-            type:    'warning',
+            message: 'Кейс удален',
+            type:    'success',
         })
+    } catch(err) {
         dispatch({
             type:    types.DELETE_WORK_FAIL,
             payload: err,
             error:   true,
         })
+        callback({
+            message: 'Ошибка удаления кейса',
+            type:    'warning',
+        })        
     }
 }

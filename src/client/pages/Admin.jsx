@@ -1,11 +1,19 @@
 import React from 'react'
-
+import {connect} from 'react-redux'
 import withStyles from '@material-ui/core/styles/withStyles'
 
-import {worksFake} from 'client/fakeData'
+//import {worksFake} from 'client/fakeData'
 import WorkList from 'client/components/Work/WorkList'
 import WorkAdmin from 'client/components/Work/WorkAdmin'
 import config from 'config/client'
+
+import {getWorks as getWorksSelector} from 'client/data/selectors/admin'
+import {
+    getWorks    as getWorksAction,
+    //appendWork  as appendWorkAction,
+    //editWork    as editWorkAction,
+    //deleteWork  as deleteWorkAction,
+} from 'client/data/actions/admin'
 
 class Admin extends React.Component {    
 
@@ -13,12 +21,17 @@ class Admin extends React.Component {
         const {nameUrl} = this.props.match.params
     }
 
+    componentDidMount = () => {
+        const {getWorksAction} = this.props
+        getWorksAction()
+    }
+
     componentWillReceiveProps = nextProps => {
         const {nameUrl} = nextProps.match.params
     }
 
     render() {
-        const {classes} = this.props
+        const {classes, works} = this.props
         const {nameUrl} = this.props.match.params
         const createWork = {
             miniature:      `${config.assetsPath}/imgs/design/create_mini.png`,
@@ -33,7 +46,7 @@ class Admin extends React.Component {
                     <div className={classes.header}>
                         <h2>Режим Редактирования</h2>
                     </div>                            
-                    <WorkList items={[...worksFake, createWork]}/>                 
+                    <WorkList items={[...works, createWork]}/>                 
                 </div>
                 {
                     nameUrl && 
@@ -58,4 +71,15 @@ const styles = () => ({
     }
 })
 
-export default withStyles(styles)(Admin)
+const mapStateToProps = state => ({
+    works: getWorksSelector(state),
+})
+
+const mapDispatchToProps = {
+    getWorksAction,
+    //appendWorkAction,
+    //editWorkAction,
+    //deleteWorkAction,
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(withStyles(styles)(Admin))

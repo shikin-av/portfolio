@@ -2,7 +2,6 @@ import React from 'react'
 import {func, object, string} from 'prop-types'
 import withStyles from '@material-ui/core/styles/withStyles'
 
-import config from 'config/client'
 import InputCustom from 'client/components/common/InputCustom'
 import workInputs from 'client/components/Work/workInputs'
 import Tag from 'client/components/common/Tag'
@@ -48,7 +47,9 @@ class WorkHeader extends React.Component {
                 )
             } else {
                 return (
-                    <div>
+                    <div style={{
+                        backgroundColor: work.color ? work.color : null
+                    }}>
                         {   
                             work.headImg &&
                             <img 
@@ -56,23 +57,21 @@ class WorkHeader extends React.Component {
                                 className={classes.headImg}
                             />                            
                         }   
-                            <div 
-                                className={classes.titleBlock}
-                                style={{
-                                    backgroundColor: work.color ? work.color : null
-                                }}
-                            >
-                                <h1 className={classes.title}>{work.title}</h1>
-                                <h3 className={classes.description}>{work.description}</h3>
-                                {
-                                    work.tags &&
-                                    work.tags.split(',').map(tag => (
-                                        <Tag text={tag} key={tag}/>
-                                    ))
-                                }
-                            </div>
-                        
-                        {/*TODO tags*/}
+                        <div 
+                            className={classes.titleBlock}
+                            style={{
+                                backgroundColor: work.color ? work.color : null
+                            }}
+                        >
+                            <h1 className={classes.title}>{work.title}</h1>
+                            <h3 className={classes.description}>{work.description}</h3>
+                            {
+                                work.tags &&
+                                work.tags.split(',').map(tag => (
+                                    <Tag text={tag} key={tag}/>
+                                ))
+                            }
+                        </div>                        
                     </div>
                 )
             }

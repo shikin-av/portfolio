@@ -179,7 +179,7 @@ class Work extends React.Component {
                             <SPB
                                 saveHandler={this.saveRows}
                                 menu={save ? true : false}
-                                mode={save ? 'edit' : 'preview'}
+                                mode={mode}
                                 rowsData={work.rows || []}
                                 theme={defaultTheme}
                                 changeMode={changeMode || this.changeMode}

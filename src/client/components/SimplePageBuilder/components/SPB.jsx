@@ -36,14 +36,17 @@ class App extends React.Component {
     tmpRows = this.state.rows   
     
     componentWillMount = () => {
-        const {theme} = this.props        
+        const {theme, mode} = this.props        
         document.body.style.backgroundColor = theme.palette.background
+        //this.setState({mode})
+        //console.log('WILLMOUNTE MODE', mode)
     }
 
     componentWillReceiveProps = nextProps => {
         const oldTheme = this.props.theme
         const newTheme = nextProps.theme
         document.body.style.backgroundColor = newTheme.palette.background
+        console.log('receive props MODE', nextProps.mode)
     }
 
     showToolsHandler = val => {
