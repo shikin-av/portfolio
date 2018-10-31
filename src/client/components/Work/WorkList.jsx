@@ -35,7 +35,6 @@ class WorkList extends React.Component {
                 className={`${classes.work} work gridcase`}
                 key={item.nameUrl}
             >
-                {console.log(item)}
                 <Link 
                     to={item.nameUrl}
                     onClick={this.clickWorkHandler}

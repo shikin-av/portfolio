@@ -9,7 +9,7 @@ import Slide from '@material-ui/core/Slide'
 import IconButton from '@material-ui/core/IconButton'
 import CloseIcon from '@material-ui/icons/Close'
 
-import {rowsFake, worksFake} from 'client/fakeData'
+//import {rowsFake, worksFake} from 'client/fakeData'
 import Animation from 'client/components/common/Animation'
 import LoadingSpin from 'client/components/common/LoadingSpin'
 import SPB from 'client/components/SimplePageBuilder'
@@ -45,10 +45,12 @@ class Work extends React.Component {
     componentWillReceiveProps = nextProps => {
         const {nameUrl} = nextProps
         const {open} = this.state
-        this.loadWork(nameUrl)
-        if(open){
-            showHomeContent(false)
-        }
+        this.setState({work: null}, () => {
+            this.loadWork(nameUrl)
+            if(open){
+                showHomeContent(false)
+            }
+        })        
     }
 
     handleClose = () => {

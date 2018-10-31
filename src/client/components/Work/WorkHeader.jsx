@@ -5,6 +5,7 @@ import withStyles from '@material-ui/core/styles/withStyles'
 import config from 'config/client'
 import InputCustom from 'client/components/common/InputCustom'
 import workInputs from 'client/components/Work/workInputs'
+import Tag from 'client/components/common/Tag'
 
 class WorkHeader extends React.Component {
     static propTypes = {
@@ -14,7 +15,7 @@ class WorkHeader extends React.Component {
         work:              object,
         mode:              string,
     }
-    //TODO state.work, чтобы не сбивались инпуты при переключении mode
+    
     render() {
         const {
             save,
@@ -54,7 +55,23 @@ class WorkHeader extends React.Component {
                                 src={work.headImg} 
                                 className={classes.headImg}
                             />                            
-                        }
+                        }   
+                            <div 
+                                className={classes.titleBlock}
+                                style={{
+                                    backgroundColor: work.color ? work.color : null
+                                }}
+                            >
+                                <h1 className={classes.title}>{work.title}</h1>
+                                <h3 className={classes.description}>{work.description}</h3>
+                                {
+                                    work.tags &&
+                                    work.tags.split(',').map(tag => (
+                                        <Tag text={tag} key={tag}/>
+                                    ))
+                                }
+                            </div>
+                        
                         {/*TODO tags*/}
                     </div>
                 )
@@ -69,8 +86,16 @@ const styles = theme => ({
         width: '100%',
         display: 'flex',
     },
-    tag: {
-
+    titleBlock: {
+        textAlign: 'center',
+        padding: 50,
+        color: 'white',
+    },
+    title: {
+        marginBottom: 2,
+    },
+    description: {
+        marginBottom: 14,
     },
     formContainer: {
         display: 'flex',

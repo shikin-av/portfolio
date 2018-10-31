@@ -42,10 +42,10 @@ export default () => {
             description,
             rows,
             sortWeight,
+            title,
+            color,
         } = req.body
         
-        console.log('CREATE  ', req.body)
-
         const work = new Work({
             nameUrl,
             miniature,
@@ -56,6 +56,8 @@ export default () => {
             description,
             rows,
             sortWeight,
+            title,
+            color,
         })
         
         return await work.save(err => {
@@ -79,6 +81,8 @@ export default () => {
             description,
             rows,
             sortWeight,
+            title,
+            color,
         } = req.body
         return await Work.findOne({
             nameUrl: req.params.nameUrl
@@ -96,6 +100,8 @@ export default () => {
                 work.description     = description     || work.description
                 work.rows            = rows            || work.rows
                 work.sortWeight      = sortWeight      || work.sortWeight
+                work.title           = title           || work.title
+                work.color           = color           || work.color
                 
                 return work.save((err) => {
                     if(!err) {

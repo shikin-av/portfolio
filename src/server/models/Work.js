@@ -44,7 +44,16 @@ const WorkSchema = new mongoose.Schema({
 		type: Number,
 		required: false,
 		default: 99,
-	}
+	},
+	title: {
+		type: String,
+		required: true,
+	},	
+	color: {
+		type: String,
+		required: false,
+		default: '#607d8b',
+	},
 })
 
 WorkSchema.plugin(uniqueValidator)
