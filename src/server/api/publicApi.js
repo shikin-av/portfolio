@@ -24,12 +24,12 @@ export default () => {
     api.get('/works/:nameUrl', async (req, res, next) => {
         return await Work.findOne({
             nameUrl: req.params.nameUrl
-        }, (err, work) => {
+        }, (err, work) => {            
             if(!err){
                 if(work){
                     return res.json(work)
                 } else {
-                    return next()
+                    return res.status(404).json({error: '404'})
                 }
             } else {
                 return next(err)

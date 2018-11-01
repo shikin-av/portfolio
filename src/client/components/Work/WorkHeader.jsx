@@ -7,90 +7,89 @@ import workInputs from 'client/components/Work/workInputs'
 import Tag from 'client/components/common/Tag'
 import Button from '@material-ui/core/Button'
 
-class WorkHeader extends React.Component {
-    static propTypes = {
-        classes:            object.isRequired,
-        fieldCHangeHandler: func,
-        saveHandler:        func,
-        deleteHandler:      func,
-        work:               object,
-        mode:               string,
-        nameUrl:            string,
-    }
-    
-    render() {
-        const {
-            saveHandler,
-            deleteHandler,
-            fieldCHangeHandler, 
-            classes,
-            work,
-            mode,
-            nameUrl,
-        } = this.props        
-        if(work){
-            if(saveHandler && mode === 'edit'){
-                return (
-                    <div className={classes.formContainer}>
-                        {
-                            nameUrl !== 'create' && deleteHandler &&
-                            <Button
-                                variant='outlined'
-                                className={classes.deleteBtn}
-                                onClick={() => deleteHandler(nameUrl)}
-                            >
-                                Удалить
-                            </Button>
-                        }                        
-                        {
-                            workInputs.map(input => (
-                                <InputCustom
-                                    key={input.id}
-                                    id={input.id}
-                                    label={input.label}
-                                    value={work[input.id]}
-                                    onChange={fieldCHangeHandler(input.id)}                            
-                                    required={input.required || false}
-                                    multiline={input.multiline || false}
-                                    size={input.size || null}
-                                    type={input.type || null}
-                                />
-                            ))
-                        }                        
-                    </div>
-                )
-            } else {
-                return (
-                    <div style={{
-                        backgroundColor: work.color ? work.color : null
-                    }}>
-                        {   
-                            work.headImg &&
-                            <img 
-                                src={work.headImg} 
-                                className={classes.headImg}
-                            />                            
-                        }   
-                        <div 
-                            className={classes.titleBlock}
-                            style={{
-                                backgroundColor: work.color ? work.color : null
-                            }}
+const WorkHeader = ({
+    saveHandler,
+    deleteHandler,
+    fieldCHangeHandler, 
+    classes,
+    work,
+    mode,
+    nameUrl,
+}) => {
+           
+    if(work){
+        if(saveHandler && mode === 'edit'){
+            return (
+                <div className={classes.formContainer}>
+                    {
+                        nameUrl !== 'create' && deleteHandler &&
+                        <Button
+                            variant='outlined'
+                            className={classes.deleteBtn}
+                            onClick={() => deleteHandler(nameUrl)}
                         >
-                            <h1 className={classes.title}>{work.title}</h1>
-                            <h3 className={classes.description}>{work.description}</h3>
-                            {
-                                work.tags &&
-                                work.tags.split(',').map(tag => (
-                                    <Tag text={tag} key={tag}/>
-                                ))
-                            }
-                        </div>                        
-                    </div>
-                )
-            }
-        } else return null
-    }
+                            Удалить
+                        </Button>
+                    }                        
+                    {
+                        workInputs.map(input => (
+                            <InputCustom
+                                key={input.id}
+                                id={input.id}
+                                label={input.label}
+                                value={work[input.id]}
+                                onChange={fieldCHangeHandler(input.id)}                            
+                                required={input.required || false}
+                                multiline={input.multiline || false}
+                                size={input.size || null}
+                                type={input.type || null}
+                            />
+                        ))
+                    }                        
+                </div>
+            )
+        } else {
+            return (
+                <div style={{
+                    backgroundColor: work.color ? work.color : null
+                }}>
+                    {   
+                        work.headImg &&
+                        <img 
+                            src={work.headImg} 
+                            className={classes.headImg}
+                        />                            
+                    }   
+                    <div 
+                        className={classes.titleBlock}
+                        style={{
+                            backgroundColor: work.color ? work.color : null
+                        }}
+                    >
+                        <h1 className={classes.title}>{work.title}</h1>
+                        <h3 className={classes.description}>{work.description}</h3>
+                        {
+                            work.tags &&
+                            work.tags.split(',').map(tag => (
+                                <Tag text={tag} key={tag}/>
+                            ))
+                        }
+                    </div>                        
+                </div>
+            )
+        }
+    } else return null
+}
+
+
+WorkHeader.propTypes = {
+    classes:            object.isRequired,
+    fieldCHangeHandler: func,
+    saveHandler:        func,
+    deleteHandler:      func,
+    work:               object,
+    mode:               string,
+    nameUrl:            string,
 }
 
 const styles = theme => ({

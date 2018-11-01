@@ -90,9 +90,7 @@ class WorkAdmin extends React.Component {
     }
 }
 
-const mapStateToProps = state => ({
-    //selectors
-})
+const mapStateToProps = state => ({})
 
 const mapDispatchToProps = {
     appendWorkAction,

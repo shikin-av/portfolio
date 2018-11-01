@@ -14,6 +14,10 @@ const SiteRouter = props => (
             component={Login}
         />
         <Route
+            exact path='/404'
+            component={Page404}
+        /> 
+        <Route
             exact path='/:nameUrl?'
             component={Home}
         />                

@@ -1,6 +1,5 @@
 import React from 'react'
 import {string, func} from 'prop-types'
-import ReactDOM from 'react-dom'
 
 import withStyles from '@material-ui/core/styles/withStyles'
 import Dialog from '@material-ui/core/Dialog'
@@ -9,7 +8,6 @@ import Slide from '@material-ui/core/Slide'
 import IconButton from '@material-ui/core/IconButton'
 import CloseIcon from '@material-ui/icons/Close'
 
-//import {rowsFake, worksFake} from 'client/fakeData'
 import Animation from 'client/components/common/Animation'
 import LoadingSpin from 'client/components/common/LoadingSpin'
 import SPB from 'client/components/SimplePageBuilder'
@@ -31,6 +29,7 @@ class Work extends React.Component {
     state = {
         open: true,
         work: null,
+        message: null,
     }    
 
     componentDidMount = () => {
@@ -96,13 +95,13 @@ class Work extends React.Component {
                 const work = await getWorkApi(nameUrl)
                 if(!work.error){
                     this.setState({work})
-                } else {
+                } else {                    
                     this.openMessage({
                         message: 'Не удалось загрузить кейс',
                         type: 'warning',
                     })
-                }
-                
+                    setTimeout(() => this.handleClose(), 1000)
+                }                
             } catch(err) {
                 this.openMessage({
                     message: 'Не удалось загрузить кейс',
@@ -116,7 +115,7 @@ class Work extends React.Component {
         const {save, nameUrl} = this.props
         const {work} = this.state
 
-        work.rows = []  //!!!
+        work.rows = []
         const savingWork = {...work, rows}
 
         const isCreate = nameUrl === 'create'
@@ -148,6 +147,7 @@ class Work extends React.Component {
         const {
             open, 
             work,
+            message,
         } = this.state
                 
         return (
@@ -194,7 +194,8 @@ class Work extends React.Component {
                     <DialogContent className={classes.content}>
                         <LoadingSpin/>
                     </DialogContent>
-                }                
+                }      
+                {message}          
             </Dialog>
         )        
     }
