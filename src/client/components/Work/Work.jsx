@@ -76,9 +76,10 @@ class Work extends React.Component {
     handleFieldCHange = type => e => {
         const {work} = this.state
         this.setState({
-            work: Object.assign(
-                work, {[type]: e.target.value}
-            )
+            work: {
+                ...work, 
+                [type]: e.target.value
+            }
         })
     }
 
@@ -116,7 +117,7 @@ class Work extends React.Component {
         const {work} = this.state
 
         work.rows = []  //!!!
-        const savingWork = Object.assign(work, {rows})
+        const savingWork = {...work, rows}
 
         const isCreate = nameUrl === 'create'
 
@@ -142,6 +143,7 @@ class Work extends React.Component {
             save,
             changeMode,
             mode,
+            deleteHandler,
         } = this.props
         const {
             open, 
@@ -171,10 +173,12 @@ class Work extends React.Component {
                     <Animation animationCssClass='animOpacity' time={1900}>
                         <DialogContent className={classes.content}>  
                             <WorkHeader
-                                save={save}
-                                handleFieldCHange={this.handleFieldCHange}
+                                saveHandler={save}
+                                deleteHandler={deleteHandler}
+                                fieldCHangeHandler={this.handleFieldCHange}
                                 work={work}
                                 mode={mode || 'preview'}
+                                nameUrl={nameUrl}
                             />                                             
                             <SPB
                                 saveHandler={this.saveRows}

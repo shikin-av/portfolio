@@ -59,7 +59,7 @@ const InputCustom = props => {
                 required={required}
                 classes={
                     customClasses 
-                    ? Object.assign(defaultClasses, customClasses) 
+                    ? {...defaultClasses, ...customClasses}
                     : defaultClasses
                 }
                 type={type}

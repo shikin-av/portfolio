@@ -45,7 +45,7 @@ export const appendWork = (work, callback=defaultCallback) => async dispatch => 
     }
 }
 
-export const editWork = (nameUrl, work, callback=defaultCallback) => async dispatch => {
+export const editWork = (nameUrl, work, callback=defaultCallback) => async dispatch => {    
     dispatch({type: types.EDIT_WORK_START})
     try {
         const editedWork = await api.editWork(nameUrl, work)        
@@ -73,10 +73,10 @@ export const editWork = (nameUrl, work, callback=defaultCallback) => async dispa
 export const deleteWork = (nameUrl, callback=defaultCallback) => async dispatch => {
     dispatch({type: types.DELETE_WORK_START})
     try {
-        const deletedWork = await api.deleteWork(nameUrl)        
+        const deletedWork = await api.deleteWork(nameUrl)     
         dispatch({
             type:    types.DELETE_WORK_SUCCESS,
-            payload: deletedWork,
+            payload: nameUrl,
         })
         callback({
             message: 'Кейс удален',

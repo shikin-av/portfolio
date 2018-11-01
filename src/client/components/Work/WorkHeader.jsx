@@ -5,29 +5,43 @@ import withStyles from '@material-ui/core/styles/withStyles'
 import InputCustom from 'client/components/common/InputCustom'
 import workInputs from 'client/components/Work/workInputs'
 import Tag from 'client/components/common/Tag'
+import Button from '@material-ui/core/Button'
 
 class WorkHeader extends React.Component {
     static propTypes = {
-        classes:           object.isRequired,
-        handleFieldCHange: func,
-        save:              func,
-        work:              object,
-        mode:              string,
+        classes:            object.isRequired,
+        fieldCHangeHandler: func,
+        saveHandler:        func,
+        deleteHandler:      func,
+        work:               object,
+        mode:               string,
+        nameUrl:            string,
     }
     
     render() {
         const {
-            save,
-            handleFieldCHange, 
+            saveHandler,
+            deleteHandler,
+            fieldCHangeHandler, 
             classes,
             work,
             mode,
-        } = this.props
-
+            nameUrl,
+        } = this.props        
         if(work){
-            if(save && mode === 'edit'){
+            if(saveHandler && mode === 'edit'){
                 return (
                     <div className={classes.formContainer}>
+                        {
+                            nameUrl !== 'create' && deleteHandler &&
+                            <Button
+                                variant='outlined'
+                                className={classes.deleteBtn}
+                                onClick={() => deleteHandler(nameUrl)}
+                            >
+                                Удалить
+                            </Button>
+                        }                        
                         {
                             workInputs.map(input => (
                                 <InputCustom
@@ -35,7 +49,7 @@ class WorkHeader extends React.Component {
                                     id={input.id}
                                     label={input.label}
                                     value={work[input.id]}
-                                    onChange={handleFieldCHange(input.id)}                            
+                                    onChange={fieldCHangeHandler(input.id)}                            
                                     required={input.required || false}
                                     multiline={input.multiline || false}
                                     size={input.size || null}
@@ -102,6 +116,12 @@ const styles = theme => ({
         marginTop: 70,
         marginBottom: 50,
     },    
+    deleteBtn: {
+        position: 'absolute',
+        top: 10,
+        left: 10,
+        zIndex: 10000,
+    },
 })
 
 export default withStyles(styles)(WorkHeader)

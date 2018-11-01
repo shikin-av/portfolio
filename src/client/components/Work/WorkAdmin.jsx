@@ -42,14 +42,20 @@ class WorkAdmin extends React.Component {
         if(nameUrl === 'create'){
             appendWorkAction(work, ({message, type}) => {
                 this.openMessage({message, type})
-                //this.closeDialog()
             })                
         } else {
             editWorkAction(nameUrl, work, ({message, type}) => {
                 this.openMessage({message, type})
-                //this.closeDialog()
             })                
         }                      
+    }
+
+    deleteHandler = nameUrl => {   
+        const {deleteWorkAction} = this.props
+        deleteWorkAction(nameUrl, ({message, type}) => {
+            this.openMessage({message, type})
+            this.closeDialog()
+        })
     }
 
     closeDialog = () => {
@@ -73,7 +79,8 @@ class WorkAdmin extends React.Component {
             <div>
                 <Work 
                     {...this.props}
-                    save={this.save}     //TODO + this.edit , this.delete 
+                    save={this.save}
+                    deleteHandler={this.deleteHandler}
                     changeMode={this.changeMode}
                     mode={mode}
                 />                    

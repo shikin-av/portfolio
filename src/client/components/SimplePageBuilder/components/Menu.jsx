@@ -12,18 +12,15 @@ class Menu extends React.Component {
     static propTypes = {
         classes:    object.isRequired,
         menu:       bool,
-        theme:      object.isRequired,
         mode:       string.isRequired,
         save:       func.isRequired,
         changeMode: func.isRequired,
     }
 
     render(){
-        console.log('MODE', mode)
         const {
             classes, 
             menu,
-            theme,
             mode,
             save,
             changeMode,
@@ -34,17 +31,7 @@ class Menu extends React.Component {
                     <Tooltip title='Сохранить страницу'>
                         <Button                                
                             onClick={save}
-                            className={classes.menuButton}
-                            ref={'saveBtn'}
-                            style={{color: theme.palette.contrast}}
-                            onMouseEnter={() => {
-                                const el = ReactDOM.findDOMNode(this.refs.saveBtn)
-                                el.style.color = theme.palette.primary.main
-                            }}
-                            onMouseLeave={() => {
-                                const el = ReactDOM.findDOMNode(this.refs.saveBtn)
-                                el.style.color = theme.palette.contrast
-                            }}
+                            className={classes.menuButton}                            
                         >
                             <SaveIcon/>Сохранить
                         </Button>   
@@ -55,16 +42,6 @@ class Menu extends React.Component {
                             <Button
                                 className={classes.menuButton}
                                 onClick={() => changeMode('preview')}
-                                ref={'previewBtn'}
-                                style={{color: theme.palette.contrast}}
-                                onMouseEnter={() => {
-                                    const el = ReactDOM.findDOMNode(this.refs.previewBtn)
-                                    el.style.color = theme.palette.primary.main
-                                }}
-                                onMouseLeave={() => {
-                                    const el = ReactDOM.findDOMNode(this.refs.previewBtn)
-                                    el.style.color = theme.palette.contrast
-                                }}
                             >
                                 <ViewIcon/>Предпросмотр
                             </Button>
@@ -76,16 +53,6 @@ class Menu extends React.Component {
                             <Button
                                 className={classes.menuButton}
                                 onClick={() => changeMode('edit')}
-                                ref={'editBtn'}
-                                style={{color: theme.palette.contrast}}
-                                onMouseEnter={() => {
-                                    const el = ReactDOM.findDOMNode(this.refs.editBtn)
-                                    el.style.color = theme.palette.primary.main
-                                }}
-                                onMouseLeave={() => {
-                                    const el = ReactDOM.findDOMNode(this.refs.editBtn)
-                                    el.style.color = theme.palette.contrast
-                                }}
                             >
                                 <ViewIcon/>Редактор
                             </Button>

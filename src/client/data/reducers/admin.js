@@ -19,7 +19,7 @@ const works = (state=[], {type, payload}) => {
 
         case types.DELETE_WORK_SUCCESS: 
             _.remove(state, work => {
-                return work.nameUrl === payload.nameUrl
+                return work.nameUrl === payload
             })
             return state
 
