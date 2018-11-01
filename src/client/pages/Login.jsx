@@ -48,7 +48,6 @@ class Login extends React.Component {
                             type:    'warning',
                         })
                     } else if(data.redirectTo){
-                        console.log(data.redirectTo)
                         window.location.replace(data.redirectTo)
                     } else if(data.message){
                         this.openMessage({
@@ -92,12 +91,14 @@ class Login extends React.Component {
                 {message}
                 <div className={classes.authorize}>
                     <InputCustom
+                        id='login'
                         label='Логин'
                         value={this.state.login}
                         onChange={this.handleChange('login')}
                         styleRoot={inputStyle.root}
                     />                
                     <InputCustom
+                        id='password'
                         label='Пароль'
                         value={this.state.password}
                         onChange={this.handleChange('password')}                    

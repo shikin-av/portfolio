@@ -18,4 +18,5 @@ export default {
     },
     assetsPath:     common.assetsPath,
     assetsDir:      common.assetsDir,
+    adminPath:      common.adminPath,
 }

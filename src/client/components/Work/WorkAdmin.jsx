@@ -4,6 +4,7 @@ import {connect} from 'react-redux'
 import Message from 'client/components/common/Message'
 import Work, {showHomeContent} from 'client/components/Work/Work'
 import workInputs from 'client/components/Work/workInputs'
+import config from 'config/client'
 
 import {
     appendWork  as appendWorkAction,
@@ -61,7 +62,7 @@ class WorkAdmin extends React.Component {
     closeDialog = () => {
         showHomeContent(true)
         setTimeout(() => {
-            document.location.href = '/admin#/'
+            document.location.href = config.adminPath
         }, 500)  
     }
 

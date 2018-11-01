@@ -2,6 +2,7 @@ import layout from '../client/layout'
 import getAuth from './resources/auth'
 import getApi from './api'
 import getPublicApi from './api/publicApi'
+import config from '../config/server'
 
 export default (app) => {
     const auth = getAuth()
@@ -24,8 +25,7 @@ export default (app) => {
         }))
     })
 
-    app.post('/login', async (req, res) => {        
-        console.log('LOGIN ', req.body.login, req.body.password)
+    app.post('/login', async (req, res) => {     
         if(req.body.login && req.body.password){
             const login = req.body.login
             const password = req.body.password
@@ -37,7 +37,7 @@ export default (app) => {
                     config.jwt.expiresSec
                 )
                 res.cookie('auth_token', token)
-                res.json({ redirectTo: '/admin#/' })
+                res.json({ redirectTo: config.adminPath })
             }else{
                 res.status(401).json({ message: 'Проверьте правильность Логина и Пароля' })
             }

@@ -15,6 +15,7 @@ import defaultTheme from 'client/components/themes/default'
 import WorkHeader from 'client/components/Work/WorkHeader'
 import workInputs from 'client/components/Work/workInputs'
 import Message from 'client/components/common/Message'
+import config from 'config/client'
 
 import {getWork as getWorkApi} from 'client/data/api/site'
 
@@ -60,7 +61,7 @@ class Work extends React.Component {
             showHomeContent(true)
             setTimeout(() => {
                 if(this.props.save){
-                    document.location.href = '/admin#/'
+                    document.location.href = config.adminPath
                 } else {
                     document.location.href = '/#/'
                 }

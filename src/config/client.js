@@ -6,4 +6,5 @@ export default {
     port:       common.port,    
     assetsPath: common.assetsPath,
     apiPath:    '/admin/api',
+    adminPath:  common.adminPath,
 }
