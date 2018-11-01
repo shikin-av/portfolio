@@ -27,7 +27,7 @@ const styles = () => ({
     header: {
         padding: '4em 0 2em 0',
         textAlign: 'center',
-        marginBottom: -8,
+        marginBottom: -20,
     },
     avatar: {
         borderRadius: '100%',

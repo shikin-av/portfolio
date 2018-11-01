@@ -6,6 +6,7 @@ import Animation from 'client/components/common/Animation'
 import Header from 'client/components/Header'
 import WorkList from 'client/components/Work/WorkList'
 import Work from 'client/components/Work/Work'
+import WorkFilter from 'client/components/Work/WorkFilter'
 import Message from 'client/components/common/Message'
 import LoadingSpin from 'client/components/common/LoadingSpin'
 
@@ -70,7 +71,7 @@ class Home extends React.Component {
                     >                
                         {
                             works
-                            ? <WorkList items={works}/> 
+                            ? <WorkFilter works={works}/> 
                             : <LoadingSpin/>
                         }
                         

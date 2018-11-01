@@ -2,19 +2,24 @@ import React from 'react'
 import {string, object, func} from 'prop-types'
 import withStyles from '@material-ui/core/styles/withStyles'
 
-const Tag = ({text, classes, clickHandler, style}) => (
-    <li 
-        className={classes.tagWrapper}
-        onClick={clickHandler ? () => clickHandler(text) : () => null}
-    >
-        <span 
-            className={classes.tagInner}
-            style={style ? style : null}
+const Tag = ({text, classes, clickHandler, style}) => {
+    const cursorStyle = clickHandler ? {cursor: 'pointer'} : null
+    const tagStyle = style ? {...style, ...cursorStyle} : cursorStyle
+
+    return (
+        <li 
+            className={classes.tagWrapper}
+            onClick={clickHandler ? () => clickHandler(text) : () => null}
         >
-            {text}
-        </span>
-    </li>
-)
+            <span 
+                className={classes.tagInner}
+                style={tagStyle}
+            >
+                {text}
+            </span>
+        </li>
+    )
+}
 
 Tag.propTypes = {
     text:         string.isRequired,
