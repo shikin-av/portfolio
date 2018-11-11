@@ -1,14 +1,13 @@
 import React from 'react'
 import withStyles from '@material-ui/core/styles/withStyles'
 
-//import {worksFake} from 'client/fakeData'
 import Animation from 'client/components/common/Animation'
 import Header from 'client/components/Header'
-import WorkList from 'client/components/Work/WorkList'
 import Work from 'client/components/Work/Work'
 import WorkFilter from 'client/components/Work/WorkFilter'
 import Message from 'client/components/common/Message'
 import LoadingSpin from 'client/components/common/LoadingSpin'
+import showHomeContent from 'client/components/common/showHomeContent'
 
 import {getWorks as getWorksApi} from 'client/data/api/site'
 
@@ -22,7 +21,8 @@ class Home extends React.Component {
         const {nameUrl} = this.props.match.params
     }
 
-    componentDidMount = async () => {        
+    componentDidMount = async () => {      
+        showHomeContent(true)  
         try {
             const works = await getWorksApi()
             if(!works.error){
@@ -43,6 +43,7 @@ class Home extends React.Component {
 
     componentWillReceiveProps = nextProps => {
         const {nameUrl} = nextProps.match.params
+        showHomeContent(true)
     }
 
     openMessage = ({message, type}) => {
@@ -62,20 +63,19 @@ class Home extends React.Component {
         return (
             <div className={classes.root}>                
                 <div id={'homeContent'}>
-                    <Animation animationCssClass='animOpacity'>
-                        <Header/>
-                    </Animation>      
-                    <Animation 
-                        animationCssClass='animOpacityLong' 
-                        time={2900}
-                    >                
+                    <Animation animationCssClass='animOpacityLong' time={2900}>
+                        <Header/> 
                         {
                             works
                             ? <WorkFilter works={works}/> 
                             : <LoadingSpin/>
                         }
-                        
-                    </Animation>  
+                        <a 
+                            href='https://github.com/shikin-av/'
+                            target='_blank'
+                            className={classes.link}
+                        >github.com/shikin-av</a>                    
+                    </Animation>   
                 </div>
                 {nameUrl && <Work nameUrl={nameUrl}/>}
                 {message}
@@ -95,6 +95,14 @@ const styles = () => ({
         filter: 'none',
         transition: 'opacity 1s ease, filter 1s ease',
     },
+    link: {
+        fontSize: '1.2rem',
+        textAlign: 'center',
+        marginTop: 0,
+        marginBottom: 20,
+        display: 'block',
+        color: 'white',
+    }
 })
 
 export default withStyles(styles)(Home)

@@ -221,11 +221,14 @@ class Row extends React.Component {
     }
 }
 
-const styles = () => ({
+const styles = theme => ({
     root: {
         minHeight: 70,
-        padding: '29px 20px',
+        padding: '20px 20px 30px 20px',
         zIndex: 1,
+        [theme.breakpoints.down('xs')]: {
+            padding: '20px 5px 30px 5px',
+        },
     },
     menuButtonPlace: {
         width: 0,

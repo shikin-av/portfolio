@@ -74,6 +74,17 @@ const WorkHeader = ({
                                 <Tag text={tag} key={tag}/>
                             ))
                         }
+                        <br/>
+                        {
+                            work.siteUrl &&
+                            <a 
+                                href={work.siteUrl}
+                                target='_blank'
+                                className={classes.siteUrl}
+                            >
+                                {work.siteUrl}
+                            </a>
+                        }
                     </div>                        
                 </div>
             )
@@ -97,11 +108,17 @@ const styles = theme => ({
         margin: '0 auto',
         width: '100%',
         display: 'flex',
+        [theme.breakpoints.down('xs')]: {
+            display: 'none',
+        },
     },
     titleBlock: {
         textAlign: 'center',
         padding: 50,
         color: 'white',
+        [theme.breakpoints.down('xs')]: {
+            padding: '30px 10px 40px 10px',
+        },
     },
     title: {
         marginBottom: 2,
@@ -121,6 +138,12 @@ const styles = theme => ({
         left: 10,
         zIndex: 10000,
     },
+    siteUrl: {
+        color: 'white',
+        fontSize: '1.5rem',
+        marginTop: 7,
+        display: 'block',
+    }
 })
 
 export default withStyles(styles)(WorkHeader)

@@ -64,7 +64,6 @@ export default () => {
             if(!err) {
                 return res.status(201).json(work)
             } else {
-                console.log('ERROR', err)
                 return next(err)
             }
         })

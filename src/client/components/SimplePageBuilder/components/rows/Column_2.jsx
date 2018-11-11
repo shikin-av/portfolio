@@ -18,7 +18,7 @@ export const Column_2 = props => {
     } = props
     return (
         <Grid container>
-            <Grid item xs={12} sm={6}>
+            <Grid item xs={12} sm={6} className='column2'>
                 <ElementPlace 
                     element={elements[0]}
                     row={row}
@@ -63,7 +63,7 @@ export const Preview = props => {
         if(elements[1] && elements[1].hasOwnProperty('content')) content2 = elements[1].content    
     }    
     return (
-        <Grid container className='preview'>
+        <Grid container className='preview column2'>
             <Grid 
                 item 
                 xs={12} sm={6} 

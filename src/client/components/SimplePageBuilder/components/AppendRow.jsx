@@ -145,7 +145,6 @@ const styles = () => ({
             backgroundColor: '#ffffff00',
             color: '#ffffff00',
         },
-        //zIndex: 1000,
     },
     tools: {
         width: '100%',

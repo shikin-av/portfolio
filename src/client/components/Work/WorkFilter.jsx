@@ -3,6 +3,7 @@ import {array} from 'prop-types'
 import withStyles from '@material-ui/core/styles/withStyles'
 import _ from 'lodash'
 
+import Animation from 'client/components/common/Animation'
 import Tag from 'client/components/common/Tag'
 import WorkList from 'client/components/Work/WorkList'
 
@@ -77,8 +78,11 @@ class WorkFilter extends React.Component {
         } = this.props
         const {tags} = this.state
         return (
-            <div className={classes.root}>
-                <div className={classes.filter}>
+            <Animation 
+                animationCssClass='animOpacityLong' 
+                time={2900}
+            >
+                <div className={`${classes.filter} work-filter`}>
                     <ul>
                         {
                             tags.map(tag => (
@@ -99,13 +103,12 @@ class WorkFilter extends React.Component {
                     </ul>
                 </div>
                 <WorkList items={this.filterByTags(works)}/>                
-            </div>
+            </Animation>
         )
     }
 }
 
-const styles =({
-    root: {},
+const styles = theme => ({    
     filter: {
         margin: '0 auto',
         marginBottom: 20,

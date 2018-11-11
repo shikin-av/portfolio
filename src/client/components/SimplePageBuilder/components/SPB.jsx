@@ -40,10 +40,31 @@ class App extends React.Component {
         document.body.style.backgroundColor = theme.palette.background
     }
 
+    componentDidMount = () => {
+        const {theme} = this.props
+        this.setImagesStyle(theme)   
+    }
+    
     componentWillReceiveProps = nextProps => {
-        const oldTheme = this.props.theme
         const newTheme = nextProps.theme
         document.body.style.backgroundColor = newTheme.palette.background
+        this.setImagesStyle(newTheme)        
+    }
+
+    setImagesStyle = theme => {
+        const spb = ReactDOM.findDOMNode(this.refs.spb) 
+        setTimeout(() => {
+            const fullwidthImages = spb.querySelectorAll('.fullwidth img')
+            const column2Images   = spb.querySelectorAll('.column2 img')
+            const spbImages = [...fullwidthImages, ...column2Images]
+
+            if(spbImages.length && theme.palette.primary.main){
+                for(let image of spbImages){
+                    image.style.border = `1px solid ${theme.palette.primary.main}`
+                }
+            }
+        }, 100)
+        
     }
 
     showToolsHandler = val => {
@@ -180,7 +201,6 @@ class App extends React.Component {
             rows, 
             isShowTools
         } = this.state
-        
         return (
             <MuiThemeProvider theme={theme}>
                 <CssBaseline/>                                  
@@ -189,6 +209,8 @@ class App extends React.Component {
                     style={{
                         color: `${theme.palette.contrast}`,
                     }}
+                    ref='spb'
+                    id='spb'
                 >                    
                     <Menu
                         menu={menu}
@@ -289,7 +311,10 @@ const styles = () => ({
     root: {        
         top: 0,
         left: 0,
-        width: '100%',        
+        width: '100%',     
+        //fontSize: '14pt',   
+        fontSize: '1.3rem',
+        lineHeight: '1.4em',
     },
 })
 

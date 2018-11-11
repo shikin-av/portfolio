@@ -1,6 +1,6 @@
 import React from 'react'
 import {array} from 'prop-types'
-import {Link} from 'react-router-dom'
+import Link from 'react-router-dom/Link'
 import Masonry from 'react-masonry-component'
 import _ from 'lodash'
 import withStyles from '@material-ui/core/styles/withStyles'
@@ -11,6 +11,17 @@ class WorkList extends React.Component {
     static propTypes = {
         items: array.isRequired,
     }    
+
+    componentWillMount = () => {
+        this.defaultMiniatureHeight = null
+        /*switch(true){
+            case(window.innerWidth < 768):
+                this.defaultMiniatureHeight = 268
+                break
+            case(window.innerWidth === 768):
+                this.defaultMiniatureHeight = 268
+        }*/
+    }
 
     masonryOptions = {
         transitionDuration: 0,
@@ -23,7 +34,7 @@ class WorkList extends React.Component {
             classes,
             items
         } = this.props
-        
+    
         const works = _.sortBy(items, 'sortWeight').map(item => (
             <li 
                 className={`${classes.work} work gridcase`}
@@ -34,7 +45,7 @@ class WorkList extends React.Component {
                 >
                     <figure className={`effect-bubba`}>
                         <div className='work-img-wrapper' style={{
-                            height: item.miniatureHeight,
+                            height: window.innerWidth < 768 ? 268 :item.miniatureHeight,
                         }}>
                             <div className='work-img-inner'></div>
                             <img 
@@ -63,7 +74,7 @@ class WorkList extends React.Component {
             </li>
         ))
 
-        return (
+        return (        
             <Masonry                
                 elementType={'ul'}
                 className={classes.mansonry}
@@ -73,14 +84,18 @@ class WorkList extends React.Component {
                 imagesLoadedOptions={imagesLoadedOptions}
             >
                 {works}
-            </Masonry>
+            </Masonry>                            
         )
     }
 }
 
 const styles = theme => ({
     mansonry: {
-        left: -10,  //TODO check mobile
+        left: -10,
+        marginBottom: -10,    
+        [theme.breakpoints.down('xs')]: {
+            left: '-13%',
+        },
     },
     work: {
         display: 'block',        
@@ -94,12 +109,18 @@ const styles = theme => ({
         borderRadius: 4,
         boxShadow: 'inset 0 0 0 1px rgba(255, 255, 255, 0.25)',
         backgroundColor: 'rgba(255, 255, 255, 0.075)',
-        overflow: 'hidden',
-        width: '30%',        
-        [theme.breakpoints.down('sm')]: {   //TODO
+        overflow: 'hidden', 
+        width: '30%',
+        [theme.breakpoints.down('sm')]: {
             width: '100%',
-            left: '0px !important',
-        }
+        },
+        [theme.breakpoints.up('sm')]: {
+            width: '44%',
+        },
+        [theme.breakpoints.up('md')]: {
+            width: '30%',
+        },
+
     },
     img: {
         position: 'absolute',
@@ -114,12 +135,13 @@ const styles = theme => ({
         fontSize: '1em',
         margin: '1em',
         marginTop: '0.5em',
+        marginBottom: '0.8em',
         color: 'rgba(255, 255, 255, 0.65)',
         textDecoration: 'none',
     },
     tag: {
         padding: 5,
-    }
+    },
 })
 
 export default withStyles(styles)(WorkList)

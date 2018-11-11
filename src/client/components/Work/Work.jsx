@@ -1,6 +1,7 @@
 import React from 'react'
 import {string, func} from 'prop-types'
 
+import createMuiTheme from '@material-ui/core/styles/createMuiTheme'
 import withStyles from '@material-ui/core/styles/withStyles'
 import Dialog from '@material-ui/core/Dialog'
 import DialogContent from '@material-ui/core/DialogContent'
@@ -16,6 +17,7 @@ import WorkHeader from 'client/components/Work/WorkHeader'
 import workInputs from 'client/components/Work/workInputs'
 import Message from 'client/components/common/Message'
 import config from 'config/client'
+import showHomeContent from 'client/components/common/showHomeContent'
 
 import {getWork as getWorkApi} from 'client/data/api/site'
 
@@ -28,9 +30,10 @@ class Work extends React.Component {
     }
 
     state = {
-        open: true,
-        work: null,
+        open:    true,
+        work:    null,
         message: null,
+        theme:   null,
     }    
 
     componentDidMount = () => {
@@ -95,7 +98,14 @@ class Work extends React.Component {
             try {
                 const work = await getWorkApi(nameUrl)
                 if(!work.error){
-                    this.setState({work})
+                    this.setState({
+                        work,
+                        theme: createMuiTheme({
+                            palette: {
+                                primary:   {main: work.color},
+                            },
+                        })
+                    })
                 } else {                    
                     this.openMessage({
                         message: 'Не удалось загрузить кейс',
@@ -149,6 +159,7 @@ class Work extends React.Component {
             open, 
             work,
             message,
+            theme,
         } = this.state
                 
         return (
@@ -186,7 +197,10 @@ class Work extends React.Component {
                                 menu={save ? true : false}
                                 mode={mode}
                                 rowsData={work.rows || []}
-                                theme={defaultTheme}
+                                theme={{
+                                    ...defaultTheme,
+                                    ...theme
+                                }}
                                 changeMode={changeMode || this.changeMode}
                             />
                         </DialogContent>
@@ -199,15 +213,6 @@ class Work extends React.Component {
                 {message}          
             </Dialog>
         )        
-    }
-}
-
-export const showHomeContent = isShow => {
-    const homeContent = document.getElementById('homeContent')
-    if(isShow){
-        homeContent.style.opacity = 1
-    } else {
-        homeContent.style.opacity = 0
     }
 }
 
