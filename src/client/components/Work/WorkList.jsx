@@ -12,17 +12,6 @@ class WorkList extends React.Component {
         items: array.isRequired,
     }    
 
-    componentWillMount = () => {
-        this.defaultMiniatureHeight = null
-        /*switch(true){
-            case(window.innerWidth < 768):
-                this.defaultMiniatureHeight = 268
-                break
-            case(window.innerWidth === 768):
-                this.defaultMiniatureHeight = 268
-        }*/
-    }
-
     masonryOptions = {
         transitionDuration: 0,
         gutter: 24,

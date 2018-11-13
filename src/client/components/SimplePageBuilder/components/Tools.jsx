@@ -1,6 +1,5 @@
 import React from 'react'
 import {object, func} from 'prop-types'
-import ReactCSSTransitionGroup from 'react-addons-css-transition-group'
 
 import {withStyles} from '@material-ui/core/styles'
 import Toolbar from '@material-ui/core/Toolbar'
@@ -31,15 +30,7 @@ class Tools extends React.Component {
                 }}
             >
                 <div className={classes.panel}>
-                    <ReactCSSTransitionGroup
-                        transitionName='animTranslateX'
-                        transitionAppear={true}
-                        transitionAppearTimeout={900}
-                        transitionEnter={true}
-                        transitionEnterTimeout={900}
-                        transitionLeave={true}
-                        transitionLeaveTimeout={900}
-                    >
+                    <Animation animationCssClass='animTranslateX' time={900}>
                         <div className={classes.titleBlock}>
                             <Typography
                                 variant='button'
@@ -65,7 +56,7 @@ class Tools extends React.Component {
                                 )
                             })
                         }
-                    </ReactCSSTransitionGroup>
+                    </Animation>
                 </div>
             </Toolbar>
         )

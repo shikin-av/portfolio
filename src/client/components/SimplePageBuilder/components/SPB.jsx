@@ -1,7 +1,6 @@
 import React from 'react'
 import _ from 'lodash'
 import {object, func, bool, string, array} from 'prop-types'
-import ReactCSSTransitionGroup from 'react-addons-css-transition-group'
 import ReactDOM from 'react-dom'
 
 import {
@@ -15,6 +14,7 @@ import rowTypes from './rows'
 import AppendRow from './AppendRow'
 import DividerGorizontal from './DividerGorizontal'
 import Menu from './Menu'
+import Animation from '../../common/Animation'
 
 class App extends React.Component {
     static propTypes = {
@@ -232,16 +232,8 @@ class App extends React.Component {
                     {mode === 'preview' && this.appendRowFake()}
 
                     <DividerGorizontal mode={mode}/>                    
-
-                    <ReactCSSTransitionGroup 
-                        transitionName='animTranslateY'                        
-                        transitionAppear={true}
-                        transitionAppearTimeout={1900}
-                        transitionEnter={true}
-                        transitionEnterTimeout={1900}
-                        transitionLeave={true}
-                        transitionLeaveTimeout={1900}
-                    >                        
+  
+                    <Animation animationCssClass='animTranslateY'>                   
                         {                            
                             rows.map((row, i) => {
                                 let RowView = rowTypes[_.findIndex(rowTypes, rowType => {return rowType.type === row.type})]
@@ -280,7 +272,6 @@ class App extends React.Component {
                                                 row={row}
                                                 deleteElementHandler={this.deleteElement}
                                                 addElementHandler={this.addElement}
-                                                moveHandler={this.moveHandler}
                                                 changeContentHandler={this.changeElementContent}
                                                 theme={theme}
                                             />
@@ -300,7 +291,7 @@ class App extends React.Component {
                                 )
                             })
                         }
-                    </ReactCSSTransitionGroup>
+                    </Animation>
                 </div>
             </MuiThemeProvider>
         )        

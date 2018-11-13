@@ -14,6 +14,7 @@ import LoadingSpin from 'client/components/common/LoadingSpin'
 import SPB from 'client/components/SimplePageBuilder'
 import defaultTheme from 'client/components/themes/default'
 import WorkHeader from 'client/components/Work/WorkHeader'
+import WorkHeaderAdmin from 'client/components/Work/WorkHeaderAdmin'
 import workInputs from 'client/components/Work/workInputs'
 import Message from 'client/components/common/Message'
 import config from 'config/client'
@@ -184,14 +185,18 @@ class Work extends React.Component {
                     work ?
                     <Animation animationCssClass='animOpacity' time={1900}>
                         <DialogContent className={classes.content}>  
-                            <WorkHeader
-                                saveHandler={save}
-                                deleteHandler={deleteHandler}
-                                fieldCHangeHandler={this.handleFieldCHange}
-                                work={work}
-                                mode={mode || 'preview'}
-                                nameUrl={nameUrl}
-                            />                                             
+                            {   
+                                save
+                                ? <WorkHeaderAdmin
+                                    saveHandler={save}
+                                    deleteHandler={deleteHandler}
+                                    fieldCHangeHandler={this.handleFieldCHange}
+                                    work={work}
+                                    mode={mode || 'preview'}
+                                    nameUrl={nameUrl}
+                                /> 
+                                : <WorkHeader work={work}/>
+                            }
                             <SPB
                                 saveHandler={this.saveRows}
                                 menu={save ? true : false}
@@ -234,12 +239,18 @@ const styles = theme => ({
         position: 'absolute',
         right: 0,
         borderRadius: 4,
+        [theme.breakpoints.down('sm')]: {
+            position: 'fixed',
+            width: 24,
+            height: 24,
+            right: -2,
+            top: -7,
+        },
     },
     dialogPaper: {
         maxWidth: 1024,
         [theme.breakpoints.down('md')]: {
             maxWidth: '90%',
-            margin: '0px auto',
         },
         [theme.breakpoints.down('sm')]: {
             maxWidth: '100%',

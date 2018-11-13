@@ -1,5 +1,5 @@
 @charset "UTF-8";
-@import url("http://fonts.googleapis.com/css?family=Source+Sans+Pro:200");
+@import url("https://fonts.googleapis.com/css?family=Source+Sans+Pro:200");
 
 body {
     font-family: "Source Sans Pro", Helvetica, sans-serif;
@@ -1356,6 +1356,9 @@ figure.effect-bubba:hover p {
 @media screen and (max-width: 767px) {
   .work-filter {
     display: none;
+  }
+  .column3 img {
+    width: 100% !important;
   }
 }
 

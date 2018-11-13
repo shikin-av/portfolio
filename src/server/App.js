@@ -64,7 +64,7 @@ export default class App {
             console.log('Connected to DB')
         })
 
-        return this.app.listen(this.config.port, () => {
+        return this.app.listen(process.env.PORT || this.config.port, () => {
             console.log(`App run on ${ this.config.port } port`)
         })
     }
