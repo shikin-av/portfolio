@@ -7,6 +7,7 @@ import { ConnectedRouter as Router, routerMiddleware } from 'react-router-redux'
 import { composeWithDevTools } from 'redux-devtools-extension'
 import thunk from 'redux-thunk'
 import 'babel-polyfill'
+import 'whatwg-fetch'
 
 import CssBaseline from '@material-ui/core/CssBaseline'
 import reducers from 'client/data/reducers/admin'

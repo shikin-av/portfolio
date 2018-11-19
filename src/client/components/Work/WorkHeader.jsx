@@ -4,9 +4,7 @@ import withStyles from '@material-ui/core/styles/withStyles'
 import Tag from 'client/components/common/Tag'
 
 const WorkHeader = ({work, classes}) => (
-    <div style={{
-        backgroundColor: work.color ? work.color : null
-    }}>
+    <div>
         {   
             work.headImg &&
             <img 
