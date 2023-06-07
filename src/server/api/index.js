@@ -1,13 +1,13 @@
 import { Router } from 'express'
-import getUsersApi from './users'
-import getWorksApi from './works'
+import usersApi from './users'
+import worksApi from './works'
 
 export default () => {
     const api = Router()
 
     api.all('/', (req, res) => ({}))
-    api.use('/users', getUsersApi())
-    api.use('/works', getWorksApi())
+    api.use('/users', usersApi())
+    api.use('/works', worksApi())
 
     return api
 }

@@ -34,12 +34,12 @@ export default class App {
         })
     }
 
-    async getConnectionDB(){
-        const urlDB = `mongodb://${ this.config.db.user }:${ this.config.db.password }${ this.config.db.url }`
-        await mongoose.connect(urlDB)
-        return await mongoose.connection
+    // async getConnectionDB(){
+    //     const urlDB = `mongodb://${ this.config.db.user }:${ this.config.db.password }${ this.config.db.url }`
+    //     await mongoose.connect(urlDB)
+    //     return await mongoose.connection
 
-    }
+    // }
 
     setStatic(){
         this.app.use(this.config.assetsPath, express.static(`.${ this.config.assetsPath }`))
@@ -51,18 +51,18 @@ export default class App {
     }
 
     async run(){
-        try {
-            this.db = await this.getConnectionDB()
-        } catch(err){
-            console.log(err)
-        }
+        // try {
+        //     this.db = await this.getConnectionDB()
+        // } catch(err){
+        //     console.log(err)
+        // }
 
-        this.db.on('error', (err) => {
-            console.log('db connection error:', err.message)
-        })
-        this.db.on('open', () => {
-            console.log('Connected to DB')
-        })
+        // this.db.on('error', (err) => {
+        //     console.log('db connection error:', err.message)
+        // })
+        // this.db.on('open', () => {
+        //     console.log('Connected to DB')
+        // })
 
         return this.app.listen(process.env.PORT || this.config.port, () => {
             console.log(`App run on ${ this.config.port } port`)
