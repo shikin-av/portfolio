@@ -59,6 +59,8 @@ export default () => {
             title,
             color,
         })
+
+        console.log('NEW WORK = ', JSON.stringify(work))
         
         return await work.save(err => {
             if(!err) {
@@ -101,6 +103,8 @@ export default () => {
                 work.sortWeight      = sortWeight      || work.sortWeight
                 work.title           = title           || work.title
                 work.color           = color           || work.color
+
+                console.log('CHANGE WORK = ', JSON.stringify(work))
                 
                 return work.save((err) => {
                     if(!err) {

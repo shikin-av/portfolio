@@ -17,7 +17,7 @@ const Header = props => {
                 <h1 className={classes.surname}>Шикин</h1>
                 <h2 className={classes.name}>Александр</h2>
                 <h3 className={classes.phone}>8 912 448 33 40</h3>
-                <h3 className={classes.info}>MERN Stack Developer</h3>
+                <h3 className={classes.info}>Full-stack developer</h3>
             </div>
         </div> 
     )

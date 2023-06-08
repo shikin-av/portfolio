@@ -1,6 +1,358 @@
 export const works = [
     {
         "_id": {
+            "$oid": "JOE"
+        },
+        "miniatureHeight": 435,
+        "sortWeight": 0,
+        "color": "#d3b4d6",
+        "nameUrl": "joe",
+        "miniature": "/assets/imgs/content/joe_logo.png",
+        "headImg": "/assets/imgs/content/joe_head.png",
+        "tags": "react-native,hapi,nest",
+        "description": "Приложение здорового питания",
+        "rows": [
+            {
+                "id": 0.988230938910849,
+                "type": "fullwidth",
+                "elements": [
+                    {
+                        "id": 0.679661047130452,
+                        "type": "texteditor",
+                        "content": "<h2 style=\"text-align:center;\">Выполнено на основе <a href=\"/#/page-builder\" target=\"_self\"><ins>Simple Page Builder<\/ins><\/a><\/h2>\n<img src=\"/assets/imgs/content/po-editor.png\" alt=\"undefined\" style=\"float:none;height: auto;width: auto\"/>\n<p><\/p>\n"
+                    }
+                ],
+                "color": "#EEEEEE"
+            },
+            {
+                "id": 0.391791267815963,
+                "type": "fullwidth",
+                "elements": [
+                    {
+                        "id": 0.547095271294806,
+                        "type": "texteditor",
+                        "content": "<h2 style=\"text-align:center;\">Masonry Grid<\/h2>\n<img src=\"/assets/imgs/content/po-masonry.png\" alt=\"undefined\" style=\"float:none;height: auto;width: auto\"/>\n<p><\/p>\n"
+                    }
+                ],
+                "color": "#FAFAFA"
+            },
+            {
+                "id": 0.544843566494754,
+                "type": "fullwidth",
+                "elements": [
+                    {
+                        "id": 0.793923765168392,
+                        "type": "texteditor",
+                        "content": "<h2 style=\"text-align:center;\">Фильтр по тегам<\/h2>\n<img src=\"/assets/imgs/content/po-filter.png\" alt=\"undefined\" style=\"float:none;height: auto;width: auto\"/>\n<p><\/p>\n"
+                    }
+                ],
+                "color": "#EEEEEE"
+            },
+            {
+                "id": 0.984629274785851,
+                "type": "fullwidth",
+                "elements": [
+                    {
+                        "id": 0.0256181331107619,
+                        "type": "texteditor",
+                        "content": "<h2 style=\"text-align:center;\">Темизация Simple Page Builder для каждого кейса<\/h2>\n"
+                    }
+                ],
+                "color": "#FAFAFA"
+            },
+            {
+                "id": 0.0677863128441019,
+                "type": "column_2",
+                "elements": [
+                    {
+                        "id": 0.101741842687343,
+                        "type": "texteditor",
+                        "content": "<p><\/p>\n<img src=\"/assets/imgs/content/po-themzation-1.png\" alt=\"undefined\" style=\"float:right;height: auto;width: auto\"/>\n<p><\/p>\n"
+                    },
+                    {
+                        "id": 0.705893946248733,
+                        "type": "texteditor",
+                        "content": "<p><\/p>\n<img src=\"/assets/imgs/content/po-themzation-2.png\" alt=\"undefined\" style=\"float:left;height: auto;width: auto\"/>\n<p><\/p>\n"
+                    }
+                ],
+                "color": "#FAFAFA"
+            },
+            {
+                "id": 0.814837531896369,
+                "type": "fullwidth",
+                "elements": [
+                    {
+                        "id": 0.226354770844306,
+                        "type": "texteditor",
+                        "content": "<h2 style=\"text-align:center;\">Адаптивный дизайн<\/h2>\n"
+                    }
+                ],
+                "color": "#EEEEEE"
+            },
+            {
+                "id": 0.0168089773714646,
+                "type": "column_3",
+                "elements": [
+                    {
+                        "id": 0.599038889885963,
+                        "type": "texteditor",
+                        "content": "<p><\/p>\n<img src=\"/assets/imgs/content/po-mobile-iphone.png\" alt=\"undefined\" style=\"float:none;height: auto;width: auto\"/>\n<p><\/p>\n"
+                    },
+                    {
+                        "id": 0.0662015440816555,
+                        "type": "texteditor",
+                        "content": "<p><\/p>\n<img src=\"/assets/imgs/content/po-mobile-nexus.png\" alt=\"undefined\" style=\"float:none;height: auto;width: auto\"/>\n<p><\/p>\n"
+                    },
+                    {
+                        "id": 0.226520829605457,
+                        "type": "texteditor",
+                        "content": "<p><\/p>\n<img src=\"/assets/imgs/content/po-mobile-galaxy.png\" alt=\"undefined\" style=\"float:none;height: auto;width: auto\"/>\n<p><\/p>\n"
+                    }
+                ],
+                "color": "#EEEEEE"
+            }
+        ],
+        "title": "Joe & The Juice",
+        "__v": 18
+    },
+    {
+        "_id": {
+            "$oid": "5bdca716ba1b61115caeafbc"
+        },
+        "miniatureHeight": 435,
+        "sortWeight": 0,
+        "color": "#555592",
+        "nameUrl": "portfolio",
+        "miniature": "/assets/imgs/content/portfolio_mini.png",
+        "headImg": "/assets/imgs/content/portfolio-home.png",
+        "tags": "react,redux,express",
+        "description": "Наглядно и информативно",
+        "rows": [
+            {
+                "id": 0.988230938910849,
+                "type": "fullwidth",
+                "elements": [
+                    {
+                        "id": 0.679661047130452,
+                        "type": "texteditor",
+                        "content": "<h2 style=\"text-align:center;\">Выполнено на основе <a href=\"/#/page-builder\" target=\"_self\"><ins>Simple Page Builder<\/ins><\/a><\/h2>\n<img src=\"/assets/imgs/content/po-editor.png\" alt=\"undefined\" style=\"float:none;height: auto;width: auto\"/>\n<p><\/p>\n"
+                    }
+                ],
+                "color": "#EEEEEE"
+            },
+            {
+                "id": 0.391791267815963,
+                "type": "fullwidth",
+                "elements": [
+                    {
+                        "id": 0.547095271294806,
+                        "type": "texteditor",
+                        "content": "<h2 style=\"text-align:center;\">Masonry Grid<\/h2>\n<img src=\"/assets/imgs/content/po-masonry.png\" alt=\"undefined\" style=\"float:none;height: auto;width: auto\"/>\n<p><\/p>\n"
+                    }
+                ],
+                "color": "#FAFAFA"
+            },
+            {
+                "id": 0.544843566494754,
+                "type": "fullwidth",
+                "elements": [
+                    {
+                        "id": 0.793923765168392,
+                        "type": "texteditor",
+                        "content": "<h2 style=\"text-align:center;\">Фильтр по тегам<\/h2>\n<img src=\"/assets/imgs/content/po-filter.png\" alt=\"undefined\" style=\"float:none;height: auto;width: auto\"/>\n<p><\/p>\n"
+                    }
+                ],
+                "color": "#EEEEEE"
+            },
+            {
+                "id": 0.984629274785851,
+                "type": "fullwidth",
+                "elements": [
+                    {
+                        "id": 0.0256181331107619,
+                        "type": "texteditor",
+                        "content": "<h2 style=\"text-align:center;\">Темизация Simple Page Builder для каждого кейса<\/h2>\n"
+                    }
+                ],
+                "color": "#FAFAFA"
+            },
+            {
+                "id": 0.0677863128441019,
+                "type": "column_2",
+                "elements": [
+                    {
+                        "id": 0.101741842687343,
+                        "type": "texteditor",
+                        "content": "<p><\/p>\n<img src=\"/assets/imgs/content/po-themzation-1.png\" alt=\"undefined\" style=\"float:right;height: auto;width: auto\"/>\n<p><\/p>\n"
+                    },
+                    {
+                        "id": 0.705893946248733,
+                        "type": "texteditor",
+                        "content": "<p><\/p>\n<img src=\"/assets/imgs/content/po-themzation-2.png\" alt=\"undefined\" style=\"float:left;height: auto;width: auto\"/>\n<p><\/p>\n"
+                    }
+                ],
+                "color": "#FAFAFA"
+            },
+            {
+                "id": 0.814837531896369,
+                "type": "fullwidth",
+                "elements": [
+                    {
+                        "id": 0.226354770844306,
+                        "type": "texteditor",
+                        "content": "<h2 style=\"text-align:center;\">Адаптивный дизайн<\/h2>\n"
+                    }
+                ],
+                "color": "#EEEEEE"
+            },
+            {
+                "id": 0.0168089773714646,
+                "type": "column_3",
+                "elements": [
+                    {
+                        "id": 0.599038889885963,
+                        "type": "texteditor",
+                        "content": "<p><\/p>\n<img src=\"/assets/imgs/content/po-mobile-iphone.png\" alt=\"undefined\" style=\"float:none;height: auto;width: auto\"/>\n<p><\/p>\n"
+                    },
+                    {
+                        "id": 0.0662015440816555,
+                        "type": "texteditor",
+                        "content": "<p><\/p>\n<img src=\"/assets/imgs/content/po-mobile-nexus.png\" alt=\"undefined\" style=\"float:none;height: auto;width: auto\"/>\n<p><\/p>\n"
+                    },
+                    {
+                        "id": 0.226520829605457,
+                        "type": "texteditor",
+                        "content": "<p><\/p>\n<img src=\"/assets/imgs/content/po-mobile-galaxy.png\" alt=\"undefined\" style=\"float:none;height: auto;width: auto\"/>\n<p><\/p>\n"
+                    }
+                ],
+                "color": "#EEEEEE"
+            }
+        ],
+        "title": "Портфолио",
+        "__v": 18
+    },
+    {
+        "_id": {
+            "$oid": "5bdca716ba1b61115caeafbc"
+        },
+        "miniatureHeight": 435,
+        "sortWeight": 0,
+        "color": "#555592",
+        "nameUrl": "portfolio",
+        "miniature": "/assets/imgs/content/portfolio_mini.png",
+        "headImg": "/assets/imgs/content/portfolio-home.png",
+        "tags": "react,redux,express",
+        "description": "Наглядно и информативно",
+        "rows": [
+            {
+                "id": 0.988230938910849,
+                "type": "fullwidth",
+                "elements": [
+                    {
+                        "id": 0.679661047130452,
+                        "type": "texteditor",
+                        "content": "<h2 style=\"text-align:center;\">Выполнено на основе <a href=\"/#/page-builder\" target=\"_self\"><ins>Simple Page Builder<\/ins><\/a><\/h2>\n<img src=\"/assets/imgs/content/po-editor.png\" alt=\"undefined\" style=\"float:none;height: auto;width: auto\"/>\n<p><\/p>\n"
+                    }
+                ],
+                "color": "#EEEEEE"
+            },
+            {
+                "id": 0.391791267815963,
+                "type": "fullwidth",
+                "elements": [
+                    {
+                        "id": 0.547095271294806,
+                        "type": "texteditor",
+                        "content": "<h2 style=\"text-align:center;\">Masonry Grid<\/h2>\n<img src=\"/assets/imgs/content/po-masonry.png\" alt=\"undefined\" style=\"float:none;height: auto;width: auto\"/>\n<p><\/p>\n"
+                    }
+                ],
+                "color": "#FAFAFA"
+            },
+            {
+                "id": 0.544843566494754,
+                "type": "fullwidth",
+                "elements": [
+                    {
+                        "id": 0.793923765168392,
+                        "type": "texteditor",
+                        "content": "<h2 style=\"text-align:center;\">Фильтр по тегам<\/h2>\n<img src=\"/assets/imgs/content/po-filter.png\" alt=\"undefined\" style=\"float:none;height: auto;width: auto\"/>\n<p><\/p>\n"
+                    }
+                ],
+                "color": "#EEEEEE"
+            },
+            {
+                "id": 0.984629274785851,
+                "type": "fullwidth",
+                "elements": [
+                    {
+                        "id": 0.0256181331107619,
+                        "type": "texteditor",
+                        "content": "<h2 style=\"text-align:center;\">Темизация Simple Page Builder для каждого кейса<\/h2>\n"
+                    }
+                ],
+                "color": "#FAFAFA"
+            },
+            {
+                "id": 0.0677863128441019,
+                "type": "column_2",
+                "elements": [
+                    {
+                        "id": 0.101741842687343,
+                        "type": "texteditor",
+                        "content": "<p><\/p>\n<img src=\"/assets/imgs/content/po-themzation-1.png\" alt=\"undefined\" style=\"float:right;height: auto;width: auto\"/>\n<p><\/p>\n"
+                    },
+                    {
+                        "id": 0.705893946248733,
+                        "type": "texteditor",
+                        "content": "<p><\/p>\n<img src=\"/assets/imgs/content/po-themzation-2.png\" alt=\"undefined\" style=\"float:left;height: auto;width: auto\"/>\n<p><\/p>\n"
+                    }
+                ],
+                "color": "#FAFAFA"
+            },
+            {
+                "id": 0.814837531896369,
+                "type": "fullwidth",
+                "elements": [
+                    {
+                        "id": 0.226354770844306,
+                        "type": "texteditor",
+                        "content": "<h2 style=\"text-align:center;\">Адаптивный дизайн<\/h2>\n"
+                    }
+                ],
+                "color": "#EEEEEE"
+            },
+            {
+                "id": 0.0168089773714646,
+                "type": "column_3",
+                "elements": [
+                    {
+                        "id": 0.599038889885963,
+                        "type": "texteditor",
+                        "content": "<p><\/p>\n<img src=\"/assets/imgs/content/po-mobile-iphone.png\" alt=\"undefined\" style=\"float:none;height: auto;width: auto\"/>\n<p><\/p>\n"
+                    },
+                    {
+                        "id": 0.0662015440816555,
+                        "type": "texteditor",
+                        "content": "<p><\/p>\n<img src=\"/assets/imgs/content/po-mobile-nexus.png\" alt=\"undefined\" style=\"float:none;height: auto;width: auto\"/>\n<p><\/p>\n"
+                    },
+                    {
+                        "id": 0.226520829605457,
+                        "type": "texteditor",
+                        "content": "<p><\/p>\n<img src=\"/assets/imgs/content/po-mobile-galaxy.png\" alt=\"undefined\" style=\"float:none;height: auto;width: auto\"/>\n<p><\/p>\n"
+                    }
+                ],
+                "color": "#EEEEEE"
+            }
+        ],
+        "title": "Портфолио",
+        "__v": 18
+    },
+
+
+
+    // --------------------------------------------------------
+    {
+        "_id": {
             "$oid": "5bd8e00fc2f65513e45776d6"
         },
         "miniatureHeight": 514,
@@ -9,7 +361,6 @@ export const works = [
         "miniature": "/assets/imgs/content/remont_mini.png",
         "headImg": "/assets/imgs/content/remont-home.png",
         "tags": "react,redux,express",
-        "siteUrl": "http://remont-service.ml",
         "description": "Сервис приема заявок на ремонт бытовой техники",
         "rows": [
             {
@@ -19,7 +370,7 @@ export const works = [
                     {
                         "id": 0.454525725342735,
                         "type": "texteditor",
-                        "content": "<p style=\"text-align:center;\">Сервис разделен на два приложения:<\/p>\n<p style=\"text-align:center;\">&nbsp;<a href=\"http://remont-service.ml\" target=\"_blank\"><span style=\"color: rgb(41,105,176);\"><ins>Клиентский сайт<\/ins><\/span><\/a> и  <a href=\"http://remont-service.ml/admin\" target=\"_blank\"><span style=\"color: rgb(41,105,176);\"><ins>Административная панель<\/ins><\/span><\/a>&nbsp;<\/p>\n<p style=\"text-align:center;\">Попробовать админ-панель в демо-режиме:<\/p>\n<p style=\"text-align:center;\">логин: <strong>demo     <\/strong>пароль: <strong>demo<\/strong><\/p>\n<img src=\"/assets/imgs/content/rs-calendar.png\" alt=\"undefined\" style=\"float:none;height: auto;width: auto\"/>\n<p><\/p>\n"
+                        "content": "<p style=\"text-align:center;\">Сервис разделен на два приложения:<\/p>\n<p style=\"text-align:center;\">&nbsp;<b>Клиентский сайт<\/b> и  <b>Административная панель<\/b>&nbsp;<\/p>\n<img src=\"/assets/imgs/content/rs-calendar.png\" alt=\"undefined\" style=\"float:none;height: auto;width: auto\"/>\n<p><\/p>\n"
                     }
                 ],
                 "color": "#EEEEEE"
@@ -131,7 +482,6 @@ export const works = [
         "miniature": "/assets/imgs/content/yami_mini.png",
         "headImg": "/assets/imgs/content/yami-home.png",
         "tags": "react,redux,wordpress",
-        "siteUrl": "http://yami18.ru",
         "description": "Интернет-магазин суши и роллов",
         "rows": [
             {
@@ -244,7 +594,6 @@ export const works = [
         "miniature": "/assets/imgs/content/pagebuilder_mini.png",
         "headImg": "/assets/imgs/content/spb-home.png",
         "tags": "react",
-        "siteUrl": "http://page-builder.ml",
         "description": "Редактор страниц с поддержкой тем",
         "rows": [
             {
@@ -368,8 +717,7 @@ export const works = [
         "nameUrl": "flowers",
         "miniature": "/assets/imgs/content/buket_mini.png",
         "headImg": "/assets/imgs/content/flowers-home.png",
-        "tags": "jquery,php",
-        "siteUrl": "http://flowers18.ru/",
+        "tags": "express",
         "description": "Интернет-магазин цветов",
         "rows": [
             {
@@ -469,7 +817,6 @@ export const works = [
         "miniature": "/assets/imgs/content/portfolio_mini.png",
         "headImg": "/assets/imgs/content/portfolio-home.png",
         "tags": "react,redux,express",
-        "siteUrl": "https://github.com/shikin-av",
         "description": "Наглядно и информативно",
         "rows": [
             {
@@ -585,8 +932,7 @@ export const works = [
         "nameUrl": "auction",
         "miniature": "/assets/imgs/content/auction_mini.png",
         "headImg": "/assets/imgs/content/au-home.png",
-        "tags": "jquery,django",
-        "siteUrl": "",
+        "tags": "django",
         "description": "Интернет-аукцион картин",
         "rows": [
             {

@@ -9,11 +9,12 @@ import WorkList from 'client/components/Work/WorkList'
 
 const tagsArr = [
     'react',
-    'redux',
+    'react-native',
     'express',
+    'hapi',
+    'nest',
+    'firebase',
     'wordpress',
-    'jquery',
-    'php',
     'django',
 ]
 

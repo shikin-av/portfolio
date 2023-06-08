@@ -69,12 +69,7 @@ class Home extends React.Component {
                             works
                             ? <WorkFilter works={works}/> 
                             : <LoadingSpin/>
-                        }
-                        <a 
-                            href='https://github.com/shikin-av/'
-                            target='_blank'
-                            className={classes.link}
-                        >github.com/shikin-av</a>                    
+                        }                    
                     </Animation>   
                 </div>
                 {nameUrl && <Work nameUrl={nameUrl}/>}
