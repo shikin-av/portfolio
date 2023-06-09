@@ -13,9 +13,10 @@ const tagsArr = [
     'express',
     'hapi',
     'nest',
-    'firebase',
     'wordpress',
     'django',
+    'firebase',
+    'AWS'
 ]
 
 class WorkFilter extends React.Component {

@@ -9,7 +9,7 @@ export const works = [
         "nameUrl": "joe",
         "miniature": "/assets/imgs/content/joe_logo.png",
         "headImg": "/assets/imgs/content/joe_head.png",
-        "tags": "react-native,hapi,nest",
+        "tags": "react-native,hapi,nest, AWS",
         "description": "Приложение здорового питания",
         "rows": [
             {
@@ -19,7 +19,7 @@ export const works = [
                     {
                         "id": 0.679661047130452,
                         "type": "texteditor",
-                        "content": "<h2 style=\"text-align:center;\">Выполнено на основе <a href=\"/#/page-builder\" target=\"_self\"><ins>Simple Page Builder<\/ins><\/a><\/h2>\n<img src=\"/assets/imgs/content/po-editor.png\" alt=\"undefined\" style=\"float:none;height: auto;width: auto\"/>\n<p><\/p>\n"
+                        "content": `<h2 style="text-align:center;">Проект выполнен в EPAM Systems</h2>`
                     }
                 ],
                 "color": "#EEEEEE"
@@ -31,48 +31,16 @@ export const works = [
                     {
                         "id": 0.547095271294806,
                         "type": "texteditor",
-                        "content": "<h2 style=\"text-align:center;\">Masonry Grid<\/h2>\n<img src=\"/assets/imgs/content/po-masonry.png\" alt=\"undefined\" style=\"float:none;height: auto;width: auto\"/>\n<p><\/p>\n"
-                    }
-                ],
-                "color": "#FAFAFA"
-            },
-            {
-                "id": 0.544843566494754,
-                "type": "fullwidth",
-                "elements": [
-                    {
-                        "id": 0.793923765168392,
-                        "type": "texteditor",
-                        "content": "<h2 style=\"text-align:center;\">Фильтр по тегам<\/h2>\n<img src=\"/assets/imgs/content/po-filter.png\" alt=\"undefined\" style=\"float:none;height: auto;width: auto\"/>\n<p><\/p>\n"
-                    }
-                ],
-                "color": "#EEEEEE"
-            },
-            {
-                "id": 0.984629274785851,
-                "type": "fullwidth",
-                "elements": [
-                    {
-                        "id": 0.0256181331107619,
-                        "type": "texteditor",
-                        "content": "<h2 style=\"text-align:center;\">Темизация Simple Page Builder для каждого кейса<\/h2>\n"
-                    }
-                ],
-                "color": "#FAFAFA"
-            },
-            {
-                "id": 0.0677863128441019,
-                "type": "column_2",
-                "elements": [
-                    {
-                        "id": 0.101741842687343,
-                        "type": "texteditor",
-                        "content": "<p><\/p>\n<img src=\"/assets/imgs/content/po-themzation-1.png\" alt=\"undefined\" style=\"float:right;height: auto;width: auto\"/>\n<p><\/p>\n"
-                    },
-                    {
-                        "id": 0.705893946248733,
-                        "type": "texteditor",
-                        "content": "<p><\/p>\n<img src=\"/assets/imgs/content/po-themzation-2.png\" alt=\"undefined\" style=\"float:left;height: auto;width: auto\"/>\n<p><\/p>\n"
+                        "content": `<h2 style="text-align:center;">Роль в команде:</h2>
+                        <ul>
+                        <li>Ведущий backend developer</li>
+                        <li>Ответственный за платежную систему приложения
+                        и интеграцию с внешними платежными сервисами</li>
+                        <li>Участие в принятии архитектурных и иных технических решений проекта</li>
+                        <li>Обучение младших сотрудников</li>
+                        <li>Делегирование им задач</li>
+                        <li>Контроль качества кода</li>
+                        </ul>`
                     }
                 ],
                 "color": "#FAFAFA"
@@ -84,7 +52,7 @@ export const works = [
                     {
                         "id": 0.226354770844306,
                         "type": "texteditor",
-                        "content": "<h2 style=\"text-align:center;\">Адаптивный дизайн<\/h2>\n"
+                        "content": "<h2 style=\"text-align:center;\">Приложение доставки здорового питания по Европе, Америке и странам Ближнего Востока<\/h2>\n"
                     }
                 ],
                 "color": "#EEEEEE"
@@ -96,17 +64,17 @@ export const works = [
                     {
                         "id": 0.599038889885963,
                         "type": "texteditor",
-                        "content": "<p><\/p>\n<img src=\"/assets/imgs/content/po-mobile-iphone.png\" alt=\"undefined\" style=\"float:none;height: auto;width: auto\"/>\n<p><\/p>\n"
+                        "content": "<p><\/p>\n<img src=\"/assets/imgs/content/joe-mobile-iphone.png\" alt=\"undefined\" style=\"float:none;height: auto;width: auto\"/>\n<p><\/p>\n"
                     },
                     {
                         "id": 0.0662015440816555,
                         "type": "texteditor",
-                        "content": "<p><\/p>\n<img src=\"/assets/imgs/content/po-mobile-nexus.png\" alt=\"undefined\" style=\"float:none;height: auto;width: auto\"/>\n<p><\/p>\n"
+                        "content": "<p><\/p>\n<img src=\"/assets/imgs/content/joe-mobile-nexus.png\" alt=\"undefined\" style=\"float:none;height: auto;width: auto\"/>\n<p><\/p>\n"
                     },
                     {
                         "id": 0.226520829605457,
                         "type": "texteditor",
-                        "content": "<p><\/p>\n<img src=\"/assets/imgs/content/po-mobile-galaxy.png\" alt=\"undefined\" style=\"float:none;height: auto;width: auto\"/>\n<p><\/p>\n"
+                        "content": "<p><\/p>\n<img src=\"/assets/imgs/content/joe-mobile-galaxy.png\" alt=\"undefined\" style=\"float:none;height: auto;width: auto\"/>\n<p><\/p>\n"
                     }
                 ],
                 "color": "#EEEEEE"
