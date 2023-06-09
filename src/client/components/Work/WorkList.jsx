@@ -24,7 +24,8 @@ class WorkList extends React.Component {
             items
         } = this.props
     
-        const works = _.sortBy(items, 'sortWeight').map(item => (
+        // const works = _.sortBy(items, 'sortWeight').map(item => (
+            const works = items.map(item => (
             <li 
                 className={`${classes.work} work gridcase`}
                 key={item.nameUrl}

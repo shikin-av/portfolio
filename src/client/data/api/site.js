@@ -1,4 +1,4 @@
-import { works } from 'config/mock'
+import { works } from 'mocks'
 
 const apiPath = '/publicapi'
 
