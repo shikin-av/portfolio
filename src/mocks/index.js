@@ -1,5 +1,5 @@
 import joe from './joe'
-import banking from './banking'
+import leadership from './leadership'
 import skii from './sk-ii'
 import repair from './repaire-service'
 import yami from './yami'
@@ -10,7 +10,7 @@ import auction from './auction'
 
 export const works = [
     joe,
-    banking,
+    leadership,
     skii,
     repair,
     yami,
