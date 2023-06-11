@@ -5,6 +5,7 @@ export default {
   "miniatureHeight": 389,
   "sortWeight": 5,
   "color": "#3f51b5",
+  "whiteCloseButton": true,
   "nameUrl": "page-builder",
   "miniature": "/assets/imgs/content/pagebuilder_mini.png",
   "headImg": "/assets/imgs/content/spb-home.jpg",

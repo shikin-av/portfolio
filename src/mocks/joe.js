@@ -5,6 +5,7 @@ export default {
   "miniatureHeight": 445,
   "sortWeight": 0,
   "color": "#d3b4d6",
+  "whiteCloseButton": true,
   "nameUrl": "joe",
   "miniature": "/assets/imgs/content/joe_logo.png",
   "headImg": "/assets/imgs/content/joe_head.jpg",

@@ -5,6 +5,7 @@ export default {
   "miniatureHeight": 435,
   "sortWeight": 7,
   "color": "#555592",
+  "whiteCloseButton": true,
   "nameUrl": "portfolio",
   "miniature": "/assets/imgs/content/portfolio_mini.png",
   "headImg": "/assets/imgs/content/portfolio-home.png",

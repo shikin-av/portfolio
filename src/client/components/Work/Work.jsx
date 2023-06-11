@@ -162,6 +162,9 @@ class Work extends React.Component {
             message,
             theme,
         } = this.state
+        const closeButtonColor = work && work.whiteCloseButton 
+            ? classes.whiteButton
+            : classes.blackButton
                 
         return (
             <Dialog
@@ -177,7 +180,7 @@ class Work extends React.Component {
             >
                 <IconButton 
                     onClick={this.handleClose}
-                    className={classes.closeBtn}
+                    className={`${classes.closeBtn} ${closeButtonColor}`}
                 >
                     <CloseIcon />
                 </IconButton>
@@ -246,6 +249,12 @@ const styles = theme => ({
             right: -2,
             top: -7,
         },
+    },
+    whiteButton: {
+        color: 'white'
+    },
+    blackButton: {
+        color: 'black'
     },
     dialogPaper: {
         maxWidth: 1024,
