@@ -7,7 +7,7 @@ export default {
   "color": "#80cfd6",
   "nameUrl": "leadership",
   "miniature": "/assets/imgs/content/leadership-logo.png",
-  "headImg": "/assets/imgs/content/leadership_head.png",
+  "headImg": "/assets/imgs/content/leadership_head.jpg",
   "tags": "react",
   "description": "Руководство командами",
   "rows": [

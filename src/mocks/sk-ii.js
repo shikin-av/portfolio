@@ -7,7 +7,7 @@ export default {
   "color": "#972323",
   "nameUrl": "sk-2",
   "miniature": "/assets/imgs/content/skii-logo-1.png",
-  "headImg": "/assets/imgs/content/skii-header.png",
+  "headImg": "/assets/imgs/content/skii-header.jpg",
   "tags": "react-native,firebase",
   "description": "Панель управления магазинами косметики",
   "rows": [

@@ -7,7 +7,7 @@ export default {
   "color": "#d3b4d6",
   "nameUrl": "joe",
   "miniature": "/assets/imgs/content/joe_logo.png",
-  "headImg": "/assets/imgs/content/joe_head.png",
+  "headImg": "/assets/imgs/content/joe_head.jpg",
   "tags": "react-native,hapi,nest,AWS",
   "description": "Приложение здорового питания",
   "rows": [
