@@ -7,7 +7,7 @@ export default {
   "nameUrl": "yami",
   "miniature": "/assets/imgs/content/yami_mini.png",
   "headImg": "/assets/imgs/content/yami-home.png",
-  "tags": "react,redux,wordpress",
+  "tags": "react,wordpress",
   "description": "Интернет-магазин суши и роллов",
   "rows": [
       {

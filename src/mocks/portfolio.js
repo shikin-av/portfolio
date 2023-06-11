@@ -8,7 +8,7 @@ export default {
   "nameUrl": "portfolio",
   "miniature": "/assets/imgs/content/portfolio_mini.png",
   "headImg": "/assets/imgs/content/portfolio-home.png",
-  "tags": "react,redux,express",
+  "tags": "react,express",
   "description": "Наглядно и информативно",
   "rows": [
       {

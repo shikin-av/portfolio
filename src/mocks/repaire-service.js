@@ -7,7 +7,7 @@ export default {
   "nameUrl": "repaire-service",
   "miniature": "/assets/imgs/content/remont_mini.png",
   "headImg": "/assets/imgs/content/remont-home.png",
-  "tags": "react,redux,express",
+  "tags": "react,express",
   "description": "Сервис приема заявок на ремонт бытовой техники",
   "rows": [
       {

@@ -8,7 +8,7 @@ export default {
   "nameUrl": "sk-2",
   "miniature": "/assets/imgs/content/skii-logo-1.png",
   "headImg": "/assets/imgs/content/skii-header.png",
-  "tags": "react-native, firebase",
+  "tags": "react-native,firebase",
   "description": "Панель управления магазинами косметики",
   "rows": [
       {

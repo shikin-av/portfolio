@@ -8,7 +8,7 @@ export default {
   "nameUrl": "joe",
   "miniature": "/assets/imgs/content/joe_logo.png",
   "headImg": "/assets/imgs/content/joe_head.png",
-  "tags": "react-native,hapi,nest, AWS",
+  "tags": "react-native,hapi,nest,AWS",
   "description": "Приложение здорового питания",
   "rows": [
       {
