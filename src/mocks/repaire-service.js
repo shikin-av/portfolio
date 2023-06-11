@@ -2,7 +2,7 @@ export default {
   "_id": {
       "$oid": "5bd8e00fc2f65513e45776d6"
   },
-  "miniatureHeight": 444,
+  "miniatureHeight": 464,
   "sortWeight": 2,
   "nameUrl": "repaire-service",
   "miniature": "/assets/imgs/content/remont_mini.png",

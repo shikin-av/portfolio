@@ -2,7 +2,7 @@ export default {
   "_id": {
       "$oid": "5bdca716ba1b61115caeafbc"
   },
-  "miniatureHeight": 348,
+  "miniatureHeight": 444,
   "sortWeight": 3,
   "color": "#972323",
   "nameUrl": "sk-2",

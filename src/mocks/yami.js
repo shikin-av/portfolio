@@ -2,7 +2,7 @@ export default {
   "_id": {
       "$oid": "5bd8e189c2f65513e45776d7"
   },
-  "miniatureHeight": 415,
+  "miniatureHeight": 360,
   "sortWeight": 4,
   "nameUrl": "yami",
   "miniature": "/assets/imgs/content/yami_mini.png",

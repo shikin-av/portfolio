@@ -2,7 +2,7 @@ export default {
   "_id": {
       "$oid": "5bdca716ba1b61115caeafbc"
   },
-  "miniatureHeight": 395,
+  "miniatureHeight": 415,
   "sortWeight": 1,
   "color": "#80cfd6",
   "nameUrl": "leadership",

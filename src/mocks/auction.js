@@ -2,7 +2,7 @@ export default {
   "_id": {
       "$oid": "5bdd01aa1326c913c8cbb5e6"
   },
-  "miniatureHeight": 424,
+  "miniatureHeight": 398,
   "sortWeight": 8,
   "color": "#d4d001",
   "nameUrl": "auction",

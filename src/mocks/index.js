@@ -16,6 +16,7 @@ export const works = [
     skii,
     flowers,
     portfolio,
-    yami,
+    
     pagebuilder,
+    yami,
 ]
