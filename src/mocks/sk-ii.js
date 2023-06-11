@@ -4,12 +4,12 @@ export default {
   },
   "miniatureHeight": 435,
   "sortWeight": 2,
-  "color": "#555592",
-  "nameUrl": "portfolio",
-  "miniature": "/assets/imgs/content/portfolio_mini.png",
-  "headImg": "/assets/imgs/content/portfolio-home.png",
-  "tags": "react,redux,express",
-  "description": "Наглядно и информативно",
+  "color": "#972323",
+  "nameUrl": "sk-2",
+  "miniature": "/assets/imgs/content/skii-logo-1.png",
+  "headImg": "/assets/imgs/content/skii-header.png",
+  "tags": "react-native, firebase",
+  "description": "Панель управления магазинами косметики",
   "rows": [
       {
           "id": 0.988230938910849,
@@ -18,7 +18,7 @@ export default {
               {
                   "id": 0.679661047130452,
                   "type": "texteditor",
-                  "content": "<h2 style=\"text-align:center;\">Выполнено на основе <a href=\"/#/page-builder\" target=\"_self\"><ins>Simple Page Builder<\/ins><\/a><\/h2>\n<img src=\"/assets/imgs/content/po-editor.png\" alt=\"undefined\" style=\"float:none;height: auto;width: auto\"/>\n<p><\/p>\n"
+                  "content": `<h2 style="text-align:center;">Проект выполнен в EPAM Systems</h2>`
               }
           ],
           "color": "#EEEEEE"
@@ -30,87 +30,34 @@ export default {
               {
                   "id": 0.547095271294806,
                   "type": "texteditor",
-                  "content": "<h2 style=\"text-align:center;\">Masonry Grid<\/h2>\n<img src=\"/assets/imgs/content/po-masonry.png\" alt=\"undefined\" style=\"float:none;height: auto;width: auto\"/>\n<p><\/p>\n"
+                  "content": `<h2 style="text-align:center;">Разработка административной панели управления для сотрудников компании</h2>
+                    <ul>
+                    <li><b>Роль:</b> Full-stack developer</li>
+                    <li><b>Команда:</b> несколько распределенных команд, общая численность более 60 человек</li>
+                    <li><b>Target-device:</b> iPad</li>
+                    <li><b>Фронт работ:</b> Реализация логики на стороне Firebase и отражение ее в экранах и компонентах на React Native<br></li>
+                    </ul>`
               }
           ],
           "color": "#FAFAFA"
       },
       {
-          "id": 0.544843566494754,
-          "type": "fullwidth",
-          "elements": [
-              {
-                  "id": 0.793923765168392,
-                  "type": "texteditor",
-                  "content": "<h2 style=\"text-align:center;\">Фильтр по тегам<\/h2>\n<img src=\"/assets/imgs/content/po-filter.png\" alt=\"undefined\" style=\"float:none;height: auto;width: auto\"/>\n<p><\/p>\n"
-              }
-          ],
-          "color": "#EEEEEE"
-      },
-      {
-          "id": 0.984629274785851,
-          "type": "fullwidth",
-          "elements": [
-              {
-                  "id": 0.0256181331107619,
-                  "type": "texteditor",
-                  "content": "<h2 style=\"text-align:center;\">Темизация Simple Page Builder для каждого кейса<\/h2>\n"
-              }
-          ],
-          "color": "#FAFAFA"
-      },
-      {
-          "id": 0.0677863128441019,
-          "type": "column_2",
-          "elements": [
-              {
-                  "id": 0.101741842687343,
-                  "type": "texteditor",
-                  "content": "<p><\/p>\n<img src=\"/assets/imgs/content/po-themzation-1.png\" alt=\"undefined\" style=\"float:right;height: auto;width: auto\"/>\n<p><\/p>\n"
-              },
-              {
-                  "id": 0.705893946248733,
-                  "type": "texteditor",
-                  "content": "<p><\/p>\n<img src=\"/assets/imgs/content/po-themzation-2.png\" alt=\"undefined\" style=\"float:left;height: auto;width: auto\"/>\n<p><\/p>\n"
-              }
-          ],
-          "color": "#FAFAFA"
-      },
-      {
-          "id": 0.814837531896369,
-          "type": "fullwidth",
-          "elements": [
-              {
-                  "id": 0.226354770844306,
-                  "type": "texteditor",
-                  "content": "<h2 style=\"text-align:center;\">Адаптивный дизайн<\/h2>\n"
-              }
-          ],
-          "color": "#EEEEEE"
-      },
-      {
-          "id": 0.0168089773714646,
-          "type": "column_3",
-          "elements": [
-              {
-                  "id": 0.599038889885963,
-                  "type": "texteditor",
-                  "content": "<p><\/p>\n<img src=\"/assets/imgs/content/po-mobile-iphone.png\" alt=\"undefined\" style=\"float:none;height: auto;width: auto\"/>\n<p><\/p>\n"
-              },
-              {
-                  "id": 0.0662015440816555,
-                  "type": "texteditor",
-                  "content": "<p><\/p>\n<img src=\"/assets/imgs/content/po-mobile-nexus.png\" alt=\"undefined\" style=\"float:none;height: auto;width: auto\"/>\n<p><\/p>\n"
-              },
-              {
-                  "id": 0.226520829605457,
-                  "type": "texteditor",
-                  "content": "<p><\/p>\n<img src=\"/assets/imgs/content/po-mobile-galaxy.png\" alt=\"undefined\" style=\"float:none;height: auto;width: auto\"/>\n<p><\/p>\n"
-              }
-          ],
-          "color": "#EEEEEE"
-      }
+        "id": 0.988230938910459,
+        "type": "fullwidth",
+        "elements": [
+            {
+                "id": 0.679661047133452,
+                "type": "texteditor",
+                "content": `<h2 style="text-align:center;">Задачи</h2>
+                <li>Разработка функционала для разграничения ролей пользователей и доступных для них экранов и действий (например, продавцы-консультанты имеют доступ к каталогам товаров, акциям и т.д., менеджмент - к управлению продавцами, топ менеджмент к управлению поставками, менеджерами среднего звена и т.д.)</li><br>
+                <li>Реалтайм синхронизация данных между устройствами (в том числе поддержка версионности документов, редактируемых несколькими пользователями)</li><br>
+                <li>Реализация хранения истории изменений документов</li><br>
+                <li>Поддержка офлайн-режима работы (если сеть временно недоступна)&nbsp;</li><br>`
+            }
+        ],
+        "color": "#EEEEEE"
+    },
   ],
-  "title": "Портфолио",
+  "title": "Японская косметика SK-II",
   "__v": 18
 }
