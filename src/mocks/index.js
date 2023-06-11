@@ -11,11 +11,11 @@ import auction from './auction'
 export const works = [
     joe,
     leadership,
-    skii,
     repair,
+    auction,
+    skii,
+    flowers,
+    portfolio,
     yami,
     pagebuilder,
-    portfolio,
-    auction,
-    flowers,
 ]

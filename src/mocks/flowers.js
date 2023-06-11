@@ -2,7 +2,7 @@ export default {
   "_id": {
       "$oid": "5bdd03641326c913c8cbb5e7"
   },
-  "miniatureHeight": 268,
+  "miniatureHeight": 308,
   "sortWeight": 6,
   "color": "#ad0045",
   "nameUrl": "flowers",

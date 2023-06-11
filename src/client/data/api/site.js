@@ -15,7 +15,5 @@ export const getWork = nameUrl => {
     //     method: 'GET'
     // })
     // .then(res => res.json())
-    const work = works.filter(work => work.nameUrl === nameUrl)[0]
-    console.log('GET WORK', work);
-    return work
+    return works.filter(work => work.nameUrl === nameUrl)[0]
 }

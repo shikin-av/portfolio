@@ -2,8 +2,8 @@ export default {
   "_id": {
       "$oid": "5bdca716ba1b61115caeafbc"
   },
-  "miniatureHeight": 435,
-  "sortWeight": 2,
+  "miniatureHeight": 348,
+  "sortWeight": 3,
   "color": "#972323",
   "nameUrl": "sk-2",
   "miniature": "/assets/imgs/content/skii-logo-1.png",
