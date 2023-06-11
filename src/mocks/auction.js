@@ -7,7 +7,7 @@ export default {
   "color": "#d4d001",
   "nameUrl": "auction",
   "miniature": "/assets/imgs/content/auction_mini.png",
-  "headImg": "/assets/imgs/content/au-home.png",
+  "headImg": "/assets/imgs/content/au-home.jpg",
   "tags": "django",
   "description": "Интернет-аукцион картин",
   "rows": [
@@ -18,7 +18,7 @@ export default {
               {
                   "id": 0.8105679362457252,
                   "type": "texteditor",
-                  "content": "<h2 style=\"text-align:center;\">Удобство для пользователей и модераторов<\/h2>\n<p style=\"text-align:center;\">Никакой регистрации - авторизация через соц. сети<\/p>\n<p style=\"text-align:center;\">Новые аукционы каждый день<\/p>\n<p style=\"text-align:center;\">Уведомления пользователям и модераторам о выигрыше<\/p>\n<img src=\"/assets/imgs/content/au-product.png\" alt=\"undefined\" style=\"float:none;height: auto;width: auto\"/>\n<p><\/p>\n"
+                  "content": "<h2 style=\"text-align:center;\">Удобство для пользователей и модераторов<\/h2>\n<p style=\"text-align:center;\">Никакой регистрации - авторизация через соц. сети<\/p>\n<p style=\"text-align:center;\">Новые аукционы каждый день<\/p>\n<p style=\"text-align:center;\">Уведомления пользователям и модераторам о выигрыше<\/p>\n<img src=\"/assets/imgs/content/au-product.jpg\" alt=\"undefined\" style=\"float:none;height: auto;width: auto\"/>\n<p><\/p>\n"
               }
           ],
           "color": "#EEEEEE"
@@ -30,7 +30,7 @@ export default {
               {
                   "id": 0.15809645743280676,
                   "type": "texteditor",
-                  "content": "<h2 style=\"text-align:center;\">Комфорт участия в аукционе<\/h2>\n<img src=\"/assets/imgs/content/au-modal.png\" alt=\"undefined\" style=\"float:none;height: auto;width: auto\"/>\n<p><\/p>\n"
+                  "content": "<h2 style=\"text-align:center;\">Комфорт участия в аукционе<\/h2>\n<img src=\"/assets/imgs/content/au-modal.jpg\" alt=\"undefined\" style=\"float:none;height: auto;width: auto\"/>\n<p><\/p>\n"
               }
           ],
           "color": "#FAFAFA"
@@ -42,7 +42,7 @@ export default {
               {
                   "id": 0.5970984736435831,
                   "type": "texteditor",
-                  "content": "<h2 style=\"text-align:center;\">Напоминания<\/h2>\n<p style=\"text-align:center;\">Для пользователей и модераторов<\/p>\n<img src=\"/assets/imgs/content/au-messages.png\" alt=\"undefined\" style=\"float:none;height: auto;width: auto\"/>\n<p><\/p>\n"
+                  "content": "<h2 style=\"text-align:center;\">Напоминания<\/h2>\n<p style=\"text-align:center;\">Для пользователей и модераторов<\/p>\n<img src=\"/assets/imgs/content/au-messages.jpg\" alt=\"undefined\" style=\"float:none;height: auto;width: auto\"/>\n<p><\/p>\n"
               }
           ],
           "color": "#EEEEEE"

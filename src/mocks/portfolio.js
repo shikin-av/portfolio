@@ -30,7 +30,7 @@ export default {
               {
                   "id": 0.547095271294806,
                   "type": "texteditor",
-                  "content": "<h2 style=\"text-align:center;\">Masonry Grid<\/h2>\n<img src=\"/assets/imgs/content/po-masonry.png\" alt=\"undefined\" style=\"float:none;height: auto;width: auto\"/>\n<p><\/p>\n"
+                  "content": "<h2 style=\"text-align:center;\">Masonry Grid<\/h2>\n<img src=\"/assets/imgs/content/po-masonry.jpg\" alt=\"undefined\" style=\"float:none;height: auto;width: auto\"/>\n<p><\/p>\n"
               }
           ],
           "color": "#FAFAFA"
@@ -42,7 +42,7 @@ export default {
               {
                   "id": 0.793923765168392,
                   "type": "texteditor",
-                  "content": "<h2 style=\"text-align:center;\">Фильтр по тегам<\/h2>\n<img src=\"/assets/imgs/content/po-filter.png\" alt=\"undefined\" style=\"float:none;height: auto;width: auto\"/>\n<p><\/p>\n"
+                  "content": "<h2 style=\"text-align:center;\">Фильтр по тегам<\/h2>\n<img src=\"/assets/imgs/content/po-filter.jpg\" alt=\"undefined\" style=\"float:none;height: auto;width: auto\"/>\n<p><\/p>\n"
               }
           ],
           "color": "#EEEEEE"
@@ -71,7 +71,7 @@ export default {
               {
                   "id": 0.705893946248733,
                   "type": "texteditor",
-                  "content": "<p><\/p>\n<img src=\"/assets/imgs/content/po-themzation-2.png\" alt=\"undefined\" style=\"float:left;height: auto;width: auto\"/>\n<p><\/p>\n"
+                  "content": "<p><\/p>\n<img src=\"/assets/imgs/content/po-themzation-2.jpg\" alt=\"undefined\" style=\"float:left;height: auto;width: auto\"/>\n<p><\/p>\n"
               }
           ],
           "color": "#FAFAFA"

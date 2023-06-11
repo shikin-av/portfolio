@@ -7,7 +7,7 @@ export default {
   "color": "#ad0045",
   "nameUrl": "flowers",
   "miniature": "/assets/imgs/content/buket_mini.png",
-  "headImg": "/assets/imgs/content/flowers-home.png",
+  "headImg": "/assets/imgs/content/flowers-home.jpg",
   "tags": "express",
   "description": "Интернет-магазин цветов",
   "rows": [
@@ -18,7 +18,7 @@ export default {
               {
                   "id": 0.019521351361164507,
                   "type": "texteditor",
-                  "content": "<h2 style=\"text-align:center;\">Фильтр товаров<\/h2>\n<p style=\"text-align:center;\">Исходя из категории и ближайших праздников<\/p>\n<img src=\"/assets/imgs/content/fl-filter.png\" alt=\"undefined\" style=\"float:none;height: auto;width: auto\"/>\n<p><\/p>\n"
+                  "content": "<h2 style=\"text-align:center;\">Фильтр товаров<\/h2>\n<p style=\"text-align:center;\">Исходя из категории и ближайших праздников<\/p>\n<img src=\"/assets/imgs/content/fl-filter.jpg\" alt=\"undefined\" style=\"float:none;height: auto;width: auto\"/>\n<p><\/p>\n"
               }
           ],
           "color": "#EEEEEE"
@@ -30,7 +30,7 @@ export default {
               {
                   "id": 0.21889138878958292,
                   "type": "texteditor",
-                  "content": "<h2 style=\"text-align:center;\">Каталог<\/h2>\n<p style=\"text-align:center;\">Необходимая информация, не переходя в товар<\/p>\n<img src=\"/assets/imgs/content/fl-catalog.png\" alt=\"undefined\" style=\"float:none;height: auto;width: auto\"/>\n<p><\/p>\n"
+                  "content": "<h2 style=\"text-align:center;\">Каталог<\/h2>\n<p style=\"text-align:center;\">Необходимая информация, не переходя в товар<\/p>\n<img src=\"/assets/imgs/content/fl-catalog.jpg\" alt=\"undefined\" style=\"float:none;height: auto;width: auto\"/>\n<p><\/p>\n"
               }
           ],
           "color": "#FAFAFA"
@@ -42,7 +42,7 @@ export default {
               {
                   "id": 0.6933599827682682,
                   "type": "texteditor",
-                  "content": "<h2 style=\"text-align:center;\">Удобная навигация<\/h2>\n<img src=\"/assets/imgs/content/fl-menu.png\" alt=\"undefined\" style=\"float:none;height: auto;width: auto\"/>\n<p><\/p>\n"
+                  "content": "<h2 style=\"text-align:center;\">Удобная навигация<\/h2>\n<img src=\"/assets/imgs/content/fl-menu.jpg\" alt=\"undefined\" style=\"float:none;height: auto;width: auto\"/>\n<p><\/p>\n"
               }
           ],
           "color": "#EEEEEE"
@@ -54,7 +54,7 @@ export default {
               {
                   "id": 0.3280176138311537,
                   "type": "texteditor",
-                  "content": "<h2 style=\"text-align:center;\">Всё самое необходимое для подарка<\/h2>\n<p style=\"text-align:center;\">Сопутствующие товары, Вариации букетов, Быстрый заказ<\/p>\n<img src=\"/assets/imgs/content/fl-product.png\" alt=\"undefined\" style=\"float:none;height: auto;width: auto\"/>\n<p><\/p>\n"
+                  "content": "<h2 style=\"text-align:center;\">Всё самое необходимое для подарка<\/h2>\n<p style=\"text-align:center;\">Сопутствующие товары, Вариации букетов, Быстрый заказ<\/p>\n<img src=\"/assets/imgs/content/fl-product.jpg\" alt=\"undefined\" style=\"float:none;height: auto;width: auto\"/>\n<p><\/p>\n"
               }
           ],
           "color": "#FAFAFA"

@@ -6,7 +6,7 @@ export default {
   "sortWeight": 4,
   "nameUrl": "yami",
   "miniature": "/assets/imgs/content/yami_mini.png",
-  "headImg": "/assets/imgs/content/yami-home.png",
+  "headImg": "/assets/imgs/content/yami-home.jpg",
   "tags": "react,wordpress",
   "description": "Интернет-магазин суши и роллов",
   "rows": [
@@ -17,7 +17,7 @@ export default {
               {
                   "id": 0.28511508442016154,
                   "type": "texteditor",
-                  "content": "<h2 style=\"text-align:center;\">Простота и удобство<\/h2>\n<p style=\"text-align:center;\">Наполнение корзины из каталога<\/p>\n<img src=\"/assets/imgs/content/y-products-to-cart.png\" alt=\"undefined\" style=\"float:none;height: auto;width: auto\"/>\n<p><\/p>\n"
+                  "content": "<h2 style=\"text-align:center;\">Простота и удобство<\/h2>\n<p style=\"text-align:center;\">Наполнение корзины из каталога<\/p>\n<img src=\"/assets/imgs/content/y-products-to-cart.jpg\" alt=\"undefined\" style=\"float:none;height: auto;width: auto\"/>\n<p><\/p>\n"
               }
           ],
           "color": "#EEEEEE"
@@ -29,7 +29,7 @@ export default {
               {
                   "id": 0.6467461300844712,
                   "type": "texteditor",
-                  "content": "<h2 style=\"text-align:center;\">Корзина<\/h2>\n<p style=\"text-align:center;\">Покупка в минимум кликов<\/p>\n<img src=\"/assets/imgs/content/y-cart.png\" alt=\"undefined\" style=\"float:none;height: auto;width: auto\"/>\n<p><\/p>\n"
+                  "content": "<h2 style=\"text-align:center;\">Корзина<\/h2>\n<p style=\"text-align:center;\">Покупка в минимум кликов<\/p>\n<img src=\"/assets/imgs/content/y-cart.jpg\" alt=\"undefined\" style=\"float:none;height: auto;width: auto\"/>\n<p><\/p>\n"
               }
           ],
           "color": "#FAFAFA"
@@ -41,7 +41,7 @@ export default {
               {
                   "id": 0.0503065235003779,
                   "type": "texteditor",
-                  "content": "<h2 style=\"text-align:center;\">Wordpress<\/h2>\n<p style=\"text-align:center;\">Комфорт управления сайтом<\/p>\n<img src=\"/assets/imgs/content/y-admin.png\" alt=\"undefined\" style=\"float:none;height: auto;width: auto\"/>\n<p><\/p>\n"
+                  "content": "<h2 style=\"text-align:center;\">Wordpress<\/h2>\n<p style=\"text-align:center;\">Комфорт управления сайтом<\/p>\n<img src=\"/assets/imgs/content/y-admin.jpg\" alt=\"undefined\" style=\"float:none;height: auto;width: auto\"/>\n<p><\/p>\n"
               }
           ],
           "color": "#EEEEEE"
@@ -53,7 +53,7 @@ export default {
               {
                   "id": 0.4751870947213843,
                   "type": "texteditor",
-                  "content": "<h2 style=\"text-align:center;\">Товар<\/h2>\n<p style=\"text-align:center;\">Ничего лишнего<\/p>\n<img src=\"/assets/imgs/content/y-product.png\" alt=\"undefined\" style=\"float:none;height: auto;width: auto\"/>\n<p><\/p>\n"
+                  "content": "<h2 style=\"text-align:center;\">Товар<\/h2>\n<p style=\"text-align:center;\">Ничего лишнего<\/p>\n<img src=\"/assets/imgs/content/y-product.jpg\" alt=\"undefined\" style=\"float:none;height: auto;width: auto\"/>\n<p><\/p>\n"
               }
           ],
           "color": "#FAFAFA"
@@ -65,7 +65,7 @@ export default {
               {
                   "id": 0.6403850581196664,
                   "type": "texteditor",
-                  "content": "<h2 style=\"text-align:center;\">Подсказка \"Состав\"<\/h2>\n<img src=\"/assets/imgs/content/y-composition.png\" alt=\"undefined\" style=\"float:none;height: auto;width: auto\"/>\n<p><\/p>\n"
+                  "content": "<h2 style=\"text-align:center;\">Подсказка \"Состав\"<\/h2>\n<img src=\"/assets/imgs/content/y-composition.jpg\" alt=\"undefined\" style=\"float:none;height: auto;width: auto\"/>\n<p><\/p>\n"
               }
           ],
           "color": "#EEEEEE"

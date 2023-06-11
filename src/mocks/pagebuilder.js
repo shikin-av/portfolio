@@ -7,7 +7,7 @@ export default {
   "color": "#3f51b5",
   "nameUrl": "page-builder",
   "miniature": "/assets/imgs/content/pagebuilder_mini.png",
-  "headImg": "/assets/imgs/content/spb-home.png",
+  "headImg": "/assets/imgs/content/spb-home.jpg",
   "tags": "react",
   "description": "Редактор страниц с поддержкой тем",
   "rows": [
@@ -18,7 +18,7 @@ export default {
               {
                   "id": 0.71553655674471,
                   "type": "texteditor",
-                  "content": "<h2 style=\"text-align:center;\">Многоколоночная сетка<\/h2>\n<p style=\"text-align:center;\">Большой выбор пресетов<\/p>\n<p style=\"text-align:center;\">Легко добавлять свои варианты<\/p>\n<img src=\"/assets/imgs/content/pb-presets.png\" alt=\"undefined\" style=\"float:none;height: auto;width: auto\"/>\n<p><\/p>\n"
+                  "content": "<h2 style=\"text-align:center;\">Многоколоночная сетка<\/h2>\n<p style=\"text-align:center;\">Большой выбор пресетов<\/p>\n<p style=\"text-align:center;\">Легко добавлять свои варианты<\/p>\n<img src=\"/assets/imgs/content/pb-presets.jpg\" alt=\"undefined\" style=\"float:none;height: auto;width: auto\"/>\n<p><\/p>\n"
               }
           ],
           "color": "#EEEEEE"
@@ -30,7 +30,7 @@ export default {
               {
                   "id": 0.719638266110484,
                   "type": "texteditor",
-                  "content": "<h2 style=\"text-align:center;\">WYSIWYG редактор текста<\/h2>\n<img src=\"/assets/imgs/content/pb-wysiwyg.png\" alt=\"undefined\" style=\"float:none;height: auto;width: auto\"/>\n<p><\/p>\n"
+                  "content": "<h2 style=\"text-align:center;\">WYSIWYG редактор текста<\/h2>\n<img src=\"/assets/imgs/content/pb-wysiwyg.jpg\" alt=\"undefined\" style=\"float:none;height: auto;width: auto\"/>\n<p><\/p>\n"
               }
           ],
           "color": "#FAFAFA"
